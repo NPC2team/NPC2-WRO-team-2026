@@ -52,7 +52,7 @@
 
 Somos el equipo NPC (Non Playable Character), este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
 
-Vu Tue Anh, compitió el año pasado en la categoría XXXXXXXX, mientras que Leonardo y Juan participaron en la categoría de futuros ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China donde logramos el 1er Lugar 
+Vu Tue Anh, compitió el año pasado en la categoría de misiones roboticas, mientras que Leonardo y Juan participaron en la categoría de futuros ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China donde logramos el 1er Lugar 
 
 ## b. Miembros del Equipo 
 
@@ -62,19 +62,26 @@ Hola soy Juan, soy venezolano/español y tengo 16 años, actualmente estudio 4to
 
 Mis aportes al equipo se han enfocado en el código de Arduino IDE/Python, así como la realización de pruebas de los distintos componentes y de los retos. 
 
+<img width="810" height="1080" alt="Foto Juan" src="https://github.com/user-attachments/assets/12faab20-5ee2-468b-90a8-455d406bb78f" />
+
 ## **Leonardo Carrasquero** 
 
 Hola soy Leo, venezolano/italiano de 16 años, estudio 4to año de bachillerato y soy miembro del Club de Robótica del Colegio Jefferson 2024.  Al igual que Juan, este es mi segundo año en la categoría de Futuros Ingenieros y este año quiero lograr participar en la Final Internacional de Puerto Rico. 
 
 Mis contribuciones se enfocaron en la investigación de componentes, diseño e impresión de piezas 3D, ensamblaje del robot, así como programación en Python y ROS2. 
 
+<img width="3000" height="4000" alt="Foto Leo" src="https://github.com/user-attachments/assets/3321f65f-eee9-4a1c-8590-d9dd36cd5ec3" />
+
 ## **Vu Tue Anh** 
 
 Hola soy Vu, de origen vietnamita y llevó 3 años viviendo en Venezuela y soy compañera 
 
-de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi segundo año en competencias de la WRO, pero el año pasado estuve en la categoría de XXXXXXXXXXXXX. Este año quise cambiar y tener el reto de participar en Futuros Ingenieros. 
+de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi segundo año en competencias de la WRO, pero el año pasado estuve en la categoría de misiones roboticas. Este año quise cambiar y tener el reto de participar en Futuros Ingenieros. 
 
 Para nuestro proyecto, fui responsable en la realización de pruebas, así como de la documentación y registro fotográfico. 
+
+<img width="720" height="1280" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
+
 
 ## **Foto del Equipo Junto y Foto en China** 
 
