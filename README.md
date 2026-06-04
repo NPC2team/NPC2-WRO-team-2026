@@ -103,6 +103,7 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 a. Reto 1 – Open Challenge 
 
 ## **Link YouTube** 
+(https://youtube.com/shorts/lqm2GCjuBmU?feature=share)
 
 b. Reto 2 – Obstacle Challenge 
 
