@@ -85,6 +85,9 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 
 ## **Foto del Equipo Junto y Foto en China** 
 
+
+<img width="4000" height="3000" alt="Foto Equipo China" src="https://github.com/user-attachments/assets/0fcc130a-4b6b-41c9-a679-5f67b65756d1" />
+
 ## **2.Robot** 
 
 ## a. Descripción del Robot 
