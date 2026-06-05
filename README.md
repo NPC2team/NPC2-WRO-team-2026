@@ -61,7 +61,7 @@ Hola soy Juan, soy venezolano/español y tengo 16 años, actualmente estudio 4to
 
 Mis aportes al equipo se han enfocado en el código de Arduino IDE/Python, así como la realización de pruebas de los distintos componentes y de los retos. 
 
-<img width="210" height="300" alt="Foto Juan" src="https://github.com/user-attachments/assets/12faab20-5ee2-468b-90a8-455d406bb78f" />
+<img width="300" height="210" alt="foto de juan" src="https://github.com/user-attachments/assets/ed233a77-1e34-493c-bbb3-09d09d80df08" />
 
 ## **Leonardo Carrasquero** 
 
