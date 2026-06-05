@@ -61,7 +61,7 @@ Hola soy Juan, soy venezolano/español y tengo 16 años, actualmente estudio 4to
 
 Mis aportes al equipo se han enfocado en el código de Arduino IDE/Python, así como la realización de pruebas de los distintos componentes y de los retos. 
 
-<img width="810" height="1080" alt="Foto Juan" src="https://github.com/user-attachments/assets/12faab20-5ee2-468b-90a8-455d406bb78f" />
+<img width="210" height="300" alt="Foto Juan" src="https://github.com/user-attachments/assets/12faab20-5ee2-468b-90a8-455d406bb78f" />
 
 ## **Leonardo Carrasquero** 
 
@@ -69,7 +69,7 @@ Hola soy Leo, venezolano/italiano de 16 años, estudio 4to año de bachillerato 
 
 Mis contribuciones se enfocaron en la investigación de componentes, diseño e impresión de piezas 3D, ensamblaje del robot, así como programación en Python y ROS2. 
 
-<img width="3000" height="4000" alt="Foto Leo" src="https://github.com/user-attachments/assets/3321f65f-eee9-4a1c-8590-d9dd36cd5ec3" />
+<img width="210" height="300" alt="Foto Leo" src="https://github.com/user-attachments/assets/3321f65f-eee9-4a1c-8590-d9dd36cd5ec3" />
 
 ## **Vu Tue Anh** 
 
@@ -79,7 +79,7 @@ de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi seg
 
 Para nuestro proyecto, fui responsable en la realización de pruebas, así como de la documentación y registro fotográfico. 
 
-<img width="720" height="1280" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
+<img width="210" height="300" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
 
 ## **Alfredo Gonzalez**
 
@@ -87,15 +87,15 @@ Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 
 
 Él también es nuestro profesor de robótica en el colegio.
 
-<img width="590" height="1280" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" />
+<img width="210" height="300" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" />
 
 
 ## **Foto del Equipo Junto y Foto en China** 
 
 
-<img width="4000" height="3000" alt="Foto Equipo China" src="https://github.com/user-attachments/assets/0fcc130a-4b6b-41c9-a679-5f67b65756d1" />
+<img width="2000" height="1000" alt="Foto Equipo China" src="https://github.com/user-attachments/assets/0fcc130a-4b6b-41c9-a679-5f67b65756d1" />
 
-<img width="3885" height="2589" alt="3DC51F0D-4A7F-49F5-A332-7C0CE98BB8BD" src="https://github.com/user-attachments/assets/334253b8-bd11-4a9b-96b2-d55186c25b6b" />
+<img width="2000" height="1000" alt="3DC51F0D-4A7F-49F5-A332-7C0CE98BB8BD" src="https://github.com/user-attachments/assets/334253b8-bd11-4a9b-96b2-d55186c25b6b" />
 
 
 ## **2.Robot** 
@@ -105,18 +105,18 @@ Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 
 “Proyecto Mahoraga” es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a “Crazy Diamond” (WRO 2025), con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
 ## b. Fotos del Robot 
-<img width="817" height="812" alt="carro desde atras" src="https://github.com/user-attachments/assets/77612413-32a5-400c-bef5-78fec8bc7c57" />
+<img width="640" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/77612413-32a5-400c-bef5-78fec8bc7c57" />
 
-<img width="1280" height="960" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
+<img width="640" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
 
 ## **Foto del Robot en todos los lados** 
-<img width="1146" height="778" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
-<img width="1280" height="960" alt="carro de frente 1" src="https://github.com/user-attachments/assets/28e94544-7e90-4029-b90b-68d1c754cfa6" />
-<img width="803" height="1131" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
-<img width="960" height="1107" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
-<img width="1139" height="754" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
-<img width="817" height="812" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
-<img width="814" height="1175" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
+<img width="640" height="480" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
+<img width="640" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/28e94544-7e90-4029-b90b-68d1c754cfa6" />
+<img width="640" height="480" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
+<img width="640" height="480" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
+<img width="640" height="480" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
+<img width="640" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
+<img width="640" height="480" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
 
 ## **3.Videos de Pruebas del Vehículo** 
 
