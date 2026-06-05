@@ -105,8 +105,18 @@ Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 
 “Proyecto Mahoraga” es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a “Crazy Diamond” (WRO 2025), con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
 ## b. Fotos del Robot 
+<img width="817" height="812" alt="carro desde atras" src="https://github.com/user-attachments/assets/77612413-32a5-400c-bef5-78fec8bc7c57" />
+
+<img width="1280" height="960" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
 
 ## **Foto del Robot en todos los lados** 
+<img width="1146" height="778" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
+<img width="1280" height="960" alt="carro de frente 1" src="https://github.com/user-attachments/assets/28e94544-7e90-4029-b90b-68d1c754cfa6" />
+<img width="803" height="1131" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
+<img width="960" height="1107" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
+<img width="1139" height="754" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
+<img width="817" height="812" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
+<img width="814" height="1175" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
 
 ## **3.Videos de Pruebas del Vehículo** 
 
@@ -130,6 +140,10 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
 
 ## FOTO Chasis donde se vean los niveles 
+
+
+<img width="1080" height="810" alt="Chasis de Abajo 3D v1" src="https://github.com/user-attachments/assets/c8eb0144-a6be-4013-9521-e503519def04" />
+<img width="1080" height="810" alt="Chasis de Arriba 3D V1" src="https://github.com/user-attachments/assets/13cbcd2a-cc7d-40f6-addc-18beb9b317ed" />
 
 |**Atributo**|**Descripción**|
 |---|---|
