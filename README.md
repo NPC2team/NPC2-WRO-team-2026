@@ -81,6 +81,14 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 
 <img width="720" height="1280" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
 
+## **Alfredo Gonzalez
+
+Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 2023 en la WRO en Venezuela.
+
+Él también es nuestro profesor de robótica en el colegio.
+
+<img width="590" height="1280" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" />
+
 
 ## **Foto del Equipo Junto y Foto en China** 
 
