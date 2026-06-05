@@ -2,7 +2,7 @@
 
 ## **CONTENIDO** 
 
-## [**1. Introducción e Información del Equipo**](**1.Encabezado-e-Información-del-Equipo**)
+## [**1. Introducción e Información del Equipo**](##**1.Encabezado-e-Información-del-Equipo**)
 - a. Introducción 
 
 - b. Miembros del Equipo 
