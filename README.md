@@ -81,7 +81,7 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 
 <img width="720" height="1280" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
 
-## **Alfredo Gonzalez
+## **Alfredo Gonzalez**
 
 Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 2023 en la WRO en Venezuela.
 
