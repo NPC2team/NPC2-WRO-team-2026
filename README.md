@@ -73,9 +73,7 @@ Mis contribuciones se enfocaron en la investigación de componentes, diseño e i
 
 ## **Vu Tue Anh** 
 
-Hola soy Vu, de origen vietnamita y llevó 3 años viviendo en Venezuela y soy compañera 
-
-de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi segundo año en competencias de la WRO, pero el año pasado estuve en la categoría de misiones roboticas. Este año quise cambiar y tener el reto de participar en Futuros Ingenieros. 
+Hola soy Vu, de origen vietnamita y llevó 3 años viviendo en Venezuela y soy compañera de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi segundo año en competencias de la WRO, pero el año pasado estuve en la categoría de misiones roboticas. Este año quise cambiar y tener el reto de participar en Futuros Ingenieros. 
 
 Para nuestro proyecto, fui responsable en la realización de pruebas, así como de la documentación y registro fotográfico. 
 
@@ -83,9 +81,9 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 
 ## **Alfredo Gonzalez**
 
-Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 2023 en la WRO en Venezuela.
+Alfredo, es nuestro coach, el es de profesion matematico y ha estado desde 2023 en la WRO en Venezuela.
 
-Él también es nuestro profesor de robótica en el colegio.
+Él también es nuestro profesor de robótica en el colegio Jefferson.
 
 <img width="210" height="300" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" />
 
@@ -105,28 +103,26 @@ Alfredo, es nuestro coach y carcelero de origen Venezolano. Él ha estado desde 
 “Proyecto Mahoraga” es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a “Crazy Diamond” (WRO 2025), con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
 ## b. Fotos del Robot 
-<img width="640" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/77612413-32a5-400c-bef5-78fec8bc7c57" />
+<img width="600" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/77612413-32a5-400c-bef5-78fec8bc7c57" />
 
-<img width="640" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
+<img width="600" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
 
 ## **Foto del Robot en todos los lados** 
-<img width="640" height="480" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
-<img width="640" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/28e94544-7e90-4029-b90b-68d1c754cfa6" />
-<img width="640" height="480" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
-<img width="640" height="480" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
-<img width="640" height="480" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
-<img width="640" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
-<img width="640" height="480" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
+<img width="600" height="480" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
+<img width="600" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/28e94544-7e90-4029-b90b-68d1c754cfa6" />
+<img width="600" height="480" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
+<img width="600" height="480" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
+<img width="600" height="480" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
+<img width="600" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
+<img width="600" height="480" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
 
 ## **3.Videos de Pruebas del Vehículo** 
 
 a. Reto 1 – Open Challenge 
-
 ## **Link YouTube** 
 (https://youtube.com/shorts/lqm2GCjuBmU?feature=share)
 
 b. Reto 2 – Obstacle Challenge 
-
 ## **Link YouTube** 
 
 ## **4.Movilidad y Diseño Mecánico (Criterio 1)** 
@@ -139,11 +135,10 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 
 y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
 
-## FOTO Chasis donde se vean los niveles 
+## Fotos de Niveles del Chasis 
 
 
-<img width="1080" height="810" alt="Chasis de Abajo 3D v1" src="https://github.com/user-attachments/assets/c8eb0144-a6be-4013-9521-e503519def04" />
-<img width="1080" height="810" alt="Chasis de Arriba 3D V1" src="https://github.com/user-attachments/assets/13cbcd2a-cc7d-40f6-addc-18beb9b317ed" />
+
 
 |**Atributo**|**Descripción**|
 |---|---|
@@ -210,7 +205,7 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 |Batalla(L)|142 mm|
 |Pivotes(W)|97 mm|
 |Radio degiro(R)|217,7 mm a 40°|
-|Distanciapara 90°|341,90 mm|
+|Distancia para 90°|341,90 mm|
 
 
 
@@ -355,11 +350,6 @@ El software del robot NPC está construido sobre ROS 2 Jazzy corriendo en Ubuntu
 |/start|std_msgs/Empty|pico_bridge|control_node|Señal de inicio (botón)|
 |/cmd_motor|std_msgs/Float32|control_node|pico_bridge|Velocidad del motor en m/s|
 |/cmd_servo|std_msgs/Float32|control_node|pico_bridge|Dirección en [-1.0, +1.0]|
-
-
-
-|**Topic**|**Tipo**|**Publicador**|**Suscriptor**|**Descripción**|
-|---|---|---|---|---|
 |/imu|sensor_msgs/Imu|pico_bridge|(debug)|Datos del IMU filtrados|
 |/encoder|std_msgs/Int32|pico_bridge|(debug)|Ticks crudos del encoder|
 
