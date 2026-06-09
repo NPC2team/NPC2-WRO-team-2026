@@ -43,7 +43,18 @@
 
 - f. Diagrama de Cableado 
 
-- g. Decisión de Diseño 
+- g. Decisión de Diseño
+
+## **6. Arquitectura de Software y Estrategia de Obstáculos  (Criterio 3)** 
+
+- a. Visión General 
+
+- b. Tópicos 
+
+- c. Firmware del Pico 2 
+
+- d. Estrategia del Reto Abierto 
+
 
 ## **1.Encabezado e Información del Equipo** 
 
