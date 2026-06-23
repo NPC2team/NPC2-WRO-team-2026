@@ -53,84 +53,117 @@
 
 - c. Firmware del Pico 2 
 
-- d. Estrategia del Reto Abierto 
+- d. Estrategia del Reto Abierto
 
+- e. Métricas de Desempeño del Reto Abierto 
 
 ## **1.Encabezado e Información del Equipo** 
 
 ## a. Introducción 
+<div>
+<img width="316" height="411" align="left" alt="Equipo" src="https://github.com/user-attachments/assets/75947953-eac8-472f-b4b6-771bddc59407" /><br>
+   
+Somos el equipo **NPC (Non Playable Character)**, este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO    Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
 
-Somos el equipo NPC (Non Playable Character), este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
-
-Vu Tue Anh, compitió el año pasado en la categoría de misiones roboticas, mientras que Leonardo y Juan participaron en la categoría de futuros ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China donde logramos el 1er Lugar 
+Vu Tue Anh, compitió el año pasado en la categoría de misiones roboticas, mientras que Leonardo y Juan participaron en la categoría de futuros ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China donde logramos el 1er Lugar. 
+</div>
+<br clear="left" />
 
 ## b. Miembros del Equipo 
 
 ## **Juan Ignacio Gonzalez** 
 
+<img width="300" height="210" align="left" alt="foto de juan" src="https://github.com/user-attachments/assets/ed233a77-1e34-493c-bbb3-09d09d80df08" /><br>
 Hola soy Juan, soy venezolano/español y tengo 16 años, actualmente estudio 4to año de bachillerato y miembro del Club de Robótica del Colegio Jefferson.  Este es mi segundo año en la competencia de la WRO de Futuros Ingenieros. En 2025, junto con Leonardo obtuvimos el 5to Lugar en la Final Nacional y el 1er Lugar en un invitacional en Weifang, China. 
 
 Mis aportes al equipo se han enfocado en el código de Arduino IDE/Python, así como la realización de pruebas de los distintos componentes y de los retos. 
 
-<img width="300" height="210" alt="foto de juan" src="https://github.com/user-attachments/assets/ed233a77-1e34-493c-bbb3-09d09d80df08" />
+<br clear="left" />
 
 ## **Leonardo Carrasquero** 
 
+<img width="210" height="300" align="left" alt="Foto Leo" src="https://github.com/user-attachments/assets/3321f65f-eee9-4a1c-8590-d9dd36cd5ec3" /><br>
 Hola soy Leo, venezolano/italiano de 16 años, estudio 4to año de bachillerato y soy miembro del Club de Robótica del Colegio Jefferson 2024.  Al igual que Juan, este es mi segundo año en la categoría de Futuros Ingenieros y este año quiero lograr participar en la Final Internacional de Puerto Rico. 
 
 Mis contribuciones se enfocaron en la investigación de componentes, diseño e impresión de piezas 3D, ensamblaje del robot, así como programación en Python y ROS2. 
 
-<img width="210" height="300" alt="Foto Leo" src="https://github.com/user-attachments/assets/3321f65f-eee9-4a1c-8590-d9dd36cd5ec3" />
+<br clear="left" />
 
 ## **Vu Tue Anh** 
 
+<img width="210" height="300" align="left" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" /><br>
 Hola soy Vu, de origen vietnamita y llevó 3 años viviendo en Venezuela y soy compañera de 4to año de Juan y Leonardo, en el Colegio Jefferson. Este también es mi segundo año en competencias de la WRO, pero el año pasado estuve en la categoría de misiones roboticas. Este año quise cambiar y tener el reto de participar en Futuros Ingenieros. 
 
 Para nuestro proyecto, fui responsable en la realización de pruebas, así como de la documentación y registro fotográfico. 
 
-<img width="210" height="300" alt="Foto Vu" src="https://github.com/user-attachments/assets/1f55c34e-20b2-4f6b-848f-cb1276342bbd" />
+<br clear="left" />
 
 ## **Alfredo Gonzalez**
 
-Alfredo, es nuestro coach, el es de profesion matematico y ha estado desde 2023 en la WRO en Venezuela.
+<img width="210" height="300" align="left" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" /><br>
+Alfredo, es nuestro coach y de profesion matemático. 
 
-Él también es nuestro profesor de robótica en el colegio Jefferson.
+Él también es nuestro profesor de robótica en el Colegio Jefferson y ha estado desde 2023 paticipando en ompetencias de la WRO en Venezuela, dirigiendo a varios equipos del colegio en las distintas categorias, con participaciones en las Regionales, Final en Venezuela, Final Internacional y diversos invitacionales.
 
-<img width="210" height="300" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" />
-
+<br clear="left" />
 
 ## **Foto del Equipo Junto y Foto en China** 
 
 
-<img width="2000" height="1000" alt="Foto Equipo China" src="https://github.com/user-attachments/assets/0fcc130a-4b6b-41c9-a679-5f67b65756d1" />
+<img width="1000" height="500" alt="Foto Equipo China" src="https://github.com/user-attachments/assets/0fcc130a-4b6b-41c9-a679-5f67b65756d1" />
 
-<img width="2000" height="1000" alt="3DC51F0D-4A7F-49F5-A332-7C0CE98BB8BD" src="https://github.com/user-attachments/assets/334253b8-bd11-4a9b-96b2-d55186c25b6b" />
+<img width="1000" height="500" alt="3DC51F0D-4A7F-49F5-A332-7C0CE98BB8BD" src="https://github.com/user-attachments/assets/334253b8-bd11-4a9b-96b2-d55186c25b6b" />
 
 
 ## **2.Robot** 
 
 ## a. Descripción del Robot 
 
-“Proyecto Mahoraga” es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a “Crazy Diamond” (WRO 2025), con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
+**“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
 ## b. Fotos del Robot 
 
-<img width="600" height="480" alt="carro de frente 1" src="https://github.com/user-attachments/assets/8f5b521a-7783-44ea-a8ea-17f986dd68a1" />
-<img width="600" height="480" alt="lado del carro 1" src="https://github.com/user-attachments/assets/e7cd0193-3014-4557-ab1a-6cbd6797d841" />
-<img width="600" height="480" alt="carro desde arriba" src="https://github.com/user-attachments/assets/555c5c3d-e172-46f8-b8e0-97b6cdd35cf7" />
-<img width="600" height="480" alt="espacio de la bateria: carro de lado 2" src="https://github.com/user-attachments/assets/eafdf685-c8e7-48a2-acb4-b04de96b0852" />
-<img width="600" height="480" alt="carro de lado 3" src="https://github.com/user-attachments/assets/88ab79e8-b564-44f9-bb46-b0cc88f9cfd7" />
-<img width="600" height="480" alt="carro desde atras" src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" />
-<img width="600" height="480" alt="carro desde abajo" src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" />
+<table>
+  <tr>
+    <td align="center">
+      <b>Vista Frontal</b><br>
+      <img src="https://github.com/user-attachments/assets/b4a8942e-1439-43c1-a7ca-33edc2647366"<img width="400" height="320"> 
+    </td>
+    <td align="center">
+      <b>Vista Trasera</b><br>
+      <img src="https://github.com/user-attachments/assets/90ec6a1e-9b9b-4096-9ffc-a29e07064918" width="400" height="320">
+    </td>
+    <td align="center">
+      <b>Lado Izquierdo</b><br>
+      <img src="https://github.com/user-attachments/assets/66ecf1d0-42eb-4086-8b54-f46e6d13c84b" width="400" height="320">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Lado Derecho</b><br>
+      <img src="https://github.com/user-attachments/assets/6423f7da-b81e-492e-8be2-071ec206ab03" width="400" height="320">
+    </td>
+  <td align="center">
+  <b>Vista de Arriba</b><br>
+  <img src="https://github.com/user-attachments/assets/095f60eb-c609-4bc3-b138-825c379ec7ad" width="400" height="320">
+</td>
+    <td align="center">
+      <b>Vista de Abajo</b><br>
+      <img src="https://github.com/user-attachments/assets/eb93e29e-50c1-4a9a-acb2-6969fd807bcf" width="400" height="320">
+    </td>
+  </tr>
+</table>
 
 ## **3.Videos de Pruebas del Vehículo** 
 
 a. Reto 1 – Open Challenge 
-## **Link YouTube** 
+
+**Link YouTube** 
 (https://youtube.com/shorts/lqm2GCjuBmU?feature=share)
 
 b. Reto 2 – Obstacle Challenge 
-## **Link YouTube** 
+
+**Link YouTube** 
 
 ## **4.Movilidad y Diseño Mecánico (Criterio 1)** 
 
@@ -140,8 +173,7 @@ En este apartado documentamos la ficha técnica de la configuración mecánica f
 
 Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a la medida para la batería Lipo S3 11.1V. Esto con la finalidad de hacer más eficiente el uso del espacio y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
 
-## Fotos de Niveles del Chasis 
-
+<img width="604" height="426" alt="Chasis Comentado" src="https://github.com/user-attachments/assets/6b80a166-bae0-440d-9ea4-06bb7c6f8add" />
 
 
 
@@ -163,16 +195,17 @@ En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis
 
 ## b. Sistema de Tracción 
 
+<img width="310" height="371" align="left" hspace="6" alt="Traccion4" src="https://github.com/user-attachments/assets/a12c207c-572d-4ec8-92f4-fbbe8cc1bc22" />
+
 - Elegimos un motor Pololu 34:1 Metal Gearmotor 25Dx67L mm MP 12V con Encoder 48 CPR por su alta calidad y más que velocidad buscábamos precisión y torque, por lo que al incluir el diferencial nos generó 2.006 ticks por metro medidos por el encoder, permitiéndonos un control más fino, tanto para la medición de las distancias recorridas como para las maniobras del estacionamiento. 
 
-- Reutilizamos el diferencial utilizado por Crazy Diamond en 2025, ajustándolo al menor ancho de Proyecto Mahoraga y imprimimos un nuevo engranaje para el motor porque el eje era de menor diámetro y necesitaba otro flange para ajustar correctamente. 
+ - Reutilizamos el diferencial utilizado por Crazy Diamond en 2025, ajustándolo al menor ancho de Proyecto Mahoraga e imprimimos un nuevo engranaje para el motor porque el eje era de menor diámetro y necesitaba otro flange para ajustar correctamente. 
 
-<img width="310" height="371" alt="Traccion4" src="https://github.com/user-attachments/assets/a12c207c-572d-4ec8-92f4-fbbe8cc1bc22" />
+ - El motor es manejado por un Pololu VNH5019 de alta estabilidad, con buen manejo de energía que lo protege de cambios bruscos de dirección y le permite mantener la precisión al robot. 
 
+ - Incorporamos unas ruedas de 11mm de ancho de aluminio con neumático de goma, menos anchas que el estándar de 25mm, lo cual nos permite reducir el ancho, disminuir la fricción y mejora la estabilidad efectiva pese, al menor ancho su mayor peso permite bajar el centro de gravedad del motor.
 
-- El motor es manejado por un Pololu VNH5019 de alta estabilidad, con buen manejo de energía que lo protege de cambios bruscos de dirección y le permite mantener la precisión al robot. 
-
-- Incorporamos unas ruedas de 11 mm de ancho de aluminio con neumático de goma, menos anchas que el estándar comercial de 25mm, lo cual nos permite reducir el ancho del vehículo, disminuir la fricción y mejora la estabilidad efectiva pese al menor ancho su mayor peso permite bajar el centro de gravedad del motor. 
+<br clear="left" />
 
 |**Atributo**|**Descripción / Valor**|
 |---|---|
@@ -193,13 +226,16 @@ En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos co
 
 ## c. Sistema de Dirección 
 
-Uno de los principales retos de este año era que el vehículo debía ser más ágil, para lo cual había que reducir su tamaño y mejorar su capacidad de giro. Con batalla 142 mm y pivotes 97 mm, el robot recorre 34,2 cm para girar 90°, frente a los 48,2 cm del chasis 2025 (−29%). 
+<img width="331" height="352" align="left" hspace="6" alt="Direccion" src="https://github.com/user-attachments/assets/3a22cd53-615c-4a26-9979-4e6cee0f2961" />
 
-<img width="331" height="352" alt="Direccion" src="https://github.com/user-attachments/assets/3a22cd53-615c-4a26-9979-4e6cee0f2961" />
+Uno de los principales retos de este año era que el vehículo debía ser más ágil, para lo cual había que reducir su tamaño y mejorar su capacidad de giro. Con batalla 142 mm y pivotes 97 mm, el robot recorre 34,2 cm para girar 90°, frente a los 48,2 cm del chasis 2025 (−29%). 
 
 Los C Hub o portamanguetas de dirección fueron integrados en el chasis de abajo, permitiendo el mayor cruze que podía aportar el servo. El servo Savox SC-1251MG aporta precisión de ángulo de giro al ser digital, tener engranajes metálicos y ser coreless, permitiéndole además una alta velocidad de respuesta 0.09s/60°. 
 
 A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta decisión liberó el espacio frontal para colocar el LiDAR en posición baja y adelantada. 
+
+<br clear="left" />
+<br>
 
 |**Atributo**|**Descripción / Valor**|
 |---|---|
@@ -305,7 +341,7 @@ La bateria 3S nos permite alimentar correctamente el motor Pololu 34:1 25Dx67L M
 
 Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da holgura y mitiga el riesgo en picos de voltaje. 
 
-**Capacidad regulador lógica (9 A) y servo (5.5 A), ambos con margen de seguridad ≥50% respecto al consumo pico estimado.** 
+**Capacidad regulador lógica (9 A) y servo (5.5 A), ambos con margen de seguridad ≥50% respecto al consumo pico estimado.**
 
 |**Componente**|**Voltaje**|**Corriente**<br>**típica**|**Corriente**<br>**pico**|**Notas**|
 |---|---|---|---|---|
@@ -327,16 +363,11 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 |**TOTAL desde LiPo 3S**||**~3.2 A**|**~9.0 A pico**||
 
 
-
-Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da 
-
-holgura y mitiga el riesgo en picos de voltaje. 
-
-**Capacidad regulador lógica (9 A) y servo (5.5 A), ambos con margen de seguridad ≥50% respecto al consumo pico estimado.** 
-
 ## c. Sensores 
 
 Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener sensores de alto nivel. El LiDAR era una adición necesaria para el manejo de los obstáculos de una manera robusta. La ubicación y control preciso de los movimientos del robot queda cubierta con el IMU BNO085 y el Encoder. La cámara es un upgrade más profesional vs la Pixy que utilizamos en 2025 y los TOF VL53L4CD son un nivel más sofisticado que los ultrasónicos HC-SR04. 
+
+
 
 |**Sensor**|**Modelo**|**Función**|
 |---|---|---|
@@ -346,8 +377,6 @@ Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener 
 |Cámara global<br>shutter|Raspberry Pi GS<br>Camera|Visión por computador para detectar pilares<br>rojos/verdes. Al ser Global Shutter limita las<br>distorsión de objetos en movimiento.|
 |Lente|CCTV M12 2.8<br>mm F2.0|Campo de visión amplio para captura 96**°**|
 |Encoder|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
-
-
 
 _En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._ 
 
@@ -360,15 +389,17 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 
 ## e. Ubicación de Sensores 
 
-- **LiDAR:** primer piso, adelantado, altura óptima para detectar paredes y obstáculos de la pista (10 cm). 
+- **LiDAR:** primer piso, adelantado, altura óptima (FOV a 4,5 cms del piso) para detectar paredes y obstáculos de la pista (10 cm). 
 
-- **Cámara:** segundo piso, inclinada hacia abajo, captura el plano del suelo y los pilares con buena anticipación. 
+- **Cámara:** segundo piso, inclinada 60 grados hacia abajo, captura el plano del suelo y los pilares con buena anticipación. 
 
 - **IMU:** segundo piso, lo más alejado posible del motor y driver para minimizar EMI, pese a estar conectado por Qwiic, se fijó en una protoboard para garantizar no tuviera vibraciones. 
 
 - **ToF #1 (izq) y ToF #2 (der):** apuntando perpendicular a las ruedas, retraídos 15 mm de la superficie exterior para eliminar la zona muerta del sensor. 
 
-Foto identificando los sensores 
+<img width="942" height="600" alt="Ubicación de Sensores" src="https://github.com/user-attachments/assets/1314b2d3-25ad-4afa-8bad-3a2b8fac8868" />
+
+<br>
 
 ## f. Diagrama de Cableado 
 
@@ -382,7 +413,7 @@ _Detalle de cada conexión (pin a pin) en el_ _**Engineering Journal sección 5.
 
 ## a. Visión General 
 
-El software del robot NPC está construido sobre ROS 2 Jazzy corriendo en Ubuntu 24.04 en una Raspberry Pi 5 (16 GB), con un microcontrolador Pimoroni Pico Plus 2 (RP2350) encargándose de la lectura de sensores de bajo nivel y el control de actuadores. La arquitectura sigue un patrón distribuido de dos capas: 
+El software del robot **Proyecto Mahoraga** está construido sobre ROS 2 Jazzy corriendo en Ubuntu 24.04 en una Raspberry Pi 5 (16 GB), con un microcontrolador Pimoroni Pico Plus 2 (RP2350) encargándose de la lectura de sensores de bajo nivel y el control de actuadores. La arquitectura sigue un patrón distribuido de dos capas: 
 
 • Raspberry Pi 5 (capa de alto nivel): ejecuta nodos ROS 2 para percepción, toma de decisiones y control a 40 Hz. 
 
@@ -413,7 +444,7 @@ Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los
 
 El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la Pi5 no debe encargarse. 
 
-## Responsabilidades 
+**Responsabilidades** 
 
 - Lectura del IMU a 100 Hz vía Qwiic I2C (Adafruit BNO085, con fusión sensorial 9-DOF onboard) 
 
@@ -429,9 +460,9 @@ El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que
 
 - Publicación de telemetría a la Pi5 a 50 Hz vía USB serial 
 
-## Protocolo Serial de Comunicación RPi5 y Pico2 
+**Protocolo Serial de Comunicación RPi5 y Pico2** 
 
-## **Pico → Pi5** (50 Hz cada uno): 
+**Pico → Pi5** (50 Hz cada uno): 
 
 POS <x, y, theta, acc_yaw> **`→`** Odometría 
 
@@ -443,7 +474,7 @@ BTN **`→`** Botón presionado (evento)
 
 BOOT,...  OK,...  ERR,... **`→`** Mensajes de estado 
 
-## **Pi5 → Pico** (a demanda): 
+**Pi5 → Pico** (a demanda): 
 
 M < velocidad_ms > **`→`** Velocidad del motor en m/s 
 
@@ -455,7 +486,7 @@ STOP **`→`** Parada de emergencia
 
 La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación. 
 
-## Pilar 1. Localización y Conteo de Giros 
+**Pilar 1. Localización y Conteo de Giros** 
 
 Objetivo: saber dónde está el robot y cuántas esquinas ha girado (meta: 12 giros = 3 vueltas completas). 
 
@@ -469,7 +500,7 @@ Objetivo: saber dónde está el robot y cuántas esquinas ha girado (meta: 12 gi
 
 - Conteo de giros realizado al detectar el cruce (esquina) y no depender del cálculo acumulado del IMU que puede verse afectado por el efecto drifting. 
 
-## Pilar 2. Detección de Esquinas y Sentido de Recorrido 
+**Pilar 2. Detección de Esquinas y Sentido de Recorrido** 
 
 El robot debe detectar cuándo ha llegado a una esquina, decidir hacia qué lado girar, y en qué sentido (CW o CCW) seguirá toda la carrera. Esta metodología era igual a la que empleamos en 2025, pero en aquel momento lo hicimos con ultrasónicos y ahora contamos con un LiDAR, esto nos permitió hacer la detección de una forma más robusta. 
 
@@ -485,7 +516,7 @@ Una vez que en la primera esquina se determina el sentido de los giros, en las s
 
 <img width="593" height="168" alt="Pilar2" src="https://github.com/user-attachments/assets/61061769-7f22-4978-b0d0-93b03f1ba7d8" />
 
-## Pilar 3. Control de Navegación y Centrado de Pared 
+**Pilar 3. Control de Navegación y Centrado de Pared** 
 
 Establecimos 2 esquemas de control de navegación: El Heading y el Centrado de Paredes donde el que tenga la corrección más importante tiene preferencia. Asi tenemos que: 
 
@@ -525,7 +556,7 @@ El robot ya viene calculando el Heading (str_heading) apuntando hacia el angulo 
 
 <img width="591" height="105" alt="Pilar35" src="https://github.com/user-attachments/assets/0dbd60b7-cef4-4b1d-9d6f-b832c7e2c628" />
 
-## Pilar 4. Fin de Carrera 
+**Pilar 4. Fin de Carrera** 
 
 Después de completarse el 12° giro (turn_count == 12), el estado transita a FINISH_APPROACH, donde: 
 
@@ -559,7 +590,7 @@ La máquina de estados de alto nivel tiene cinco estados:
 |**FINISH_APPROACH**|Heading y centrado activos, sin detección de esquinas, perfil de<br>velocidad basado en la distancia frontal.|
 |**STOPPED**|Motor y servo en 0. Estado terminal.|
 
-## c. Métricas de Desempeño del Reto Abierto 
+## e. Métricas de Desempeño del Reto Abierto 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
@@ -580,7 +611,7 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 
 
 
-## Ajustes Realizados 
+## f. Ajustes Realizados 
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
