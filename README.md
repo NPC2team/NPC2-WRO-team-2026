@@ -59,7 +59,7 @@
 
 ## **1.Encabezado e Información del Equipo** 
 
-## a. Introducción 
+## 1a. Introducción 
 <div>
 <img width="316" height="411" align="left" alt="Equipo" src="https://github.com/user-attachments/assets/75947953-eac8-472f-b4b6-771bddc59407" /><br>
    
@@ -69,7 +69,7 @@ Vu Tue Anh, compitió el año pasado en la categoría de misiones roboticas, mie
 </div>
 <br clear="left" />
 
-## b. Miembros del Equipo 
+## 1b. Miembros del Equipo 
 
 ## **Juan Ignacio Gonzalez** 
 
@@ -117,11 +117,11 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 ## **2.Robot** 
 
-## a. Descripción del Robot 
+## 2a. Descripción del Robot 
 
 **“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
-## b. Fotos del Robot 
+## 2b. Fotos del Robot 
 
 <table>
   <tr>
@@ -156,12 +156,12 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 ## **3.Videos de Pruebas del Vehículo** 
 
-a. Reto 1 – Open Challenge 
+3a. Reto 1 – Open Challenge 
 
 **Link YouTube** 
 (https://youtube.com/shorts/lqm2GCjuBmU?feature=share)
 
-b. Reto 2 – Obstacle Challenge 
+3b. Reto 2 – Obstacle Challenge 
 
 **Link YouTube** 
 
@@ -169,7 +169,7 @@ b. Reto 2 – Obstacle Challenge
 
 En este apartado documentamos la ficha técnica de la configuración mecánica final de Proyecto  Mahoraga.  En  el  Engineering  Journal  (Sección  4)  incluimos  la  descripción completa  del proceso  de  diseño,  las  mejoras sobre  nuestro  robot 2025,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. 
 
-## a. Chasis 
+## 4a. Chasis 
 
 Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a la medida para la batería Lipo S3 11.1V. Esto con la finalidad de hacer más eficiente el uso del espacio y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
 
@@ -193,7 +193,7 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 
 En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis luego de un proceso iterativo, así como su comparativo con la versión que manejamos en 2025. 
 
-## b. Sistema de Tracción 
+## 4b. Sistema de Tracción 
 
 <img width="310" height="371" align="left" hspace="6" alt="Traccion4" src="https://github.com/user-attachments/assets/a12c207c-572d-4ec8-92f4-fbbe8cc1bc22" />
 
@@ -224,7 +224,7 @@ En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis
 
 En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor. 
 
-## c. Sistema de Dirección 
+## 4c. Sistema de Dirección 
 
 <img width="331" height="352" align="left" hspace="6" alt="Direccion" src="https://github.com/user-attachments/assets/3a22cd53-615c-4a26-9979-4e6cee0f2961" />
 
@@ -257,7 +257,7 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 
 _En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._ 
 
-## d. Lista de Componentes 
+## 4d. Lista de Componentes 
 
 Para facilitar su reproductibilidad anexamos lista completa de los componentes. Todos los enlaces de compra de cada componente: ver ./lista-componentes.md. Los archivos en STL/3MF están en **/models.** 
 
@@ -323,7 +323,7 @@ En este apartado documentamos la ficha técnica del sistema de alimentación, di
 
 _En el Engineering Journal (sección 5) se encuentran las justificaciones de selección de los componentes batería/reguladores, diagramas de cableado completos y presupuesto de energía (power Budget), así como justificación de selección de sensores y su proceso de calibración._ 
 
-## a. Sistema de Potencia 
+## 5a. Sistema de Potencia 
 
 |**Componente**|**Modelo**|**Especificaciones**|
 |---|---|---|
@@ -337,7 +337,7 @@ La bateria 3S nos permite alimentar correctamente el motor Pololu 34:1 25Dx67L M
 
 **Decisión clave:** Distribución dual de reguladores 5V. El D24V90F5 (9A) alimenta toda la lógica del robot (Raspberry Pi 5, Pico Plus 2, LiDAR, IMU, TOF, lógica del VNH5019). El D36V50F5 (5.5A) alimenta exclusivamente el servo Savox SC-1251MG, que tiene picos de corriente durante giros bruscos o choques. Esto aísla los transitorios del servo del riel de lógica sensible, evitando reinicios del Raspberry Pi 5 o del Pico Plus 2. 
 
-## b. Power Budget 
+## 5b. Power Budget 
 
 Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da holgura y mitiga el riesgo en picos de voltaje. 
 
@@ -363,7 +363,7 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 |**TOTAL desde LiPo 3S**||**~3.2 A**|**~9.0 A pico**||
 
 
-## c. Sensores 
+## 5c. Sensores 
 
 Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener sensores de alto nivel. El LiDAR era una adición necesaria para el manejo de los obstáculos de una manera robusta. La ubicación y control preciso de los movimientos del robot queda cubierta con el IMU BNO085 y el Encoder. La cámara es un upgrade más profesional vs la Pixy que utilizamos en 2025 y los TOF VL53L4CD son un nivel más sofisticado que los ultrasónicos HC-SR04. 
 
@@ -380,14 +380,14 @@ Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener 
 
 _En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._ 
 
-## d. Topología de Comunicaciones 
+## 5d. Topología de Comunicaciones 
 
 Se caracteriza por una topología híbrida en estrella de alto rendimiento, donde la Raspberry Pi 5 actúa como el nodo central de procesamiento, conectada punto a punto mediante interfaces dedicadas a la cámara Global Shutter (vía MIPI CSI-2), al LiDAR STL27L (vía un puente USB-UART) y a una co-procesadora Raspberry Pico Plus 2 (vía USB-CDC). A su vez, la Pico Plus 2 funciona como un nodo secundario de control en tiempo real, gestionando un bus I2C/Qwicc compartido en paralelo para los sensores críticos de navegación (2 sensores de distancia TOF VL53L4CD y la IMU BNO085) y utilizando líneas independientes GPIO/PWM para el control directo de actuadores y hardware de movimiento, que incluyen un encoder, el driver de motor VNH5019 y un servo Savox SC-1251MG. 
 
 <img width="558" height="347" alt="Topologia de Comunicación2" src="https://github.com/user-attachments/assets/b38bd3fd-9669-4113-bf3e-4ea2c285b41a" />
 
 
-## e. Ubicación de Sensores 
+## 5e. Ubicación de Sensores 
 
 - **LiDAR:** primer piso, adelantado, altura óptima (FOV a 4,5 cms del piso) para detectar paredes y obstáculos de la pista (10 cm). 
 
@@ -401,7 +401,7 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 
 <br>
 
-## f. Diagrama de Cableado 
+## 5f. Diagrama de Cableado 
 
 <img width="2800" height="2000" alt="esquematico" src="https://github.com/user-attachments/assets/feb72cbb-3bc7-460f-871f-41e487800fb9" />
 
@@ -411,7 +411,7 @@ _Detalle de cada conexión (pin a pin) en el_ _**Engineering Journal sección 5.
 
 ## **6. Arquitectura de Software y Estrategia de Obstáculos (Criterio 3)** 
 
-## a. Visión General 
+## 6a. Visión General 
 
 El software del robot **Proyecto Mahoraga** está construido sobre ROS 2 Jazzy corriendo en Ubuntu 24.04 en una Raspberry Pi 5 (16 GB), con un microcontrolador Pimoroni Pico Plus 2 (RP2350) encargándose de la lectura de sensores de bajo nivel y el control de actuadores. La arquitectura sigue un patrón distribuido de dos capas: 
 
@@ -424,7 +424,7 @@ La comunicación entre las dos capas ocurre por USB serial (921600 baudios) usan
 <img width="612" height="474" alt="Nodos y Topicos Reto 1" src="https://github.com/user-attachments/assets/350644a9-b4a9-480d-b60c-c625360d443f" />
 
 
-## b.Tópicos 
+## 6b.Tópicos 
 
 Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los nodos suscriptores y publicador fundamental para la comunicación en ROS2.
 
@@ -440,7 +440,7 @@ Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los
 
 
 
-## c. Firmware del Pico 2 
+## 6c. Firmware del Pico 2 
 
 El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la Pi5 no debe encargarse. 
 
@@ -482,7 +482,7 @@ S < direccion > **`→`** Servo, rango [-1.0, +1.0]
 
 STOP **`→`** Parada de emergencia 
 
-## d.Estrategia del Reto Abierto 
+## 6d.Estrategia del Reto Abierto 
 
 La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación. 
 
@@ -575,11 +575,11 @@ Después de completarse el 12° giro (turn_count == 12), el estado transita a FI
 
 
 
-## Máquina de Estados 
+**Máquina de Estados** 
 
 La máquina de estados de alto nivel tiene cinco estados: 
 
-<img width="1292" height="288" alt="Maquina de Estados" src="https://github.com/user-attachments/assets/39d99def-da95-4eff-a5c1-227ed5956a2c" />
+<img width="861" height="192" alt="Maquina de Estados" src="https://github.com/user-attachments/assets/39d99def-da95-4eff-a5c1-227ed5956a2c" />
 
 
 |**Estado**|**Comportamiento**|
@@ -590,7 +590,7 @@ La máquina de estados de alto nivel tiene cinco estados:
 |**FINISH_APPROACH**|Heading y centrado activos, sin detección de esquinas, perfil de<br>velocidad basado en la distancia frontal.|
 |**STOPPED**|Motor y servo en 0. Estado terminal.|
 
-## e. Métricas de Desempeño del Reto Abierto 
+## 6e. Métricas de Desempeño del Reto Abierto 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
@@ -611,7 +611,7 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 
 
 
-## f. Ajustes Realizados 
+## 6f. Ajustes Realizados 
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
@@ -622,3 +622,118 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
    - Redujimos las velocidades a la mitad, quedando en 0.4 m/s en rectas y 0.25 m/s en curvas. Favoreciendo confiabilidad vs velocidad. 
 
 Con estos ajustes logramos una tasa de éxito muy elevada incluso con cambios en el tamaño del cuadro central a 1,4m y 1,8 m por lado. La velocidad reducida y el esquema dual del P-Controller han permitido que los ajustes post giro se han muy leves y a veces imperceptibles. 
+
+## 7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)
+
+Esta sección documenta cómo los subsistemas del robot trabajan juntos, las restricciones que dieron forma al diseño, las decisiones principales con sus alternativas, y el historial de iteraciones. El análisis técnico extendido (con cálculos, código y diagnósticos está en el **Engineering Journal, sección 7**.
+
+## 7a. Diagrama de Bloques del Sistema
+
+<img width="1104" height="602" alt="Diagrama de Subsistemas" src="https://github.com/user-attachments/assets/495105a4-db5d-4ad6-80fe-070cfcc5d145" />
+
+## 7b. Interacción entre Subsistemas
+
+| Subsistema A | Subsistema B | Interacción |
+|---|---|---|
+| LiDAR STL-27L | Control (RPi 5) | Publica `/scan` a 10 Hz → control extrae sectores frontal/laterales |
+| Cámara GS + lente 2.8 mm | Nodo de visión (RPi 5) | Detecta pilares R/G/M y publica `/pilares` (formato `R:cx:h;G:cx:h`) |
+| Pico Plus 2 | RPi 5 | UART USB 921600 baud, CSV → topics `/npcpos`, `/imu`, `/encoder`, `/start` |
+| IMU BNO085 | Pico Plus 2 | I²C 100 Hz → integración con encoder produce `POS,x,y,θ,acc_yaw` |
+| Encoder motor | Pico Plus 2 | Interrupción RISING en GP2 + lectura GP3 → odometría a 100 Hz |
+| Control (RPi 5) | Pico Plus 2 | Publica `/cmd_motor` (m/s) y `/cmd_servo` (-1..+1) a 40 Hz |
+| Pico Plus 2 | VNH5019 | INA/INB + PWM 20 kHz (GP8/9/12) → tracción |
+| Pico Plus 2 | Servo Savox | PWM 50 Hz en GP15 → dirección Ackermann |
+| ToF VL53L4CD ×2 | Pico Plus 2 | I²C vía Qwiic MultiPort, reservados para parking Reto 2 |
+| Botón físico (GP28) | Pico Plus 2 → RPi 5 | Publica `/start` → control captura `section_angle` al arrancar |
+
+## 7c. Restricciones (Constraints) Identificadas
+
+| Restricción | Límite | Impacto en el diseño |
+|---|---|---|
+| Dimensiones máximas | 300 × 200 × 300 mm (regla WRO 2026) | Llevó a chasis personalizado 230×150×126 mm |
+| Peso máximo | 1500 g | El robot final pesa 1100 g (margen +400 g) |
+| Altura paredes pista | 10 cm | **Forzó LiDAR al primer piso adelantado** para barrer a la altura correcta |
+| Altura pilares (Reto 2) | ~10 cm coloreados R/G | **Forzó lente CCTV 2.8 mm (FoV 96°)** para capturar pilares cercanos |
+| FoV útil del LiDAR | Solo 193°–350° (157° hacia adelante) | **Todos los sectores del control deben estar dentro de ese rango** |
+| Voltaje mínimo bus motor | 12 V nominal | **Forzó LiPo 3S** (2S no era suficiente) |
+| Pico de corriente servo | hasta 3.5 A | **Forzó regulador 5V dedicado** al servo (D36V50F5) |
+| Sin Wi-Fi en la pista | 0 conectividad | Arranque autónomo vía systemd + botón físico |
+| Tiempo de boot | ~40 s | Aceptado: priorizamos estabilidad sobre velocidad |
+| Latencia control 40 Hz | <25 ms por ciclo | Determinó protocolo CSV simple sobre micro-ROS |
+
+## 7d. Decisiones de Diseño Principales
+
+Esta subsección resume las decisiones de ingeniería más importantes con su razonamiento. 
+**Cada decisión sigue el patrón "elegimos X en vez de Y porque…"** 
+
+### Decisión 1 — Arquitectura: RPi 5 como Cerebro + Pico 2 como ejecutor y reportador de datos 
+
+| Opciones consideradas | Veredicto |
+|---|---|
+| **A: Toda la lógica en RPi 5, Pico solo sensores y actuadores** | ✓ **Elegida** |
+| B: Lógica distribuida (RPi 5 alto nivel, Pico control local) | Descartada |
+| C: Todo en Pico, sin Pi 5 | Descartada |
+
+**Por qué A:** Python en la Pi 5 acelera la iteración de algoritmos
+(ROS 2, OpenCV); el Pico ofrece tiempo real estricto para encoder e
+IMU; la frontera entre los dos es un protocolo CSV legible. **El
+Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
+
+### Decisión 2 — Lógica del Open Challenge: 4 pilares en lugar de máquina de estados compleja
+
+| Pilares | Función |
+|---|---|
+| **Pilar 1** | Localización (odometría) y conteo de **12 giros** (interpretación más robusta) |
+| **Pilar 2** | Detección de esquinas (mediana frontal + confirmación lateral + debounce espacial) |
+| **Pilar 3** | Control en 3 capas (heading, wall-centering, velocidad adaptativa) |
+| **Pilar 4** | Fin de carrera con banda de parada 1,2 a 1,5m |
+
+**Por qué 4 pilares y no máquina de estados grande:** la máquina se reduce a solo 5 estados (`BOOT → READY → RUNNING → FINISH_APPROACH → STOPPED`); el resto de la complejidad vive como capas dentro del estado `RUNNING`, fácil de tunear capa porcapa sin tocar las otras.
+
+### Decisión 3 — Reto 2: Siguiendo Camino de 3 capas
+
+| Capa | Función | Sensor principal |
+|---|---|---|
+| **Capa 1 — Ruta Proyectada** | Ray marching para encontrar la mejor dirección libre | LiDAR |
+| **Capa 2 — Recorte por color** | Rutas posibles se limitan según color del pilar (rojo→derecha, verde→izquierda) | Cámara |
+| **Capa 3 — SpiderSense** | Reflejo lateral de emergencia si un pilar o pared se acerca demasiado | LiDAR |
+
+**Por qué navegación reactiva y no detección de eventos:** la busqueda de ruta más profunda maneja curvas y pilares implícitamente, sin la necesidad de "detección
+de esquina, que es mas dificil en la presencia de obstaculos. La cámara es solo semáforo de color (rojo/verde), no estima distancia. La distancia la lleva el LiDAR.
+
+### Decisión 4 — Conteo de vueltas por yaw acumulado, no por esquinas
+
+**Por qué |acc_yaw| > 900° en Reto 2** (en lugar de contar giros como en Reto 1): los pilares fuerzan trayectorias no rectangulares; el robot puede "girar" 90° por una curva *o* por una evasión, y
+contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos.
+
+### Decisión 5 — Detección de sentido CW/CCW en la primera esquina
+
+**Antes:** intentábamos detectar sentido con discontinuidades del LiDAR antes de arrancar (robot quieto).
+**Problema:** en pruebas no funcionaba consistentemente.
+**Decisión:** adoptar enfoque de esperar a la primera esquina y elegir el lado con apertura.
+**Resultado:** robusto, se eliminó un estado `DETECTING_SENSE` que estaba presente en una versión inicial del Reto 1.
+
+## 7.5 Análisis de Riesgos y Mitigación
+
+| Riesgo | Probabilidad | Impacto | Mitigación implementada |
+|---|---|---|---|
+| Caída del riel 5V por pico del servo | Media | Reset de la RPi 5 a mitad de carrera | **Regulador dedicado al servo** (D36V50F5) |
+| EMI del motor sobre IMU | Media | Yaw inestable | IMU en piso superior + canales de cable separados |
+| LiDAR no ve paredes de 10 cm | Alta si mal montado | Imposibilidad de centrarse | **LiDAR en primer piso, no en piso superior** |
+| ToF lee basura a <15 mm | Alta | Lecturas espurias en parking | Sensor retraído ≥15 mm + filtro software |
+| Cámara con rolling shutter distorsiona | Alta | Falsos positivos de pilar | **Global shutter elegida específicamente** |
+| Variación de iluminación en pista | Alta | Falla detección de color | Calibración HSV in-situ con `calibrador_hsv.py` |
+| Pérdida de comunicación Pi ↔ Pico | Baja | Robot fuera de control | Reconexión USB automática en bridge + watchdog firmware (pendiente) |
+| Robot atascado contra pared | Media | Pérdida de la ronda | SpiderSense reflejo lateral (Capa 3 Reto 2) |
+
+
+## 7.6 Historial de Iteraciones (resumen)
+
+| Versión | Cambio principal | Resultado |
+|---|---|---|
+| **V1.0** | Diseño inicial 3 pisos, motor 20.4:1, batería 2S, servo PS1171MG, LiDAR arriba | Demasiado alto, par insuficiente, LiDAR no ve paredes bajas |
+| **V2.0** | Rediseño chasis 2 pisos + subnivel, motor 34:1, batería 3S, servo Savox SC-1251MG, LiDAR abajo y adelante | Geometría compacta, Ackermann real, LiDAR ve paredes |
+| **V3.0** | Servo movido detrás de las ruedas delanteras, doble regulador 5V, canales de cable modulares | Sistema robusto, aislamiento de transitorios, cableado limpio |
+| **Open Challenge V1** | 4 pilares con detección de sentido pre-arranque | No funcionaba consistentemente |
+| **Open Challenge V2** | Detección de sentido en primera esquina, UMBRAL_FIN_GIRO bajado a 15° | Estable en 2+ días de pruebas en pista oficial |
+| **Reto 2 V1** | Gap follower de 3 capas "Siguiendo Camino" | En depuración (varios bugs encontrados y corregidos, ver Journal) |
