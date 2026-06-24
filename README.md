@@ -1,3 +1,4 @@
+
 ## **NPC – WRO FUTUROS INGENIEROS 2026** 
 
 ## **CONTENIDO** 
@@ -56,6 +57,8 @@
 - d. Estrategia del Reto Abierto
 
 - e. Métricas de Desempeño del Reto Abierto 
+
+- f. Ajustes Realizados 
 
 ## **1.Encabezado e Información del Equipo** 
 
@@ -579,7 +582,7 @@ Después de completarse el 12° giro (turn_count == 12), el estado transita a FI
 
 La máquina de estados de alto nivel tiene cinco estados: 
 
-<img width="861" height="192" alt="Maquina de Estados" src="https://github.com/user-attachments/assets/39d99def-da95-4eff-a5c1-227ed5956a2c" />
+<img width="860" height="190" alt="Maquina de Estados Reto1" src="https://github.com/user-attachments/assets/50964103-af37-4f0c-9a91-b8d0e3deeeef" />
 
 
 |**Estado**|**Comportamiento**|
@@ -590,7 +593,14 @@ La máquina de estados de alto nivel tiene cinco estados:
 |**FINISH_APPROACH**|Heading y centrado activos, sin detección de esquinas, perfil de<br>velocidad basado en la distancia frontal.|
 |**STOPPED**|Motor y servo en 0. Estado terminal.|
 
-## 6e. Métricas de Desempeño del Reto Abierto 
+## 6e. Diagrama de Flujo de Reto Abierto
+
+<img width="1911" height="1077" alt="Reto1" src="https://github.com/user-attachments/assets/8688b286-6c20-4c30-901a-c8fbc9baaf0d" />
+
+
+
+
+## 6f. Métricas de Desempeño del Reto Abierto 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
@@ -599,19 +609,19 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 |Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|
 |Precisión del conteo de giros|12/12 giros contados correctamente, no se<br>generan dobles giros por restricciones<br>colocadas para ello, aprendidas en WRO<br>2025|
 |Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque<br>por fallo en lectura de apertura, corregido|
-|Precisión de posición de parada|Consistentemente dentro de la banda 1,2,|
-
-
-
-|**Métrica**|**Resultado**|
-|---|---|
-||1,5 m|
+|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|
 |Posición lateral durante rectas|< 5 cm de desviación del centro del<br>corredor, mucho más robusto con el control<br>dual Heading y Centrado|
 |Heading después de completar un giro|Dentro de 5° del objetivo|
+|Tiempos Promedios en Pruebas| 40 segundos|
+
+Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
+
+**Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos a obtener tiempos entre 42 y 38 segundos. 
+
+<img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
 
-
-## 6f. Ajustes Realizados 
+## 6g. Ajustes Realizados 
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
@@ -737,3 +747,293 @@ contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos.
 | **Open Challenge V1** | 4 pilares con detección de sentido pre-arranque | No funcionaba consistentemente |
 | **Open Challenge V2** | Detección de sentido en primera esquina, UMBRAL_FIN_GIRO bajado a 15° | Estable en 2+ días de pruebas en pista oficial |
 | **Reto 2 V1** | Gap follower de 3 capas "Siguiendo Camino" | En depuración (varios bugs encontrados y corregidos, ver Journal) |
+
+# 8. Instrucciones de Reproducibilidad
+
+> *Criterio 5 — Rúbrica WRO Future Engineers 2026.*
+> Esta sección permite que **otro equipo pueda replicar el robot
+> NPC desde cero**. Incluye lista de hardware con links de compra,
+> requisitos de software, instalación paso a paso, estructura del
+> repositorio, archivos CAD/3D y procedimiento de arranque en
+> competencia.
+
+## 8.1 Requisitos de Hardware
+
+Lista completa de componentes utilizados, con sus links de compra
+oficiales. La lista detallada con descripción y precios está en
+[`/docs/lista-componentes.md`](./lista-componentes.md).
+
+| Categoría | Componente | Modelo / SKU | Cant. | Link |
+|---|---|---|---|---|
+| **Cómputo** | SBC alto nivel | Raspberry Pi 5 — 16 GB RAM | 1 | [Adafruit 6125](https://www.adafruit.com/product/6125) |
+| | Refrigeración | Official Raspberry Pi 5 Active Cooler | 1 | [Adafruit 5815](https://www.adafruit.com/product/5815) |
+| | Base NVMe | Pimoroni NVMe Base PIM699 | 1 | [Adafruit 5845](https://www.adafruit.com/product/5845) |
+| | SSD | Silicon Power 128 GB M.2 NVMe Gen3 | 1 | Amazon |
+| | MicroSD (backup) | Silicon Power 32 GB | 1 | Amazon |
+| | Microcontrolador | Pimoroni Pico Plus 2 (RP2350) PIM724 | 1 | [Adafruit 6244](https://www.adafruit.com/product/6244) |
+| | Adapter terminal | Adafruit Terminal PiCowbell con sockets | 1 | [Adafruit 5907](https://www.adafruit.com/product/5907) |
+| **Sensores** | LiDAR 360° | LDROBOT STL-27L (25 m) | 1 | [DFRobot 2726](https://www.dfrobot.com/product-2726.html) |
+| | Cámara | Raspberry Pi Global Shutter (IMX296) | 1 | [Adafruit 5702](https://www.adafruit.com/product/5702) |
+| | Lente cámara | CCTV M12 2.8 mm F2.0 1/2.7" | 1 | Amazon |
+| | Cable cámara | FPC 22-pin → 15-pin, 200 mm (RPi 5) | 1 | [Adafruit 5818](https://www.adafruit.com/product/5818) |
+| | ToF láser | Adafruit VL53L4CD STEMMA QT | 2 | [Adafruit 5396](https://www.adafruit.com/product/5396) |
+| | IMU 9-DOF | Adafruit BNO085 STEMMA QT | 1 | [Adafruit 4754](https://www.adafruit.com/product/4754) |
+| | Concentrador I²C | SparkFun Qwiic MultiPort | 1 | [SparkFun](https://www.sparkfun.com/sparkfun-qwiic-multiport.html) |
+| | Cable Qwiic | Flexible Qwiic Cable 50 mm | 4 | [SparkFun](https://www.sparkfun.com/flexible-qwiic-cable-50mm.html) |
+| **Actuadores** | Motor + encoder | Pololu 34:1 25Dx67L MP 12V + encoder 48 CPR | 1 | [Pololu 4864](https://www.pololu.com/product/4864) |
+| | Driver de motor | Pololu VNH5019 Motor Driver Carrier | 1 | [Pololu 1451](https://www.pololu.com/product/1451) |
+| | Servo de dirección | Savox SC-1251MG digital coreless | 1 | [Savox](https://savox-servo.com/en/product/SC-1251MGplus/savox-servo-sc-1251mg-digital-coreless-motor-metal-gear) |
+| **Potencia** | Batería | Zeee LiPo 3S 11.1 V 3200 mAh 50C | 1 | [Zeee Battery](https://zeeebattery.com/collections/zeee-3s-lipo-battery/products/zeee-3s-lipo-battery-3200mah-11-1v-50c-deans-t) |
+| | Regulador 5V — Lógica | Pololu D24V90F5 (5 V, 9 A) | 1 | [Pololu 2866](https://www.pololu.com/product/2866) |
+| | Regulador 5V — Servo | Pololu D36V50F5 (5 V, 5.5 A) | 1 | [Pololu 4091](https://www.pololu.com/product/4091) |
+| **Mecánica** | Ruedas | 64 mm aluminio + neumático goma | 4 | Amazon |
+| | Eje trasero | KYX Racing Steel Drive Shaft (Tamiya DT04) | 1 | KYX Racing |
+| | Manguetas Ackermann | KYX Racing Aluminum Steering Knuckles | 2 | KYX Racing |
+| | Servo saver | Tamiya TT-02 Hi-Torque + horn aluminio | 1 | Tamiya |
+| | Tie rods | M3 ajustables uxcell | 2 | uxcell |
+| | Ejes | Acero inoxidable 5 mm × 100 mm uxcell | 2 | uxcell |
+| **Cables** | USB-C Pi↔Pico | SUNGUY USB-C 3.1 Gen2 — 6 in y 1 ft | 2 | Amazon |
+| **Mecánica 3D** | Filamento | PLA Bambu Lab | — | Bambu Lab |
+| | Impresora 3D | Bambu Lab P2S | — | Bambu Lab |
+
+## 8.2 Requisitos de Software
+
+### En la Raspberry Pi 5
+
+```
+- Ubuntu 24.04 LTS (Server, no Desktop, para arranque rápido)
+- ROS 2 Jazzy Jalisco
+- Python 3.12
+- OpenCV 4.x (apt install python3-opencv)
+- Driver oficial LDROBOT ldlidar_stl_ros2
+- Workspace npc_ws con paquetes npc_bot y npc_interfaces
+- systemd service npc_bot.service (auto-arranque)
+```
+
+### En la laptop de desarrollo
+
+```
+- Arduino IDE 2.3.8
+- Board package: Earle Philhower RP2350 (para Pico Plus 2)
+- Librerías Arduino: Adafruit BNO08x, SparkFun VL53L4CD
+- Autodesk Fusion 360 (CAD)
+- Bambu Studio (laminado e impresión)
+- Git
+```
+
+## 8.3 Instalación Paso a Paso
+
+### 1) Preparar la Raspberry Pi 5
+
+```bash
+# Sistema operativo Ubuntu 24.04
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3-opencv python3-numpy python3-pip
+
+# ROS 2 Jazzy (siguiendo guía oficial)
+# https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+sudo apt install -y ros-jazzy-desktop ros-jazzy-cv-bridge
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+```
+
+### 2) Workspace LiDAR
+
+```bash
+mkdir -p ~/lidar_ws/src && cd ~/lidar_ws/src
+git clone https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git
+cd ~/lidar_ws
+colcon build
+echo "source ~/lidar_ws/install/setup.bash" >> ~/.bashrc
+```
+
+### 3) Workspace de la cámara (camera_ros)
+
+```bash
+mkdir -p ~/camera_ws/src && cd ~/camera_ws/src
+git clone https://github.com/christianrauch/camera_ros.git
+cd ~/camera_ws
+colcon build
+echo "source ~/camera_ws/install/setup.bash" >> ~/.bashrc
+```
+
+### 4) Workspace principal (npc_bot)
+
+```bash
+mkdir -p ~/wro_ws/src && cd ~/wro_ws/src
+git clone https://github.com/[equipo-NPC]/wro2026-future-engineers.git npc_bot
+cd ~/wro_ws
+colcon build
+echo "source ~/wro_ws/install/setup.bash" >> ~/.bashrc
+```
+
+### 5) Cargar firmware al Pico Plus 2
+
+```
+1. Conectar Pico Plus 2 vía USB a la laptop
+2. Abrir src/firmware/pico_firmware.ino en Arduino IDE 2.3.8
+3. Seleccionar Board: "Pimoroni Pico Plus 2 (RP2350)"
+4. Seleccionar puerto serial correcto
+5. Click Subir (Upload)
+```
+
+### 6) Calibración HSV de la cámara (Reto 2)
+
+```bash
+ros2 run npc_bot calibrador_hsv
+```
+
+> Interfaz interactiva con sliders para rangos HSV de rojo, verde y
+> magenta. Calibrar **bajo iluminación de la pista oficial**, no en
+> laboratorio.
+
+### 7) Servicio systemd (auto-arranque, requerido por reglas WRO 9.6–9.14)
+
+```bash
+sudo cp src/systemd/npc_bot.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable npc_bot.service
+sudo systemctl start npc_bot.service
+```
+
+> Tiempo de boot hasta robot listo: **~40 segundos** desde encendido
+> al pitido de "READY".
+
+## 8.4 Estructura del Repositorio
+
+```
+/
+├── README.md                  ← este documento (índice maestro)
+├── LICENSE
+├── journal/                   ← Engineering Journal (extendido)
+│   ├── README.md
+│   
+├── src/                       ← código fuente
+│   ├── firmware/
+│   │   └── pico_firmware.ino  ← firmware Pico Plus 2 (Arduino)
+│   ├── npc_bot/               ← paquete ROS 2 Python
+│   │   ├── pico_bridge_node.py
+│   │   ├── control_node.py             (Reto 1 — Open Challenge)
+│   │   ├── control_node_reto2.py       (Reto 2 — Obstacle Challenge)
+│   │   ├── nodo_camara.py              (visión Reto 2)
+│   │   └── calibrador_hsv.py           (calibración interactiva)
+│   ├── npc_interfaces/        ← paquete ROS 2 con mensajes custom
+│   │   └── msg/NpcPose.msg    ← {x, y, theta, acc_yaw}
+│   ├── launch/                ← launch files
+│   │   ├── npc_bot.launch.py           (Reto 1)
+│   │   └── base_reto2.launch.py        (Reto 2)
+│   └── systemd/
+│       └── npc_bot.service    ← arranque automático
+├── models/                    ← archivos CAD/3D
+│   ├── *.stl                  ← geometría imprimible
+│   ├── *.3mf                  ← proyectos Bambu Studio
+│   └── *.step                 ← modelos (motor Pololu)
+├── schemes/                   ← diagramas eléctricos
+│   ├── conexiones-del-robot.pdf
+│   └── diagrams/
+│       ├── wiring.png
+│       ├── mechanical.png
+│       └── system_overview.png
+├── t-photos/                  ← fotos del equipo
+│   
+├── v-photos/                  ← fotos del vehículo (6 ángulos)
+│   ├── front.jpg
+│   ├── back.jpg
+│   ├── left.jpg
+│   ├── right.jpg
+│   ├── top.jpg
+│   └── bottom.jpg
+└── video/
+    └── video.md               ← link a video de demostración (YouTube)
+```
+
+## 8.5 Cómo Arrancar el Sistema (procedimiento de carrera)
+
+### Opción A — Arranque automático (recomendado en competencia)
+
+```
+1. Conectar batería LiPo 3S
+2. Encender interruptor principal
+3. Esperar ~40 s (LED indicador en verde fijo = listo)
+4. Colocar robot en la pista en posición de salida
+5. Presionar botón físico (GP28) → el robot captura section_angle
+   y arranca la lógica de carrera
+```
+
+### Opción B — Arranque manual (para depuración)
+
+Terminal 1 — LiDAR:
+```bash
+ros2 launch ldlidar_stl_ros2 stl27l.launch.py
+```
+
+Terminal 2 — Bridge del Pico:
+```bash
+ros2 run npc_bot pico_bridge
+```
+
+Terminal 3 — Control (elegir uno según el reto):
+```bash
+ros2 run npc_bot control_node           # Reto 1: Open Challenge
+ros2 run npc_bot control_node_reto2     # Reto 2: Obstacle Challenge
+```
+
+Terminal 4 (solo Reto 2) — Cámara + visión:
+```bash
+ros2 launch npc_bot base_reto2.launch.py
+```
+
+## 8.6 Archivos CAD / 3D
+
+Todos los archivos están en [`/models`](../models/) en formato STL
+(geometría) y 3MF (proyecto Bambu Studio con parámetros de impresión).
+
+| Pieza | Archivo | Material | Tiempo de impresión |
+|---|---|---|---|
+| Chasis Abajo V2 (primer piso) | `Chassis Abajo V2.stl` / `.3mf` | PLA | 12 h |
+| Chasis Arriba V2 (2do piso + subnivel) | `Chassis Arriba V2.stl` / `.3mf` | PLA | Pendiente |
+| Gear Box Diferencial | `Gear Box Diferencial.stl` / `.3mf` | PLA | Pendiente |
+| Gear Diferencial (engranajes cónicos) | `Gear Diferencial.stl` / `.3mf` | PLA | Pendiente |
+| Gear Motor con Flange | `Gear Motor con Flange.stl` / `.3mf` | PLA | Pendiente |
+| Soporte Motor VF | `Soporte Motor VF.stl` / `.3mf` | PLA | Pendiente |
+| Soporte Servo VF | `Soporte Servo VF.stl` / `.3mf` | PLA | Pendiente |
+| Repisa | `Repisa.stl` / `.3mf` | PLA | Pendiente |
+| Espaciador de Eje | `Espaciador de Eje.stl` / `.3mf` | PLA | Pendiente |
+| Canal Cables 2 / 3 / 4 + Tapas | `Canal 2/3/4 Cables [Tapa].stl` | PLA | Pendiente |
+| Sujetador Cables | `Sujetador Cables.stl` / `.3mf` | PLA | Pendiente |
+| Motor Pololu 25D (referencia) | `25d-metal-gearmotor-34-47-encoder.step` | — | (modelo importado del fabricante) |
+
+### Configuración de impresión recomendada
+
+```
+Material:    PLA Bambu Lab
+Boquilla:    0.4 mm
+Capa:        0.2 mm
+Perímetros:  3
+Infill:      25 % (55 % para Chasis)
+Soportes:    Sí - Tipo árbol
+Impresora:   Bambu Lab P2S
+```
+
+## 8.7 Notas de Ensamblaje
+
+> **Pendiente de redactar:** secuencia de ensamblaje paso a paso.
+> Sugerencia: incluir 6–8 fotos del proceso (primer piso completo,
+> diferencial montado, eje trasero, servo + dirección, segundo piso,
+> ensamble final).
+
+Resumen del orden recomendado:
+
+1. Imprimir todas las piezas
+2. Ensamblar diferencial: insertar engranajes cónicos en `Gear Box Diferencial`
+3. Montar eje trasero KYX con diferencial en el `Chassis Abajo V2`
+4. Montar motor Pololu 34:1 con `Soporte Motor VF` y `Gear Motor con Flange`
+5. Montar servo Savox **detrás de las ruedas delanteras** (`Soporte Servo VF`)
+6. Conectar manguetas KYX + tie rods M3 + servo saver Tamiya
+7. **Ajustar convergencia (toe-in ≈ 0.5 mm)** con servo centrado
+8. Montar VNH5019, reguladores y batería en el primer piso
+9. Montar Raspberry Pi 5, Pico Plus 2 y sensores en el segundo piso
+10. Ruteo de cables por los canales modulares (`Canal 2/3/4`)
+11. Calibrar IMU (figura de 8) y encoder (`2006 ticks/m` validados)
+12. Calibrar HSV de la cámara bajo iluminación de la pista
+
+---
