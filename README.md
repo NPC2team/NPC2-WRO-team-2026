@@ -68,7 +68,7 @@
    
 Somos el equipo **NPC (Non Playable Character)**, este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO    Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
 
-Vu Tue Anh, compitió el año pasado en la categoría de misiones roboticas, mientras que Leonardo y Juan participaron en la categoría de futuros ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China donde logramos el 1er Lugar. 
+Vu Tue Anh, compitió el año pasado en la categoría de Misiones Roboticas, mientras que Leonardo y Juan participaron en la categoría de Futuros Ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China logramos el 1er Lugar. 
 </div>
 <br clear="left" />
 
@@ -194,7 +194,7 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 
 Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba, soportes de motor y servo, carcasa y engranajes del diferencial y motor, espaciadores, repisa, canales de cables con tapas). 
 
-En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis luego de un proceso iterativo, así como su comparativo con la versión que manejamos en 2025. 
+**_En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis luego de un proceso iterativo, así como su comparativo con la versión que manejamos en 2025._** 
 
 ## 4b. Sistema de Tracción 
 
@@ -223,9 +223,7 @@ En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis
 |Eje trasero|KYX Racing acero (compatible Tamiya DT04)|
 |Ruedas|64 mm aluminio, ancho 11 mm + neumático de goma|
 
-
-
-En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor. 
+**_En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor._**
 
 ## 4c. Sistema de Dirección 
 
@@ -258,11 +256,12 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 
 
 
-_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._ 
+**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._** 
 
 ## 4d. Lista de Componentes 
 
-Para facilitar su reproductibilidad anexamos lista completa de los componentes. Todos los enlaces de compra de cada componente: ver ./lista-componentes.md. Los archivos en STL/3MF están en **/models.** 
+Para facilitar su reproductibilidad anexamos lista completa de los componentes. Todos los enlaces de compra de cada componente en la sección 8.1 de este README.<br>
+Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
 
 |**Componente**|
 |---|
@@ -322,9 +321,9 @@ Para facilitar su reproductibilidad anexamos lista completa de los componentes. 
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
 
-En este apartado documentamos la ficha técnica del sistema de alimentación, distribución de potencia y arquitectura de sensores para Proyecto Mahoraga. 
+En este apartado documentamos la ficha técnica del sistema de alimentación, distribución de potencia y arquitectura de sensores para **Proyecto Mahoraga**. 
 
-_En el Engineering Journal (sección 5) se encuentran las justificaciones de selección de los componentes batería/reguladores, diagramas de cableado completos y presupuesto de energía (power Budget), así como justificación de selección de sensores y su proceso de calibración._ 
+**_En el Engineering Journal (sección 5) se encuentran las justificaciones de selección de los componentes batería/reguladores, diagramas de cableado completos y presupuesto de energía (power Budget), así como justificación de selección de sensores y su proceso de calibración._** 
 
 ## 5a. Sistema de Potencia 
 
@@ -333,8 +332,6 @@ _En el Engineering Journal (sección 5) se encuentran las justificaciones de sel
 |Batería|Zeee LiPo 3S|11.1 V nominal, 3.200 mAh, 50C, conector T|
 |Regulador Principal<br>(lógica)|Pololu D24V90F5|5V salida, 9 A continuos|
 |Regulador  Servo|Pololu D36V50F5|5V salida, 5.5 A continuos|
-
-
 
 La bateria 3S nos permite alimentar correctamente el motor Pololu 34:1 25Dx67L MP 12V y sacar provecho de su potencia. 
 
@@ -368,9 +365,7 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 
 ## 5c. Sensores 
 
-Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener sensores de alto nivel. El LiDAR era una adición necesaria para el manejo de los obstáculos de una manera robusta. La ubicación y control preciso de los movimientos del robot queda cubierta con el IMU BNO085 y el Encoder. La cámara es un upgrade más profesional vs la Pixy que utilizamos en 2025 y los TOF VL53L4CD son un nivel más sofisticado que los ultrasónicos HC-SR04. 
-
-
+Uno de los upgrades más importantes que hicimos en **Proyecto Mahoraga** fue tener sensores de alto nivel. El LiDAR era una adición necesaria para el manejo de los obstáculos de una manera robusta. La ubicación y control preciso de los movimientos del robot queda cubierta con el IMU BNO085 y el Encoder. La cámara es un upgrade más profesional vs la Pixy que utilizamos en 2025 y los TOF VL53L4CD son un nivel más sofisticado que los ultrasónicos HC-SR04. 
 
 |**Sensor**|**Modelo**|**Función**|
 |---|---|---|
@@ -381,7 +376,7 @@ Uno de los upgrades más importantes que hicimos en Proyecto Mahoraga fue tener 
 |Lente|CCTV M12 2.8<br>mm F2.0|Campo de visión amplio para captura 96**°**|
 |Encoder|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
 
-_En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._ 
+**_En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._** 
 
 ## 5d. Topología de Comunicaciones 
 
@@ -410,7 +405,7 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 
 _Diagrama completo de conexiones eléctricas: ver schemes/conexiones-del-robot.pdf._ 
 
-_Detalle de cada conexión (pin a pin) en el_ _**Engineering Journal sección 5.5** ._ 
+**_Detalle de cada conexión (pin a pin) en el Engineering Journal sección 5.5 ._** 
 
 ## **6. Arquitectura de Software y Estrategia de Obstáculos (Criterio 3)** 
 
@@ -598,8 +593,6 @@ La máquina de estados de alto nivel tiene cinco estados:
 <img width="1911" height="1077" alt="Reto1" src="https://github.com/user-attachments/assets/8688b286-6c20-4c30-901a-c8fbc9baaf0d" />
 
 
-
-
 ## 6f. Métricas de Desempeño del Reto Abierto 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
@@ -620,8 +613,85 @@ Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar l
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
+## 6g. Nodos y Tópicos de Reto con Obstaculos 
 
-## 6g. Ajustes Realizados 
+Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), en el Reto con Obstaculos interviene la cámara y por eso se incluye un nodo_camara y tiene su propio codigo de control denominado "control_node_reto2". En cuanto a topicos ademas de los del Reto Abierto se incluye el tópico de detección de los pilares "/pilares"
+
+<img width="612" height="480" alt="Nodos y Topicos Reto 2" src="https://github.com/user-attachments/assets/3785e9bd-e193-4e83-b3f7-aa99fce97854" /><br>
+
+### Topicos ROS 2 principales
+
+| Topico | Tipo | Publicador → Suscriptor |
+|---|---|---|
+| `/scan` | `sensor_msgs/LaserScan` | lidar → control |
+| `/npcpos` | `npc_interfaces/NpcPose` | pico_bridge → control |
+| `/start` | `std_msgs/Empty` | pico_bridge → control (botón físico) |
+| `/cmd_motor` | `std_msgs/Float32` (m/s) | control → pico_bridge |
+| `/cmd_servo` | `std_msgs/Float32` (−1…+1) | control → pico_bridge |
+| `/pilares` | `std_msgs/String` (`R:cx:h;G:cx:h;M:cx:h`) | nodo_camara → control_reto2 |
+
+## 6g.Estrategia del Reto con Obstaculos 
+
+La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación.
+
+| Capa | Función | Sensor primario |
+|---|---|---|
+| **C1 — Ruta Proyectada** | Ray marching: abanico ±60° de candidatos, vecinos ±25°, paso `castR=0.075 m` | LiDAR |
+| **C2 — Recorte por color** | Si pilar rojo → solo candidatos derechos; si verde → solo izquierdos | Cámara |
+| **C3 — SpiderSense** | Reflejo lateral: si distancia <22 cm en 25°–75°, atenúa el lado correspondiente ÷3 | LiDAR |
+
+**Función de score (Capa 1):**
+```
+score = min(d, DIST_SAT) / DIST_SAT − PESO_RUMBO × |desvío_del_rumbo|
+DIST_SAT = 1.6 m       PESO_RUMBO = 0.0015
+```
+
+**Conteo de vueltas:** por `|acc_yaw| > 900°` (≈ 2.5 vueltas
+geométricas) — robusto a trayectorias deformadas por evasión de
+pilares.
+
+**Fin de carrera:** `|acc_yaw| > 900°` **AND** detección de blob
+magenta con altura ≥ 60 px (caja de parada), luego parada por
+distancia frontal como en Reto 1.
+
+### 6.5.3 Detección de Pilares R/G/M (cámara)
+
+`nodo_camara.py` convierte el frame BGR a HSV, aplica máscaras de
+color y publica el centroide y altura del mayor blob de cada color
+detectado.
+
+**Rangos HSV calibrados en pista oficial (lente CCTV 2.8 mm):**
+
+| Color | H min | H max | S min | S max | V min | V max |
+|---|---|---|---|---|---|---|
+| **Rojo** (pilar) | 5 | 14 | 80 | 255 | 80 | 255 |
+| **Verde** (pilar) | 47 | 96 | 50 | 255 | 60 | 255 |
+| **Magenta** (caja de parada) | 158 | 179 | 70 | 255 | 70 | 255 |
+
+**Nota crítica del rojo:** H_min = 5` está deliberadamente arriba de 0 para evitar las líneas naranjas del piso de la pista WRO, confusión que sucedieron en las primeras prácticas. 
+
+## 6e. Diagrama de Flujo de Reto con Obstáculos
+
+<img width="600" height="1075" alt="Reto2" src="https://github.com/user-attachments/assets/8b36ad02-b3b0-473f-b923-e1e8d9394cd6" />
+
+
+## 6f. Métricas de Desempeño del Reto con Obstáculos 
+
+Después de 3 días de pruebas físicas en la pista oficial WRO: 
+
+|**Métrica**|**Resultado**|
+|---|---|
+|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|
+|Precisión del conteo de giros|12/12 giros contados correctamente, no se<br>generan dobles giros por restricciones<br>colocadas para ello, aprendidas en WRO<br>2025|
+|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque<br>por fallo en lectura de apertura, corregido|
+|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|
+|Posición lateral durante rectas|< 5 cm de desviación del centro del<br>corredor, mucho más robusto con el control<br>dual Heading y Centrado|
+|Heading después de completar un giro|Dentro de 5° del objetivo|
+|Tiempos Promedios en Pruebas| 40 segundos|
+
+Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
+
+## 6h. Ajustes Realizados en Ambos Retos
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
@@ -689,7 +759,7 @@ Esta subsección resume las decisiones de ingeniería más importantes con su ra
 IMU; la frontera entre los dos es un protocolo CSV legible. **El
 Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
 
-### Decisión 2 — Lógica del Open Challenge: 4 pilares en lugar de máquina de estados compleja
+### Decisión 2 — Lógica del Reto Abierto: 4 pilares en lugar de máquina de estados compleja
 
 | Pilares | Función |
 |---|---|
