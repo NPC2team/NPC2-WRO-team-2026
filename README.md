@@ -56,9 +56,21 @@
 
 - d. Estrategia del Reto Abierto
 
-- e. Métricas de Desempeño del Reto Abierto 
+- e. Diagrama de Flujo de Reto Abierto
+  
+- f. Métricas de Desempeño del Reto Abierto 
 
-- f. Ajustes Realizados 
+- g. Nodos y Tópicos de Reto con Obstáculos
+
+- h. Estrategia del Reto con Obstáculos
+
+- i. Detección de Pilares R/G/M (cámara)
+
+- j. Diagrama de Flujo de Reto con Obstáculo
+
+- k. Métricas de Desempeño del Reto con Obstáculos
+
+- l. Ajustes Realizados en Ambos Retos
 
 ## **1.Encabezado e Información del Equipo** 
 
@@ -613,9 +625,9 @@ Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar l
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
-## 6g. Nodos y Tópicos de Reto con Obstaculos 
+## 6g. Nodos y Tópicos de Reto con Obstáculos 
 
-Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), en el Reto con Obstaculos interviene la cámara y por eso se incluye un nodo_camara y tiene su propio codigo de control denominado "control_node_reto2". En cuanto a topicos ademas de los del Reto Abierto se incluye el tópico de detección de los pilares "/pilares"
+Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), en el Reto con Obstáculos interviene la cámara y por eso se incluye un nodo_camara y tiene su propio codigo de control denominado "control_node_reto2". En cuanto a topicos ademas de los del Reto Abierto se incluye el tópico de detección de los pilares "/pilares"
 
 <img width="612" height="480" alt="Nodos y Topicos Reto 2" src="https://github.com/user-attachments/assets/3785e9bd-e193-4e83-b3f7-aa99fce97854" /><br>
 
@@ -630,9 +642,9 @@ Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), 
 | `/cmd_servo` | `std_msgs/Float32` (−1…+1) | control → pico_bridge |
 | `/pilares` | `std_msgs/String` (`R:cx:h;G:cx:h;M:cx:h`) | nodo_camara → control_reto2 |
 
-## 6g.Estrategia del Reto con Obstaculos 
+## 6h.Estrategia del Reto con Obstáculos 
 
-La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación.
+La lógica del Reto con Obstáculos está organizada en una navegación distinta a la del Reto Abierdo, donde la detección de esquinas era fundamental para hacer los cruces. En este reto abandonamos eso y si bien mantenemos los Estados simples, la navegación se hace siguiendo 3 capas de orientación que conviven 1) Ruta Proyectada 2) Recorte por Color y 3) SpiderSense.
 
 | Capa | Función | Sensor primario |
 |---|---|---|
@@ -640,21 +652,39 @@ La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno 
 | **C2 — Recorte por color** | Si pilar rojo → solo candidatos derechos; si verde → solo izquierdos | Cámara |
 | **C3 — SpiderSense** | Reflejo lateral: si distancia <22 cm en 25°–75°, atenúa el lado correspondiente ÷3 | LiDAR |
 
+**Capa 1 — Ruta Proyectada (Ray Marching)**
+
+En la La Capa 1, el LiDAR reporta un abanico de direcciones candidatas frente al robot (de −60° a +60° en intervalos de 2° - 60 lecturas) y cada una se convierte en una "Ruta Viable", entonces para cada una se calcula un "score" para determinar cual es la trayectoria ideal o best_dir. Ese score combina 2 cosas, 1) Cuán lejos puede ir el robot en esa dirección sin chocar con algo y 2) Que tan desviada está esa dirección respecto al rumbo objetivo de la pista. La dirección ganadora es la propuesta inicial de hacia dónde dirigirse.
+
 **Función de score (Capa 1):**
 ```
 score = min(d, DIST_SAT) / DIST_SAT − PESO_RUMBO × |desvío_del_rumbo|
 DIST_SAT = 1.6 m       PESO_RUMBO = 0.0015
 ```
 
-**Conteo de vueltas:** por `|acc_yaw| > 900°` (≈ 2.5 vueltas
-geométricas) — robusto a trayectorias deformadas por evasión de
-pilares.
+Adicionalmente para cada uno de las 60 rutas candidatas, se aplica el principio de "ray marching" donde no solo se observa el punto candidato si no que también se mide un radio de 7,5 cm de cada lado para cerciorarnos que el robot pueda caber por esa ruta, si en la ruta candidata se choca con algun objeto al ver el ray marching, etonces esa ruta es descartada o su distancia maxima se limita hasta donde si cabe el ray marching.  
 
-**Fin de carrera:** `|acc_yaw| > 900°` **AND** detección de blob
+**Capa 2 — Recorte por Color**
+
+La cámara aporta dos datos por cada pilar visible: qué color es y en qué posición horizontal de la imagen está (el centro del blob detectado, en píxeles).
+El nodo nodo_camara.py convierte cada frame de BGR a HSV, aplica máscaras de color con los rangos HSV calibrados y publica el centroide y la altura del blob más grande de cada color en el topic /pilares. La altura en píxeles funciona como proxy de distancia: un pilar cercano se ve grande, uno lejano se ve pequeño. Cuando hay un pilar relevante, la Capa 2 hace una conversión sencilla: traduce la posición en píxeles a un ángulo en el frame del robot usando el FoV de 88° de la lente CCTV 2,8 mm, y luego fuerza el best_dir a un lado u otro del pilar, con un margen seguro de unos 15°. Si el pilar es rojo, el robot se desvía hacia la derecha del pilar; si es verde, hacia la izquierda. 
+
+
+**Capa 3 — SpiderSense**
+
+La Capa 3 "SpiderSense" es el reflejo de emergencia para casos donde las paredes laterales o los obstaculos estan muy cerca, para esto el LiDAR dos sectores laterales (25° a 75° en cada lado del robot) y calcula la distancia mínima en cada uno. Si la distancia del lado izquierdo cae por debajo de 22 cm y el robot está virando hacia la izquierda (steering < 0), entonces el comando de steering se divide entre 3. Lo mismo para el lado derecho. La doble condición (peligro lateral + giro hacia el peligro) es clave, si el robot está virando hacia el lado contrario, no hay riesgo de colisión inminente. Al dividir entre 3 el steering lo que se busca es atenuar el angulo de giro para evitar la colisión lateral 
+
+
+**Fin de carrera:** 
+
+Como no tenemos giros y esquinas como en el reto 1, que para finalizar la carrera, contabamos 12 giros, entonces establecimos una medición acumulada de giro en terminos absoluto del IMU |acc_yaw| y que cuando este supere los 900°, equivalenten a 2,5 vueltas, entonces buscar el proximo color magenta, que justamente es el estacionamiento y cuando lo vea se detenga en esa sección, siguiendo la estrategia del Reto Abierto, es decir, parar cuando este entre 1,3m y 1,5m de la pared frontal de esa sección.
+
+
+`|acc_yaw| > 900°` **AND** detección de blob
 magenta con altura ≥ 60 px (caja de parada), luego parada por
 distancia frontal como en Reto 1.
 
-### 6.5.3 Detección de Pilares R/G/M (cámara)
+### 6.i Detección de Pilares R/G/M (cámara)
 
 `nodo_camara.py` convierte el frame BGR a HSV, aplica máscaras de
 color y publica el centroide y altura del mayor blob de cada color
@@ -670,12 +700,12 @@ detectado.
 
 **Nota crítica del rojo:** H_min = 5` está deliberadamente arriba de 0 para evitar las líneas naranjas del piso de la pista WRO, confusión que sucedieron en las primeras prácticas. 
 
-## 6e. Diagrama de Flujo de Reto con Obstáculos
+## 6j. Diagrama de Flujo de Reto con Obstáculos
 
 <img width="600" height="1075" alt="Reto2" src="https://github.com/user-attachments/assets/8b36ad02-b3b0-473f-b923-e1e8d9394cd6" />
 
 
-## 6f. Métricas de Desempeño del Reto con Obstáculos 
+## 6k. Métricas de Desempeño del Reto con Obstáculos 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
@@ -691,7 +721,7 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 
 Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
 
-## 6h. Ajustes Realizados en Ambos Retos
+## 6l. Ajustes Realizados en Ambos Retos
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
