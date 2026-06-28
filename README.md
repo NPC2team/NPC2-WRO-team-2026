@@ -158,7 +158,6 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 <img width="604" height="426" alt="Chasis Comentado" src="https://github.com/user-attachments/assets/6b80a166-bae0-440d-9ea4-06bb7c6f8add" />
 
 
-
 |**Atributo**|**Descripción**|
 |---|---|
 |Tipo|Personalizado, diseñado en Fusion|
@@ -231,7 +230,6 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 |Pivotes(W)|97 mm|
 |Radio degiro(R)|217,7 mm a 40°|
 |Distancia para 90°|341,90 mm|
-
 
 
 **_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._** 
@@ -419,25 +417,18 @@ Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los
 |/encoder|std_msgs/Int32|pico_bridge|(debug)|Ticks crudos del encoder|
 
 
-
 ## 6c. Firmware del Pico 2 
 
-El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la Pi5 no debe encargarse. 
+El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la RPi5 no debe encargarse. 
 
 **Responsabilidades** 
 
 - Lectura del IMU a 100 Hz vía Qwiic I2C (Adafruit BNO085, con fusión sensorial 9-DOF onboard) 
-
 - Conteo del encoder vía interrupción por hardware en GPIO 2 (Canal A) y lectura digital en GPIO 3 (Canal B), cuadratura de un solo flanco 
-
 - Integración de odometría a 100 Hz (calcula Δx, Δy, Δtheta y los acumula) 
-
 - Generación de PWM del motor a 20 kHz (sobre el rango audible) vía driver Pololu VNH5019 
-
 - Generación de PWM del servo a 50 Hz para el servo de dirección Savox SC-1251MG 
-
 - Lectura del botón de arranque en GPIO 28 (INPUT_PULLUP, activo LOW) 
-
 - Publicación de telemetría a la Pi5 a 50 Hz vía USB serial 
 
 **Protocolo Serial de Comunicación RPi5 y Pico2** 
@@ -445,24 +436,18 @@ El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que
 **Pico → Pi5** (50 Hz cada uno): 
 
 POS <x, y, theta, acc_yaw> **`→`** Odometría 
-
 IMU <yaw, qx, qy, qz> **`→`** Quaternión del IMU 
-
 ENC < ticks > **`→`** Conteo del encoder 
-
 BTN **`→`** Botón presionado (evento) 
-
 BOOT,...  OK,...  ERR,... **`→`** Mensajes de estado 
 
 **Pi5 → Pico** (a demanda): 
 
 M < velocidad_ms > **`→`** Velocidad del motor en m/s 
-
 S < direccion > **`→`** Servo, rango [-1.0, +1.0] 
-
 STOP **`→`** Parada de emergencia 
 
-## 6d.Estrategia del Reto Abierto 
+## 6d. Estrategia del Reto Abierto 
 
 La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación. 
 
@@ -492,9 +477,36 @@ Al encontrarnos a 0,7 metros de la pared central el LiDAR revisa los laterales e
 |Debounce espacial|dist desde último giro > 1.0 m|Evitar contar dos veces<br>la misma esquina|
 |Apertura lateral confirmada|mediana(LATERAL 2° en lado<br>del giro) > 1.0 m|Es una esquina real, no<br>una medición errónea|
 
+<table>
+  <tr>
+    <td align="center">
+      <b>Detección Frontal</b><br>
+     <img width="400" height="320" alt="Frontal70cms" src="https://github.com/user-attachments/assets/f0689cbe-4bd5-44dd-9f91-780d9d763d0a" />
+    </td>
+    <td align="center">
+      <b>Detección Lateral de Esquina</b><br>
+      <img width="400" height="320" alt="Lateral100cms" src="https://github.com/user-attachments/assets/d2e309f0-7445-41b5-a012-50918cacea9b" />
+    </td>
+  </tr>
+</table>
+
+```
+if self.sentido_giro is None:
+    apertura_izq = mediana(LATERAL_IZQ)
+    apertura_der = mediana(LATERAL_DER)
+    if apertura_izq > 1.0 and apertura_der < 1.0:
+        self.sentido_giro = 'CCW'
+    elif apertura_der > 1.0 and apertura_izq < 1.0:
+        self.sentido_giro = 'CW'
+    elif ambos_abiertos:
+        self.sentido_giro = 'CCW' if apertura_izq >= apertura_der else 'CW'
+    else:
+        return  # esperar al siguiente loop, no decidir aún
+```
+
 Una vez que en la primera esquina se determina el sentido de los giros, en las siguientes esquinas el LiDAR, solo busca aperturas hacia esa dirección. 
 
-<img width="593" height="168" alt="Pilar2" src="https://github.com/user-attachments/assets/61061769-7f22-4978-b0d0-93b03f1ba7d8" />
+
 
 **Pilar 3. Control de Navegación y Centrado de Pared** 
 
@@ -502,19 +514,41 @@ Establecimos 2 esquemas de control de navegación: El Heading y el Centrado de P
 
 Heading: Una vez que el LiDAR detecta un desvío importante o detecto un cruce y se actualiza el nuevo ángulo destino +/-90° según sea la dirección, se produce un error alto que activa el heading y hace girar el servo. La agresividad del giro está controlada por un P-controller con dos ganancias diferenciadas. Una ganancia más agresiva (KP_Giro) cuando el error es superior a 15° y una ganancia menor (KP_Rect) cuando el error se reduce a 15°, esto hace que una vez que el error (desviación con el objetivo se reduce) el angulo de giro se suaviza evitando un sobrecruce o oscilaciones buscando el objetivo. 
 
-<img width="589" height="119" alt="Pilar3" src="https://github.com/user-attachments/assets/9336211f-0aa3-47d7-ab3f-eba3bd153de3" />
+```
+error = norm_ang(self.pose.theta - self.section_angle)
+
+if self.turning:
+    str_angle = error * KP_GIRO    # 1.91
+else:
+    str_angle = error * KP_RECT    # 0.48
+
+str_angle = clamp(str_angle, -1.0, 1.0)
+```
+
 
 Centrado de Paredes: Tal como va haciendo las mediciones para detectar las aperturas, también va realizando mediciones para calcular desviaciones respecto al centro de la pista 
 
-<img width="588" height="31" alt="Pilar31" src="https://github.com/user-attachments/assets/39a1a01e-b639-493c-a92f-10774f70cd28" />
+<img width="400" height="320" align="right" alt="Centrado de Paredes" src="https://github.com/user-attachments/assets/6350c33e-c6ee-4556-ac09-e184c207aea2" />
+
+```
+dist_der = mediana(WALL_DER)   # +75° a +77° en el frame del robot
+dist_izq = mediana(WALL_IZQ)   # -77° a -75° en el frame del robot
+```
 
 El algoritmo de centrado no actúa todo el tiempo; solo se activa si se cumplen estas tres condiciones simultáneamente:
 
-<img width="594" height="43" alt="Pilar32" src="https://github.com/user-attachments/assets/339a9f8f-855c-434a-a0d3-14963a4e2048" />
+```
+if (dist_der + dist_izq < 1.1
+    and dist_desde_giro > 0.4
+    and not self.turning):
+```
 
-Esto garantiza que no haya la medición de error cuando hay una apertura, que no se active el centrado cuando está girando o apenas lleva 40cms desde el último giro e interfiera en el giro.
-
-<img width="591" height="29" alt="Pilar33" src="https://github.com/user-attachments/assets/51093f1b-f6c7-4e3a-ab0f-f768eda3fa56" />
+Esto garantiza que no haya la medición de error cuando hay una apertura, que no se active el centrado cuando está girando o apenas lleva 40cms desde el último giro e interfiera en el giro. 
+```
+pos = dist_der - dist_izq
+    str_lateral = clamp(pos * KP_LATERAL, -0.5, +0.5)
+```
+<br clear="right" />
 
 Si las condiciones se cumplen, el código calcula cuánto debe corregir la dirección. 
 
@@ -530,11 +564,23 @@ Saturación (clamp): Limita el comando de dirección (str_lateral) entre -0.5 y 
 
 El robot ya viene calculando el Heading (str_heading) apuntando hacia el angulo objetivo. El código compara las magnitudes absolutas del Heading y del Centrado (str_lateral). Si la necesidad de corregir la posición lateral (str_lateral) para no chocar con la pared es más drástica que la de mantener la orientación actual (str_heading), el control de centrado toma prioridad absoluta y devuelve str_lateral. De lo contrario, el robot ignora el centrado fino y sigue su rumbo normal. 
 
-<img width="592" height="49" alt="Pilar 34" src="https://github.com/user-attachments/assets/56af8f80-32e3-40b0-a7d2-59ddc7482e3f" />
+```
+if abs(str_lateral) > abs(str_heading):
+        return str_lateral    # regla: gana la corrección más fuerte
+return str_heading
+```
 
 **Velocidad Adaptativa:** Estipulamos 2 velocidades distintas para las curvas y para las rectas, permitiendo la mayor estabilidad. Las velocidades establecidas en 0.25 m/s y 0.4 m/s son el 50% de las velocidades iniciales que establecimos y que están por debajo de la velocidad teórica que habíamos calculado. Sin embargo, está velocidades en la práctica nos permitió tener mayor nivel de confiabilidad y evitar choques por retraso en alguna detección. 
 
-<img width="591" height="105" alt="Pilar35" src="https://github.com/user-attachments/assets/0dbd60b7-cef4-4b1d-9d6f-b832c7e2c628" />
+```
+if self.turning:
+    velocidad = VELOCIDAD_CURVA      # 0.25 m/s
+else:
+    velocidad = remap(abs(str_angle),
+                      in_min=0.0, in_max=1.0,
+                      out_min=VELOCIDAD_RECTA,   # 0.4 m/s
+                      out_max=VELOCIDAD_CURVA)   # 0.25 m/s
+```
 
 **Pilar 4. Fin de Carrera** 
 
@@ -591,7 +637,7 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 
 Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
 
-**Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos a obtener tiempos entre 42 y 38 segundos. 
+**Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos ha obtener tiempos entre 42 y 38 segundos. 
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
@@ -605,14 +651,14 @@ Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), 
 
 | Topico | Tipo | Publicador → Suscriptor |
 |---|---|---|
-| `/scan` | `sensor_msgs/LaserScan` | lidar → control |
-| `/npcpos` | `npc_interfaces/NpcPose` | pico_bridge → control |
-| `/start` | `std_msgs/Empty` | pico_bridge → control (botón físico) |
-| `/cmd_motor` | `std_msgs/Float32` (m/s) | control → pico_bridge |
-| `/cmd_servo` | `std_msgs/Float32` (−1…+1) | control → pico_bridge |
-| `/pilares` | `std_msgs/String` (`R:cx:h;G:cx:h;M:cx:h`) | nodo_camara → control_reto2 |
+| /scan | sensor_msgs/LaserScan | lidar → control |
+| /npcpos | npc_interfaces/NpcPose | pico_bridge → control |
+| /start | std_msgs/Empty | pico_bridge → control (botón físico) |
+| /cmd_motor | std_msgs/Float32 (m/s) | control → pico_bridge |
+| /cmd_servo | std_msgs/Float32 (−1…+1) | control → pico_bridge |
+| /pilares | std_msgs/String (`R:cx:h;G:cx:h;M:cx:h`) | nodo_camara → control_reto2 |
 
-## 6h.Estrategia del Reto con Obstáculos 
+## 6h. Estrategia del Reto con Obstáculos 
 
 La lógica del Reto con Obstáculos está organizada en una navegación distinta a la del Reto Abierdo, donde la detección de esquinas era fundamental para hacer los cruces. En este reto abandonamos eso y si bien mantenemos los Estados simples, la navegación se hace siguiendo 3 capas de orientación que conviven 1) Ruta Proyectada 2) Recorte por Color y 3) SpiderSense.
 
@@ -654,7 +700,7 @@ Como no tenemos giros y esquinas como en el reto 1, que para finalizar la carrer
 magenta con altura ≥ 60 px (caja de parada), luego parada por
 distancia frontal como en Reto 1.
 
-### 6.i Detección de Pilares R/G/M (cámara)
+## 6i. Detección de Pilares R/G/M (cámara)
 
 `nodo_camara.py` convierte el frame BGR a HSV, aplica máscaras de
 color y publica el centroide y altura del mayor blob de cada color
