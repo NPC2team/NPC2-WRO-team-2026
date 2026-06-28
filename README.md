@@ -5,74 +5,41 @@
 
 ## **1. Introducción e Información del Equipo**
 - a. Introducción 
-
 - b. Miembros del Equipo 
-
 ## **2. Vehículo** 
-
 - a. Descripción del Vehículo 
-
 - b. Fotos del Vehículo 
-
 ## **3. Videos de Pruebas del Vehículo** 
-
 - a. Reto 1 – Open Challenge 
-
 - b. Reto 2 – Obstacle Challenge 
-
 ## **4. Movilidad y Diseño Mecánico (Criterio 1)** 
-
 - a. Chasis 
-
 - b. Sistema de Tracción 
-
 - c. Sistema de Dirección 
-
-- d. Lista de Componentes 
-
+- d. Lista de Componentes
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
-
 - a. Sistema de Potencia 
-
 - b. Power Budget 
-
 - c. Sensores 
-
 - d. Diagrama de Comunicación 
-
 - e. Ubicación de Sensores 
-
 - f. Diagrama de Cableado 
-
 - g. Decisión de Diseño
-
 ## **6. Arquitectura de Software y Estrategia de Obstáculos  (Criterio 3)** 
-
 - a. Visión General 
-
 - b. Tópicos 
-
 - c. Firmware del Pico 2 
-
 - d. Estrategia del Reto Abierto
-
 - e. Diagrama de Flujo de Reto Abierto
-  
 - f. Métricas de Desempeño del Reto Abierto 
-
 - g. Nodos y Tópicos de Reto con Obstáculos
-
 - h. Estrategia del Reto con Obstáculos
-
 - i. Detección de Pilares R/G/M (cámara)
-
 - j. Diagrama de Flujo de Reto con Obstáculo
-
 - k. Métricas de Desempeño del Reto con Obstáculos
-
 - l. Ajustes Realizados en Ambos Retos
 
-## **1.Encabezado e Información del Equipo** 
+## **1. Encabezado e Información del Equipo** 
 
 ## 1a. Introducción 
 <div>
@@ -134,7 +101,7 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 ## 2a. Descripción del Robot 
 
-**“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá abordar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
+**“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá ejecutar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
 
 ## 2b. Fotos del Robot 
 
@@ -169,7 +136,7 @@ Alfredo, es nuestro coach y de profesion matemático.
   </tr>
 </table>
 
-## **3.Videos de Pruebas del Vehículo** 
+## **3. Videos de Pruebas del Vehículo** 
 
 3a. Reto 1 – Open Challenge 
 
@@ -180,9 +147,9 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 **Link YouTube** 
 
-## **4.Movilidad y Diseño Mecánico (Criterio 1)** 
+## **4. Movilidad y Diseño Mecánico (Criterio 1)** 
 
-En este apartado documentamos la ficha técnica de la configuración mecánica final de Proyecto  Mahoraga.  En  el  Engineering  Journal  (Sección  4)  incluimos  la  descripción completa  del proceso  de  diseño,  las  mejoras sobre  nuestro  robot 2025,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. 
+En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**.  En  el  Engineering  Journal  (Sección  4)  incluimos  la  descripción completa  del proceso  de  diseño,  las  mejoras sobre  nuestro  robot 2025,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. 
 
 ## 4a. Chasis 
 
@@ -196,12 +163,11 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 |---|---|
 |Tipo|Personalizado, diseñado en Fusion|
 |Material|PLA impreso en 3D(Bambu Lab P2S)|
-|Dimensiones|205 × 135 × 126 mm|
-|Distribución vertical|2pisos modulares + subnivel|
+|Dimensiones|234 × 135 × 126 mm|
+|Distribución vertical|2 pisos modulares + 2 subniveles|
 |Distancia entre ejes(batalla)|142 mm|
 |Distancia entrepivotes|97 mm|
 |Peso(sin cámara)|1.100g (límite reglamentario: 1500g)|
-
 
 
 Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba, soportes de motor y servo, carcasa y engranajes del diferencial y motor, espaciadores, repisa, canales de cables con tapas). 
@@ -228,11 +194,11 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 |Motor|Pololu 34:1 Metal Gearmotor 25Dx67L mm MP 12V|
 |Velocidad Lineal|1,1231 m/s|
 |Encoder|48 CPR en el eje del motor|
-|Torque|1,65 Kg/cm(Sin Diferencial)2,32 Kg/cm(Con Diferencial)|
+|Torque|1,65 Kg/cm(Sin Diferencial) 2,32 Kg/cm(Con Diferencial)|
 |Resolución calibrada|2.006 ticks/metro(medido enpruebas)|
 |Driver del Motor|Pololu VNH5019 Tecnología MOSFET|
 |Diferencial|Impreso 3D propio (Gear Diferencial + Gear Box)|
-|Eje trasero|KYX Racing acero (compatible Tamiya DT04)|
+|Eje trasero|KYX Racing acero (Tamiya DT04)|
 |Ruedas|64 mm aluminio, ancho 11 mm + neumático de goma|
 
 **_En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor._**
@@ -328,7 +294,7 @@ Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.**
 |Repisa|x|x|
 |Soporte Motor VF|x|x|
 |Soporte Servo VF|x|x|
-|Sujetador de Cables|x|x|<img width="845" height="634" alt="Traccion" src="https://github.com/user-attachments/assets/cc327e21-5dd0-40a2-a66e-4c440b1b4139" />
+|Sujetador de Cables|x|x|
 
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
@@ -341,13 +307,17 @@ En este apartado documentamos la ficha técnica del sistema de alimentación, di
 
 |**Componente**|**Modelo**|**Especificaciones**|
 |---|---|---|
-|Batería|Zeee LiPo 3S|11.1 V nominal, 3.200 mAh, 50C, conector T|
+|Batería|Zeee LiPo 3S|11.1 V nominal, 3.000 mAh, 50C, conector T|
 |Regulador Principal<br>(lógica)|Pololu D24V90F5|5V salida, 9 A continuos|
 |Regulador  Servo|Pololu D36V50F5|5V salida, 5.5 A continuos|
+|Motor Driver|Pololu VNH5019|Rango Operativo 5,5 a 24V, Cpacidad 12 A|
 
 La bateria 3S nos permite alimentar correctamente el motor Pololu 34:1 25Dx67L MP 12V y sacar provecho de su potencia. 
 
 **Decisión clave:** Distribución dual de reguladores 5V. El D24V90F5 (9A) alimenta toda la lógica del robot (Raspberry Pi 5, Pico Plus 2, LiDAR, IMU, TOF, lógica del VNH5019). El D36V50F5 (5.5A) alimenta exclusivamente el servo Savox SC-1251MG, que tiene picos de corriente durante giros bruscos o choques. Esto aísla los transitorios del servo del riel de lógica sensible, evitando reinicios del Raspberry Pi 5 o del Pico Plus 2. 
+
+<img width="845" height="634" alt="Distribucion de Potencia" src="https://github.com/user-attachments/assets/cbb05f86-15c2-4bf1-b885-bf6c1c0fd992" />
+
 
 ## 5b. Power Budget 
 
@@ -381,12 +351,12 @@ Uno de los upgrades más importantes que hicimos en **Proyecto Mahoraga** fue te
 
 |**Sensor**|**Modelo**|**Función**|
 |---|---|---|
-|LiDAR 360°|LDROBOT<br>STL-27L|Con 21.600 mediciones por segundo a 10 Hz (10<br>vueltas de 2.160 mediciones) es muy útil para la<br>detección de paredes y obstáculos.|
-|IMU 9-DOF|Adafruit BNO085|Entrega orientación absoluta directamente como<br>quaternion, permitiendo una fácil orientación<br>absoluta.|
-|ToF láser|Adafruit<br>VL53L4CD|Prácticamente sin punto ciego, distancia lateral<br>izq/der (1–1300 mm) a 100 Hz, es muy útil para<br>tareas de precisión como estacionar.|
-|Cámara global<br>shutter|Raspberry Pi GS<br>Camera|Visión por computador para detectar pilares<br>rojos/verdes. Al ser Global Shutter limita las<br>distorsión de objetos en movimiento.|
-|Lente|CCTV M12 2.8<br>mm F2.0|Campo de visión amplio para captura 96**°**|
-|Encoder|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
+|<img width="110" height="110" alt="LiDAR STL-27L" src="https://github.com/user-attachments/assets/3231313c-9930-4cb0-8cdd-8c09de7f08a4" /> |LiDAR 360° <br> LDROBOT STL-27L|Con 21.600 mediciones por segundo a 10 Hz (10<br>vueltas de 2.160 mediciones) es muy útil para la<br>detección de paredes y obstáculos.|
+|<img width="110" height="110" alt="IMU" src="https://github.com/user-attachments/assets/64021dd6-e882-4b43-94db-420a91359841" />|IMU 9-DOF <br> Adafruit BNO085|Entrega orientación absoluta directamente como<br>quaternion, permitiendo una fácil orientación<br>absoluta.|
+|<img width="110" height="100" alt="TOF" src="https://github.com/user-attachments/assets/5ed9f11f-feae-4101-a55e-bd5bdbb29eb4" />|ToF láser <br> Adafruit<br>VL53L4CD|Prácticamente sin punto ciego, distancia lateral<br>izq/der (1–1300 mm) a 100 Hz, es muy útil para<br>tareas de precisión como estacionar.|
+|<img width="100" height="110" alt="CamaraGS" src="https://github.com/user-attachments/assets/28cd9c8b-eb2c-449b-baf1-88d52ed59e4e" /> |Cámara Raspberry Pi <br> Global Shutter<br>|Visión por computador para detectar pilares<br>rojos/verdes. Al ser Global Shutter limita las<br>distorsión de objetos en movimiento.|
+|<img width="100" height="90" alt="GS Lens" src="https://github.com/user-attachments/assets/82a42c9a-cfe0-4fa4-acbb-b78bad9f0970" />|Lente CCTV M12 <br>2.8mm F2.0|Campo de visión amplio para captura 96°>|
+|<img width="110" height="110" alt="Encoder" src="https://github.com/user-attachments/assets/c9b0380f-ce44-4107-9fe8-7cd2a6e6303e" />|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
 
 **_En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._** 
 
@@ -415,7 +385,7 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 
 <img width="2800" height="2000" alt="esquematico" src="https://github.com/user-attachments/assets/feb72cbb-3bc7-460f-871f-41e487800fb9" />
 
-_Diagrama completo de conexiones eléctricas: ver schemes/conexiones-del-robot.pdf._ 
+**_Diagrama completo de conexiones eléctricas: ver schemes/conexiones-del-robot.pdf._** 
 
 **_Detalle de cada conexión (pin a pin) en el Engineering Journal sección 5.5 ._** 
 
