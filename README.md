@@ -670,6 +670,8 @@ La lógica del Reto con Obstáculos está organizada en una navegación distinta
 
 **Capa 1 — Ruta Proyectada (Ray Marching)**
 
+<img width="460" height="480" align="left" alt="Ruta Proyectada" src="https://github.com/user-attachments/assets/0c05d8f7-bd39-4baf-bbd3-0b2e3b692d20" />
+
 En la La Capa 1, el LiDAR reporta un abanico de direcciones candidatas frente al robot (de −60° a +60° en intervalos de 2° - 60 lecturas) y cada una se convierte en una "Ruta Viable", entonces para cada una se calcula un "score" para determinar cual es la trayectoria ideal o best_dir. Ese score combina 2 cosas, 1) Cuán lejos puede ir el robot en esa dirección sin chocar con algo y 2) Que tan desviada está esa dirección respecto al rumbo objetivo de la pista. La dirección ganadora es la propuesta inicial de hacia dónde dirigirse.
 
 **Función de score (Capa 1):**
@@ -680,11 +682,19 @@ DIST_SAT = 1.6 m       PESO_RUMBO = 0.0015
 
 Adicionalmente para cada uno de las 60 rutas candidatas, se aplica el principio de "ray marching" donde no solo se observa el punto candidato si no que también se mide un radio de 7,5 cm de cada lado para cerciorarnos que el robot pueda caber por esa ruta, si en la ruta candidata se choca con algun objeto al ver el ray marching, etonces esa ruta es descartada o su distancia maxima se limita hasta donde si cabe el ray marching.  
 
+<br clear="left" />
+
 **Capa 2 — Recorte por Color**
 
-La cámara aporta dos datos por cada pilar visible: qué color es y en qué posición horizontal de la imagen está (el centro del blob detectado, en píxeles).
-El nodo nodo_camara.py convierte cada frame de BGR a HSV, aplica máscaras de color con los rangos HSV calibrados y publica el centroide y la altura del blob más grande de cada color en el topic /pilares. La altura en píxeles funciona como proxy de distancia: un pilar cercano se ve grande, uno lejano se ve pequeño. Cuando hay un pilar relevante, la Capa 2 hace una conversión sencilla: traduce la posición en píxeles a un ángulo en el frame del robot usando el FoV de 88° de la lente CCTV 2,8 mm, y luego fuerza el best_dir a un lado u otro del pilar, con un margen seguro de unos 15°. Si el pilar es rojo, el robot se desvía hacia la derecha del pilar; si es verde, hacia la izquierda. 
+<img width="460" height="440" align="left" alt="Capa2" src="https://github.com/user-attachments/assets/5c05023b-fa03-45a2-8d99-c9e73ed0e801" />
 
+La cámara aporta dos datos por cada pilar visible: qué color es y en qué posición horizontal de la imagen está (el centro del blob detectado, en píxeles).
+El nodo nodo_camara.py convierte cada frame de BGR a HSV, aplica máscaras de color con los rangos HSV calibrados y publica el centroide y la altura del blob más grande de cada color en el topic /pilares. <br>
+<br>
+La altura en píxeles funciona como proxy de distancia: un pilar cercano se ve grande, uno lejano se ve pequeño. Cuando hay un pilar relevante, la Capa 2 hace una conversión sencilla: traduce la posición en píxeles a un ángulo en el frame del robot usando el FoV de 88° de la lente CCTV 2,8 mm, y luego fuerza el best_dir a un lado u otro del pilar, con un margen seguro de unos 15°. Si el pilar es rojo, el robot se desvía hacia la derecha del pilar, estableciendo una zona prohibida a su izquierda, donde ninguna ruta es factible; mientras que si el pilar es verde, las ruta viables estan hacia la izquierda y las prohibidas a la derecha. 
+
+<br clear="left" />
+<br>
 
 **Capa 3 — SpiderSense**
 
@@ -702,9 +712,9 @@ distancia frontal como en Reto 1.
 
 ## 6i. Detección de Pilares R/G/M (cámara)
 
-`nodo_camara.py` convierte el frame BGR a HSV, aplica máscaras de
-color y publica el centroide y altura del mayor blob de cada color
-detectado.
+<img width="300" height="320" align="left" alt="Detección de Pilares" src="https://github.com/user-attachments/assets/68cab891-b796-4743-8e43-a9954c33ba31" />
+
+nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica el centroide y altura del mayor blob de cada color detectado.
 
 **Rangos HSV calibrados en pista oficial (lente CCTV 2.8 mm):**
 
@@ -715,6 +725,9 @@ detectado.
 | **Magenta** (caja de parada) | 158 | 179 | 70 | 255 | 70 | 255 |
 
 **Nota crítica del rojo:** H_min = 5` está deliberadamente arriba de 0 para evitar las líneas naranjas del piso de la pista WRO, confusión que sucedieron en las primeras prácticas. 
+
+<br clear="left" />
+<br>
 
 ## 6j. Diagrama de Flujo de Reto con Obstáculos
 
