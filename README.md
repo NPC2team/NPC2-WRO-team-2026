@@ -16,7 +16,6 @@
 - a. Chasis 
 - b. Sistema de Tracción 
 - c. Sistema de Dirección 
-- d. Lista de Componentes
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
 - a. Sistema de Potencia 
 - b. Power Budget 
@@ -39,6 +38,11 @@
 - k. Diagrama de Flujo de Reto con Obstáculo
 - l. Métricas de Desempeño del Reto con Obstáculos
 - m. Ajustes Realizados en Ambos Retos
+## **7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)** 
+
+## **8. Instrucciones de Reproducibilidad (Criterio 5)** 
+
+
 
 ## **1. Encabezado e Información del Equipo** 
 
@@ -234,66 +238,6 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 
 
 **_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._** 
-
-## 4d. Lista de Componentes 
-
-Para facilitar su reproductibilidad anexamos lista completa de los componentes. Todos los enlaces de compra de cada componente en la sección 8.1 de este README.<br>
-Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
-
-|**Componente**|
-|---|
-|Raspberry Pi 5 - 16 GB RAM Official Raspberry Pi 5|
-|Official Raspberry Pi 5 Active Cooler| 
-|Pimoroni NVMe Base for Raspberry Pi 5|
-|Silicon Power 128GB NVMe M.2 PCIe Gen3x4 2280 SSD|
-|Silicon Power 32GB 3D NAND High Speed MicroSD Card with Adapter|
-|Pimoroni Pico Plus 2 - RP2350 Dev Board with Pico Shape and Pins - PIM724| 
-|Adafruit Terminal PiCowbell for Pico with Reset Button & STEMMA QT|
-|LDROBOT STL-27L| 
-|Raspberry Pi Global Shutter Camera|
-|1080P CCTV Lens 2.8mm  M12 Mount 2MP Aperture F2.0 1/2.7 Format for Camera|
-|Raspberry Pi 5 FPC Camera Cable - 22-pin 0.5mm to 15-pin 1mm - 200mm long|
-|Adafruit VL53L4CD Time of Flight Distance Sensor - ~1 to 1300mm - STEMMA QT / Qwiic|
-|Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 - STEMMA QT / Qwiic|
-|34:1 Metal Gearmotor 25Dx67L mm MP 12V with 48 CPR Encoder|
-|VNH5019 Motor Driver Carrier|
-|Savox SC-1251MG Be Coreless Motor Metal Gear|
-|5V, 5.5A Step Down Voltage Regulator D36V50F5|
-|Pololu 5V, 9A Step Down Voltage Regulator D24V90F5|
-|Batería: LiPo 3S (11.1V) - 3200mAh|
-|64mm Metal Drive Wheel Inner Dia 6mm Aluminum Rubber Tires|
-|SparkFun Qwiic MultiPort|
-|Flexible Qwiic Cable - 50mm|
-|SUNGUY 10Gbps USB Cable 6 inch, 3A USB C 3.1 Gen2 Cable Data Transfer, USB C|
-|SUNGUY 10Gbps USB Cable 1FT, 3A USB C 3.1 Gen2 Cable Data Transfer, USB C|
-|KYX Racing Hard Steel Freewheel Axle Front Drive Shaft for 1/10 Rc Crawler Tamiya DT04|
-|uxcell 5mm x 100mm 304 Stainless Steel Solid Round Rod for DIY Craft|
-|uxcell M3 3.0xL15mm Lever Steering Linkage Tie Rod End Ball Head End for RC|
-|uxcell M3x30mm Pushrod Connector Stainless Steel Rod Linkage|
-|Tamiya TT-02 Hi-Torque Servo Saver Set|
-|KYX Racing Aluminum Front Steering Knuckles for 1/10 Rc Crawler Tamiya DT04| 
-
- **Listado de impresiones 3D** 
-
-||Formato|Formato|
-|---|---|---|
-|Pieza|3mf|STL|
-|Canal 2 Cables Tapa|x|x|
-|Canal 3 Cables Tapa|x|x|
-|Canal 4 Cables Tapa|x|x|
-|Canal 2 Cables|x|x|
-|Canal 3 Cables|x|x|
-|Canal 4 Cables|x|x|
-|Chasis Abajo V2|x|x|
-|Chasis Arriba V2|x|x|
-|Espaciador de Eje|x|x|
-|Gear Box Diferencial|x|x|
-|Gear Diferencial|x|x|
-|Gear Motor con<br>Flange|x|x|
-|Repisa|x|x|
-|Soporte Motor VF|x|x|
-|Soporte Servo VF|x|x|
-|Sujetador de Cables|x|x|
 
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
@@ -702,7 +646,7 @@ score = min(d, DIST_SAT) / DIST_SAT − PESO_RUMBO × |desvío_del_rumbo|
 DIST_SAT = 1.6 m       PESO_RUMBO = 0.0015
 ```
 
-Adicionalmente para cada uno de las 60 rutas candidatas, se aplica el principio de "ray marching" donde no solo se observa el punto candidato si no que también se mide un radio de 7,5 cm de cada lado para cerciorarnos que el robot pueda caber por esa ruta, si en la ruta candidata se choca con algun objeto al ver el ray marching, etonces esa ruta es descartada o su distancia maxima se limita hasta donde si cabe el ray marching.  
+Adicionalmente para cada uno de las 60 rutas candidatas, se aplica el principio de "ray marching" donde no solo se observa el punto candidato si no que también se mide un radio de 7,5 cm de cada lado para cerciorarnos que el robot pueda caber por esa ruta, si en la ruta candidata se choca con algun objeto al ver el ray marching, entonces esa ruta es descartada o su distancia maxima se limita hasta donde si cabe el ray marching.  
 
 <br clear="left" />
 
@@ -722,6 +666,10 @@ La altura en píxeles funciona como proxy de distancia: un pilar cercano se ve g
 
 La Capa 3 "SpiderSense" es el reflejo de emergencia para casos donde las paredes laterales o los obstaculos estan muy cerca, para esto el LiDAR dos sectores laterales (25° a 75° en cada lado del robot) y calcula la distancia mínima en cada uno. Si la distancia del lado izquierdo cae por debajo de 22 cm y el robot está virando hacia la izquierda (steering < 0), entonces el comando de steering se divide entre 3. Lo mismo para el lado derecho. La doble condición (peligro lateral + giro hacia el peligro) es clave, si el robot está virando hacia el lado contrario, no hay riesgo de colisión inminente. Al dividir entre 3 el steering lo que se busca es atenuar el angulo de giro para evitar la colisión lateral 
 
+```
+Si d_izq < 22 cm AND robot vira a la izquierda -> steering / 3
+Si d_der < 22 cm AND robot vira a la derecha -> steering / 3  
+```
 
 **Fin de carrera:** 
 
@@ -758,7 +706,7 @@ nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica
 
 ## 6l. Métricas de Desempeño del Reto con Obstáculos 
 
-Después de 3 días de pruebas físicas en la pista oficial WRO: 
+Después de 5 días de pruebas físicas en la pista oficial WRO: 
 
 |**Métrica**|**Resultado**|
 |---|---|
@@ -773,15 +721,20 @@ Data de prueba recopilada hasta el 29/6, que ha ido mejorando con ajustes de vel
 
 ## 6m. Ajustes Realizados en Ambos Retos
 
-- Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
+- Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2 - Sección 6e. Estrategia del Reto Abierto_. 
 
 - Al comienzo habíamos establecido, que una vez que el robot comenzara a girar, saliera del modo giro cuando el error con respecto al ángulo objetivo ya se hubiera reducido a 45° (la mitad), esto para evitar sobregiros por la velocidad pasando el P Controller de un KP_GIRO más alto a  KP_RECT mas gradual, pero obtuvimos muchos subgiros y activación de aperturas no reales que provocaban nuevos giros. La solución: 
 
    - Luego de un proceso iterativo redujimos el error para pasar de KP_GIRO a KP_RECT de 45° a 15° 
-
    - Redujimos las velocidades a la mitad, quedando en 0.4 m/s en rectas y 0.25 m/s en curvas. Favoreciendo confiabilidad vs velocidad. 
 
-Con estos ajustes logramos una tasa de éxito muy elevada incluso con cambios en el tamaño del cuadro central a 1,4m y 1,8 m por lado. La velocidad reducida y el esquema dual del P-Controller han permitido que los ajustes post giro se han muy leves y a veces imperceptibles. 
+Con estos ajustes logramos una tasa de éxito muy elevada en el Reto Abierto, incluso con cambios en el tamaño del cuadro central a 1,4m y 1,8m por lado. La velocidad reducida y el esquema dual del P-Controller han permitido que los ajustes post giro se han muy leves y a veces imperceptibles. 
+
+- **Proyecto Mahoraga** en el Reto con Obstáculos arrancaba todo el tiempo recto y no cruzaba pese a detectar rutas en las aperturas, razón por lo que tuvimos que recalibrar el mecanismo de score que daba a cada ruta candidata, disminuyendo la penalización de no ir a la dirección actual. Pese a recalibrar, logramos el efecto contrario donde siempre se inclinaba con mas fuerza a donde hubiera la mayor apertura, provocando giros mas agresivos hacia la ruta ideal, está pendiente evaluar si limitar el giro maximo que podía hacer en cada iteracción para suavizar el comportamiento.
+
+- Para el Reto con Obstáculos también vimos la necesidad de reducir la velocidad y así dar mas tiempo para la detección de obstáculos y la maniobra de evasión, quedando en 0.3 m/s en rectas y 0.20 m/s en curvas.
+
+Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con Obstáculos, quedando pendiente aún mas pruebas y el ajuse de velocidad, capacidad de giro y posiblemente esttructurar una maniobra de retroceso cuando no sea posible hacer la evasión del obstáculo. Adicionalmente está pendiente la estrategía del estacionamiento.
 
 ## 7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)
 
@@ -789,42 +742,41 @@ Esta sección documenta cómo los subsistemas del robot trabajan juntos, las res
 
 ## 7a. Diagrama de Bloques del Sistema
 
-<img width="1104" height="602" alt="Diagrama de Subsistemas" src="https://github.com/user-attachments/assets/495105a4-db5d-4ad6-80fe-070cfcc5d145" />
+<img width="1100" height="600" alt="Diagrama de Subsistemas" src="https://github.com/user-attachments/assets/6603342d-d4cd-45a9-a2ca-d9efe30c329e" />
 
 ## 7b. Interacción entre Subsistemas
 
 | Subsistema A | Subsistema B | Interacción |
 |---|---|---|
-| LiDAR STL-27L | Control (RPi 5) | Publica `/scan` a 10 Hz → control extrae sectores frontal/laterales |
-| Cámara GS + lente 2.8 mm | Nodo de visión (RPi 5) | Detecta pilares R/G/M y publica `/pilares` (formato `R:cx:h;G:cx:h`) |
-| Pico Plus 2 | RPi 5 | UART USB 921600 baud, CSV → topics `/npcpos`, `/imu`, `/encoder`, `/start` |
-| IMU BNO085 | Pico Plus 2 | I²C 100 Hz → integración con encoder produce `POS,x,y,θ,acc_yaw` |
+| LiDAR STL-27L | Control (RPi 5) | Publica /scan a 10 Hz → control extrae sectores frontal/laterales |
+| Cámara GS + lente 2.8 mm | Nodo de visión (RPi 5) | Detecta pilares R/G/M y publica /pilares (formato R:cx:h;G:cx:h) |
+| Pico Plus 2 | RPi 5 | UART USB 921600 baud, CSV → topics /npcpos, /imu, /encoder, /start |
+| IMU BNO085 | Pico Plus 2 | I²C 100 Hz → integración con encoder produce POS,x,y,θ,acc_yaw |
 | Encoder motor | Pico Plus 2 | Interrupción RISING en GP2 + lectura GP3 → odometría a 100 Hz |
-| Control (RPi 5) | Pico Plus 2 | Publica `/cmd_motor` (m/s) y `/cmd_servo` (-1..+1) a 40 Hz |
+| Control (RPi 5) | Pico Plus 2 | Publica /cmd_motor (m/s) y /cmd_servo (-1..+1) a 40 Hz |
 | Pico Plus 2 | VNH5019 | INA/INB + PWM 20 kHz (GP8/9/12) → tracción |
 | Pico Plus 2 | Servo Savox | PWM 50 Hz en GP15 → dirección Ackermann |
 | ToF VL53L4CD ×2 | Pico Plus 2 | I²C vía Qwiic MultiPort, reservados para parking Reto 2 |
-| Botón físico (GP28) | Pico Plus 2 → RPi 5 | Publica `/start` → control captura `section_angle` al arrancar |
+| Botón físico (GP28) | Pico Plus 2 → RPi 5 | Publica /start → control captura section_angle al arrancar |
 
 ## 7c. Restricciones (Constraints) Identificadas
 
 | Restricción | Límite | Impacto en el diseño |
 |---|---|---|
 | Dimensiones máximas | 300 × 200 × 300 mm (regla WRO 2026) | Llevó a chasis personalizado 230×150×126 mm |
-| Peso máximo | 1500 g | El robot final pesa 1100 g (margen +400 g) |
-| Altura paredes pista | 10 cm | **Forzó LiDAR al primer piso adelantado** para barrer a la altura correcta |
-| Altura pilares (Reto 2) | ~10 cm coloreados R/G | **Forzó lente CCTV 2.8 mm (FoV 96°)** para capturar pilares cercanos |
-| FoV útil del LiDAR | Solo 193°–350° (157° hacia adelante) | **Todos los sectores del control deben estar dentro de ese rango** |
-| Voltaje mínimo bus motor | 12 V nominal | **Forzó LiPo 3S** (2S no era suficiente) |
-| Pico de corriente servo | hasta 3.5 A | **Forzó regulador 5V dedicado** al servo (D36V50F5) |
+| Peso máximo | 1500 g | El robot final pesa 1.100 g (margen +400 g) |
+| Altura paredes pista | 10 cm | Forzó LiDAR al primer piso adelantado para barrer a la altura correcta |
+| Altura pilares (Reto 2) | ~10 cm coloreados R/G | Forzó lente CCTV 2.8 mm (FoV 96°) y angulo de 60° para capturar pilares cercanos |
+| FoV útil del LiDAR | Solo 193°–350° (157° hacia adelante) | Todos los sectores del control deben estar dentro de ese rango |
+| Voltaje mínimo bus motor | 12 V nominal | Forzó LiPo 3S (2S no era suficiente) |
+| Pico de corriente servo | hasta 3.5 A | Forzó regulador 5V dedicado al servo (D36V50F5) |
 | Sin Wi-Fi en la pista | 0 conectividad | Arranque autónomo vía systemd + botón físico |
 | Tiempo de boot | ~40 s | Aceptado: priorizamos estabilidad sobre velocidad |
-| Latencia control 40 Hz | <25 ms por ciclo | Determinó protocolo CSV simple sobre micro-ROS |
 
 ## 7d. Decisiones de Diseño Principales
 
 Esta subsección resume las decisiones de ingeniería más importantes con su razonamiento. 
-**Cada decisión sigue el patrón "elegimos X en vez de Y porque…"** 
+**Cada decisión sigue el patrón "elegimos X en vez de Y porque…"** Aunque la comparativa de componentes se hará en el **Engineering Journal, sección 7**.
 
 ### Decisión 1 — Arquitectura: RPi 5 como Cerebro + Pico 2 como ejecutor y reportador de datos 
 
@@ -834,7 +786,7 @@ Esta subsección resume las decisiones de ingeniería más importantes con su ra
 | B: Lógica distribuida (RPi 5 alto nivel, Pico control local) | Descartada |
 | C: Todo en Pico, sin Pi 5 | Descartada |
 
-**Por qué A:** Python en la Pi 5 acelera la iteración de algoritmos
+**Por qué A:** Python en la RPi 5 acelera la iteración de algoritmos
 (ROS 2, OpenCV); el Pico ofrece tiempo real estricto para encoder e
 IMU; la frontera entre los dos es un protocolo CSV legible. **El
 Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
@@ -848,9 +800,9 @@ Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
 | **Pilar 3** | Control en 3 capas (heading, wall-centering, velocidad adaptativa) |
 | **Pilar 4** | Fin de carrera con banda de parada 1,2 a 1,5m |
 
-**Por qué 4 pilares y no máquina de estados grande:** la máquina se reduce a solo 5 estados (`BOOT → READY → RUNNING → FINISH_APPROACH → STOPPED`); el resto de la complejidad vive como capas dentro del estado `RUNNING`, fácil de tunear capa porcapa sin tocar las otras.
+**Por qué 4 pilares y no máquina de estados grande:** la máquina se reduce a solo 5 estados (`BOOT → READY → RUNNING → FINISH_APPROACH → STOPPED`); el resto de la complejidad vive como capas dentro del estado `RUNNING`, fácil de ajustar capa por capa sin tocar las otras.
 
-### Decisión 3 — Reto 2: Siguiendo Camino de 3 capas
+### Decisión 3 — Reto con Obstáculos: Siguiendo Camino de 3 capas
 
 | Capa | Función | Sensor principal |
 |---|---|---|
@@ -864,7 +816,7 @@ de esquina, que es mas dificil en la presencia de obstaculos. La cámara es solo
 ### Decisión 4 — Conteo de vueltas por yaw acumulado, no por esquinas
 
 **Por qué |acc_yaw| > 900° en Reto 2** (en lugar de contar giros como en Reto 1): los pilares fuerzan trayectorias no rectangulares; el robot puede "girar" 90° por una curva *o* por una evasión, y
-contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos.
+contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos. Solo hay que configurar bien el color Magenta.
 
 ### Decisión 5 — Detección de sentido CW/CCW en la primera esquina
 
@@ -873,45 +825,39 @@ contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos.
 **Decisión:** adoptar enfoque de esperar a la primera esquina y elegir el lado con apertura.
 **Resultado:** robusto, se eliminó un estado `DETECTING_SENSE` que estaba presente en una versión inicial del Reto 1.
 
-## 7.5 Análisis de Riesgos y Mitigación
+## 7.e Análisis de Riesgos y Mitigación
 
 | Riesgo | Probabilidad | Impacto | Mitigación implementada |
 |---|---|---|---|
-| Caída del riel 5V por pico del servo | Media | Reset de la RPi 5 a mitad de carrera | **Regulador dedicado al servo** (D36V50F5) |
+| Caída del riel 5V por pico del servo | **Alto** | Reset de la RPi 5 a mitad de carrera | **Regulador dedicado al servo** (D36V50F5) |
 | EMI del motor sobre IMU | Media | Yaw inestable | IMU en piso superior + canales de cable separados |
-| LiDAR no ve paredes de 10 cm | Alta si mal montado | Imposibilidad de centrarse | **LiDAR en primer piso, no en piso superior** |
-| ToF lee basura a <15 mm | Alta | Lecturas espurias en parking | Sensor retraído ≥15 mm + filtro software |
-| Cámara con rolling shutter distorsiona | Alta | Falsos positivos de pilar | **Global shutter elegida específicamente** |
+| LiDAR no ve paredes de 10 cm | **Alta si mal montado** | Imposibilidad de centrarse | **LiDAR en primer piso, no en piso superior** |
+| ToF lee basura a <15 mm | Media | Lecturas espurias en parking | Sensor retraído ≥15 mm + filtro software |
+| Cámara sin rolling shutter distorsiona | Media | Falsos positivos de pilar | Global shutter elegida específicamente |
 | Variación de iluminación en pista | Alta | Falla detección de color | Calibración HSV in-situ con `calibrador_hsv.py` |
-| Pérdida de comunicación Pi ↔ Pico | Baja | Robot fuera de control | Reconexión USB automática en bridge + watchdog firmware (pendiente) |
+| Pérdida de comunicación Pi ↔ Pico | Baja | Robot fuera de control | Reconexión USB automática en bridge |
 | Robot atascado contra pared | Media | Pérdida de la ronda | SpiderSense reflejo lateral (Capa 3 Reto 2) |
 
 
-## 7.6 Historial de Iteraciones (resumen)
+## 7.f Historial de Iteraciones (resumen)
 
 | Versión | Cambio principal | Resultado |
 |---|---|---|
-| **V1.0** | Diseño inicial 3 pisos, motor 20.4:1, batería 2S, servo PS1171MG, LiDAR arriba | Demasiado alto, par insuficiente, LiDAR no ve paredes bajas |
-| **V2.0** | Rediseño chasis 2 pisos + subnivel, motor 34:1, batería 3S, servo Savox SC-1251MG, LiDAR abajo y adelante | Geometría compacta, Ackermann real, LiDAR ve paredes |
-| **V3.0** | Servo movido detrás de las ruedas delanteras, doble regulador 5V, canales de cable modulares | Sistema robusto, aislamiento de transitorios, cableado limpio |
-| **Open Challenge V1** | 4 pilares con detección de sentido pre-arranque | No funcionaba consistentemente |
-| **Open Challenge V2** | Detección de sentido en primera esquina, UMBRAL_FIN_GIRO bajado a 15° | Estable en 2+ días de pruebas en pista oficial |
-| **Reto 2 V1** | Gap follower de 3 capas "Siguiendo Camino" | En depuración (varios bugs encontrados y corregidos, ver Journal) |
+| **V0.1** | Diseño inicial 3 pisos, motor 20.4:1, batería 2S, LiDAR arriba, 1 sólo regulador | Demasiado alto, potencia insuficiente, LiDAR no ve paredes bajas o montarlo volteado como algunos equipos |
+| **V1.0** | Rediseño chasis 2 pisos + compartimiento de batería, motor 34:1, batería 3S, servo Savox SC-1251MG digital, LiDAR abajo y adelante + 2 reguladores | Geometría compacta, Ackermann real, LiDAR ve paredes, Mejor distribucción de energía |
+| **V2.0** | Compartimiento de batería y repisa, generaron un subnivel para ubicar IMU y botón de arranque, asi como mejorar cableado| Sistema robusto, cableado limpio, sin necesidad de 3er Nivel **✓** |
+| **Reto Abierto V1** | 4 pilares con detección de sentido pre-arranque | No funcionaba consistentemente |
+| **Reto Abierto V2** | Detección de Sentido por 1era Esquina, Reducción de Velocidad y Ajuste del P Control  | Estabilidad y Alta Tasa de Ëxito del Reto Abierto **✓** |
+| **Reto con Obstaculos V1** | Gap follower de 3 capas "Siguiendo Camino-RecortexColor y SpiderSense" | Aún en ajustes, con cambios en parametros y velocidad para dar mas tiempo de respuesta  |
 
-# 8. Instrucciones de Reproducibilidad
+# 8. Instrucciones de Reproducibilidad (Criterio 5)
 
-> *Criterio 5 — Rúbrica WRO Future Engineers 2026.*
-> Esta sección permite que **otro equipo pueda replicar el robot
-> NPC desde cero**. Incluye lista de hardware con links de compra,
-> requisitos de software, instalación paso a paso, estructura del
-> repositorio, archivos CAD/3D y procedimiento de arranque en
-> competencia.
+ Esta sección permite que **otro equipo pueda replicar el robot **Proyecto Mahoraga** desde cero. Incluye lista de hardware con links de compra, requisitos de software, instalación paso a paso, estructura del repositorio, archivos CAD/3D y procedimiento de arranque en
+competencia. Sin embargo, el emsamblaje y el paso a paso estará aún más detallado en el **_Engineering Journal Sección 8_**.
 
-## 8.1 Requisitos de Hardware
+## 8.a Requisitos de Hardware
 
-Lista completa de componentes utilizados, con sus links de compra
-oficiales. La lista detallada con descripción y precios está en
-[`/docs/lista-componentes.md`](./lista-componentes.md).
+Para facilitar su reproductibilidad anexamos lista completa de los componentes con los enlaces de compra de cada componente.<br>
 
 | Categoría | Componente | Modelo / SKU | Cant. | Link |
 |---|---|---|---|---|
@@ -937,16 +883,52 @@ oficiales. La lista detallada con descripción y precios está en
 | | Regulador 5V — Lógica | Pololu D24V90F5 (5 V, 9 A) | 1 | [Pololu 2866](https://www.pololu.com/product/2866) |
 | | Regulador 5V — Servo | Pololu D36V50F5 (5 V, 5.5 A) | 1 | [Pololu 4091](https://www.pololu.com/product/4091) |
 | **Mecánica** | Ruedas | 64 mm aluminio + neumático goma | 4 | Amazon |
-| | Eje trasero | KYX Racing Steel Drive Shaft (Tamiya DT04) | 1 | KYX Racing |
-| | Manguetas Ackermann | KYX Racing Aluminum Steering Knuckles | 2 | KYX Racing |
-| | Servo saver | Tamiya TT-02 Hi-Torque + horn aluminio | 1 | Tamiya |
-| | Tie rods | M3 ajustables uxcell | 2 | uxcell |
-| | Ejes | Acero inoxidable 5 mm × 100 mm uxcell | 2 | uxcell |
+| | Eje trasero | KYX Racing Steel Drive Shaft (Tamiya DT04) | 1 | Amazon |
+| | Manguetas Ackermann | KYX Racing Aluminum Steering Knuckles | 2 | Amazon |
+| | Servo saver | Tamiya TT-02 Hi-Torque + horn aluminio | 1 | [Tamiya](https://www.tamiyausa.com/). |
+| | Tie rods | M3 ajustables uxcell | 2 | Amazon |
+| | Ejes | Acero inoxidable 5 mm × 100 mm uxcell | 2 | Amazon |
 | **Cables** | USB-C Pi↔Pico | SUNGUY USB-C 3.1 Gen2 — 6 in y 1 ft | 2 | Amazon |
 | **Mecánica 3D** | Filamento | PLA Bambu Lab | — | Bambu Lab |
 | | Impresora 3D | Bambu Lab P2S | — | Bambu Lab |
 
-## 8.2 Requisitos de Software
+**Listado de impresiones 3D** 
+
+Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
+
+||Formato|Formato|
+|---|---|---|
+|Pieza|3mf|STL|
+|Canal 2 Cables Tapa|x|x|
+|Canal 3 Cables Tapa|x|x|
+|Canal 4 Cables Tapa|x|x|
+|Canal 2 Cables|x|x|
+|Canal 3 Cables|x|x|
+|Canal 4 Cables|x|x|
+|Chasis Abajo V2|x|x|
+|Chasis Arriba V2|x|x|
+|Espaciador de Eje|x|x|
+|Gear Box Diferencial|x|x|
+|Gear Diferencial|x|x|
+|Gear Motor con<br>Flange|x|x|
+|Repisa|x|x|
+|Soporte Motor VF|x|x|
+|Soporte Servo VF|x|x|
+|Sujetador de Cables|x|x|
+
+### Configuración de impresión recomendada
+
+```
+Material:    PLA Bambu Lab
+Boquilla:    0.4 mm
+Capa:        0.2 mm
+Perímetros:  3
+Infill:      25 % (55 % para Chasis)
+Soportes:    Sí - Tipo árbol
+Impresora:   Bambu Lab P2S
+```
+
+## 8.b Requisitos de Software
 
 ### En la Raspberry Pi 5
 
@@ -963,15 +945,17 @@ oficiales. La lista detallada con descripción y precios está en
 ### En la laptop de desarrollo
 
 ```
+- Ubuntu 24.04 LTS (Desktop, en nustro caso hicimos una partición separada a Windows)
 - Arduino IDE 2.3.8
 - Board package: Earle Philhower RP2350 (para Pico Plus 2)
 - Librerías Arduino: Adafruit BNO08x, SparkFun VL53L4CD
+- Visual Studio Code
 - Autodesk Fusion 360 (CAD)
 - Bambu Studio (laminado e impresión)
 - Git
 ```
 
-## 8.3 Instalación Paso a Paso
+## 8.c Instalación Paso a Paso
 
 ### 1) Preparar la Raspberry Pi 5
 
@@ -980,7 +964,7 @@ oficiales. La lista detallada con descripción y precios está en
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-opencv python3-numpy python3-pip
 
-# ROS 2 Jazzy (siguiendo guía oficial)
+# ROS 2 Jazzy Jalisco
 # https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
 sudo apt install -y ros-jazzy-desktop ros-jazzy-cv-bridge
 echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
@@ -1028,13 +1012,11 @@ echo "source ~/wro_ws/install/setup.bash" >> ~/.bashrc
 
 ### 6) Calibración HSV de la cámara (Reto 2)
 
+ Interfaz interactiva con sliders para calibrar rangos HSV de rojo, verde y magenta. 
+
 ```bash
 ros2 run npc_bot calibrador_hsv
 ```
-
-> Interfaz interactiva con sliders para rangos HSV de rojo, verde y
-> magenta. Calibrar **bajo iluminación de la pista oficial**, no en
-> laboratorio.
 
 ### 7) Servicio systemd (auto-arranque, requerido por reglas WRO 9.6–9.14)
 
@@ -1045,10 +1027,9 @@ sudo systemctl enable npc_bot.service
 sudo systemctl start npc_bot.service
 ```
 
-> Tiempo de boot hasta robot listo: **~40 segundos** desde encendido
-> al pitido de "READY".
+Tiempo de boot hasta robot listo: **~40 segundos** desde encendido al pitido de "READY".
 
-## 8.4 Estructura del Repositorio
+## 8.d Estructura del Repositorio
 
 ```
 /
@@ -1096,9 +1077,9 @@ sudo systemctl start npc_bot.service
     └── video.md               ← link a video de demostración (YouTube)
 ```
 
-## 8.5 Cómo Arrancar el Sistema (procedimiento de carrera)
+## 8.e Cómo Arrancar el Sistema
 
-### Opción A — Arranque automático (recomendado en competencia)
+### Opción A — Arranque automático (En competencia)
 
 ```
 1. Conectar batería LiPo 3S
@@ -1109,7 +1090,7 @@ sudo systemctl start npc_bot.service
    y arranca la lógica de carrera
 ```
 
-### Opción B — Arranque manual (para depuración)
+### Opción B — Arranque manual (En prácticas para depuración)
 
 Terminal 1 — LiDAR:
 ```bash
@@ -1132,39 +1113,8 @@ Terminal 4 (solo Reto 2) — Cámara + visión:
 ros2 launch npc_bot base_reto2.launch.py
 ```
 
-## 8.6 Archivos CAD / 3D
 
-Todos los archivos están en [`/models`](../models/) en formato STL
-(geometría) y 3MF (proyecto Bambu Studio con parámetros de impresión).
-
-| Pieza | Archivo | Material | Tiempo de impresión |
-|---|---|---|---|
-| Chasis Abajo V2 (primer piso) | `Chassis Abajo V2.stl` / `.3mf` | PLA | 12 h |
-| Chasis Arriba V2 (2do piso + subnivel) | `Chassis Arriba V2.stl` / `.3mf` | PLA | Pendiente |
-| Gear Box Diferencial | `Gear Box Diferencial.stl` / `.3mf` | PLA | Pendiente |
-| Gear Diferencial (engranajes cónicos) | `Gear Diferencial.stl` / `.3mf` | PLA | Pendiente |
-| Gear Motor con Flange | `Gear Motor con Flange.stl` / `.3mf` | PLA | Pendiente |
-| Soporte Motor VF | `Soporte Motor VF.stl` / `.3mf` | PLA | Pendiente |
-| Soporte Servo VF | `Soporte Servo VF.stl` / `.3mf` | PLA | Pendiente |
-| Repisa | `Repisa.stl` / `.3mf` | PLA | Pendiente |
-| Espaciador de Eje | `Espaciador de Eje.stl` / `.3mf` | PLA | Pendiente |
-| Canal Cables 2 / 3 / 4 + Tapas | `Canal 2/3/4 Cables [Tapa].stl` | PLA | Pendiente |
-| Sujetador Cables | `Sujetador Cables.stl` / `.3mf` | PLA | Pendiente |
-| Motor Pololu 25D (referencia) | `25d-metal-gearmotor-34-47-encoder.step` | — | (modelo importado del fabricante) |
-
-### Configuración de impresión recomendada
-
-```
-Material:    PLA Bambu Lab
-Boquilla:    0.4 mm
-Capa:        0.2 mm
-Perímetros:  3
-Infill:      25 % (55 % para Chasis)
-Soportes:    Sí - Tipo árbol
-Impresora:   Bambu Lab P2S
-```
-
-## 8.7 Notas de Ensamblaje
+## 8.f Notas de Ensamblaje
 
 > **Pendiente de redactar:** secuencia de ensamblaje paso a paso.
 > Sugerencia: incluir 6–8 fotos del proceso (primer piso completo,
