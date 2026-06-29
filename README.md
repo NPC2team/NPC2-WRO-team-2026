@@ -26,18 +26,19 @@
 - f. Diagrama de Cableado 
 - g. Decisión de Diseño
 ## **6. Arquitectura de Software y Estrategia de Obstáculos  (Criterio 3)** 
-- a. Visión General 
-- b. Tópicos 
-- c. Firmware del Pico 2 
-- d. Estrategia del Reto Abierto
-- e. Diagrama de Flujo de Reto Abierto
-- f. Métricas de Desempeño del Reto Abierto 
-- g. Nodos y Tópicos de Reto con Obstáculos
-- h. Estrategia del Reto con Obstáculos
-- i. Detección de Pilares R/G/M (cámara)
-- j. Diagrama de Flujo de Reto con Obstáculo
-- k. Métricas de Desempeño del Reto con Obstáculos
-- l. Ajustes Realizados en Ambos Retos
+- a. Visión General
+- b  Estructura del Código
+- c. Tópicos 
+- d. Firmware del Pico 2 
+- e. Estrategia del Reto Abierto
+- f. Diagrama de Flujo de Reto Abierto
+- g. Métricas de Desempeño del Reto Abierto 
+- h. Nodos y Tópicos de Reto con Obstáculos
+- i. Estrategia del Reto con Obstáculos
+- j. Detección de Pilares R/G/M (cámara)
+- k. Diagrama de Flujo de Reto con Obstáculo
+- l. Métricas de Desempeño del Reto con Obstáculos
+- m. Ajustes Realizados en Ambos Retos
 
 ## **1. Encabezado e Información del Equipo** 
 
@@ -401,8 +402,29 @@ La comunicación entre las dos capas ocurre por USB serial (921600 baudios) usan
 
 <img width="612" height="474" alt="Nodos y Topicos Reto 1" src="https://github.com/user-attachments/assets/350644a9-b4a9-480d-b60c-c625360d443f" />
 
+## 6b.Estructura del Código
 
-## 6b.Tópicos 
+```
+src/
+├── firmware/
+│   └── pico_firmware.ino          # Firmware C++ del Pico (Arduino)
+├── npc_bot/                       # Paquete ROS 2 Python
+│   ├── pico_bridge_node.py        # Puente USB ↔ topics ROS 2
+│   ├── control_node.py            # Reto 1: Open Challenge
+│   ├── control_node_reto2.py      # Reto 2: Obstacle Challenge
+│   ├── nodo_camara.py             # Visión (solo Reto 2)
+│   └── calibrador_hsv.py          # Calibración HSV interactiva
+├── npc_interfaces/
+│   └── msg/NpcPose.msg            # Mensaje custom {x,y,θ,acc_yaw}
+├── launch/
+│   ├── npc_bot.launch.py          # Lanza Reto 1 completo
+│   └── base_reto2.launch.py       # Lanza Reto 2 completo
+└── systemd/
+    └── npc_bot.service            # Arranque Automatico 
+```
+
+
+## 6c.Tópicos 
 
 Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los nodos suscriptores y publicador fundamental para la comunicación en ROS2.
 
@@ -417,7 +439,7 @@ Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los
 |/encoder|std_msgs/Int32|pico_bridge|(debug)|Ticks crudos del encoder|
 
 
-## 6c. Firmware del Pico 2 
+## 6d. Firmware del Pico 2 
 
 El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la RPi5 no debe encargarse. 
 
@@ -447,7 +469,7 @@ M < velocidad_ms > **`→`** Velocidad del motor en m/s
 S < direccion > **`→`** Servo, rango [-1.0, +1.0] 
 STOP **`→`** Parada de emergencia 
 
-## 6d. Estrategia del Reto Abierto 
+## 6e. Estrategia del Reto Abierto 
 
 La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación. 
 
@@ -616,12 +638,12 @@ La máquina de estados de alto nivel tiene cinco estados:
 |**FINISH_APPROACH**|Heading y centrado activos, sin detección de esquinas, perfil de<br>velocidad basado en la distancia frontal.|
 |**STOPPED**|Motor y servo en 0. Estado terminal.|
 
-## 6e. Diagrama de Flujo de Reto Abierto
+## 6f. Diagrama de Flujo de Reto Abierto
 
 <img width="1911" height="1077" alt="Reto1" src="https://github.com/user-attachments/assets/8688b286-6c20-4c30-901a-c8fbc9baaf0d" />
 
 
-## 6f. Métricas de Desempeño del Reto Abierto 
+## 6g. Métricas de Desempeño del Reto Abierto 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
@@ -641,7 +663,7 @@ Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar l
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
-## 6g. Nodos y Tópicos de Reto con Obstáculos 
+## 6h. Nodos y Tópicos de Reto con Obstáculos 
 
 Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), en el Reto con Obstáculos interviene la cámara y por eso se incluye un nodo_camara y tiene su propio codigo de control denominado "control_node_reto2". En cuanto a topicos ademas de los del Reto Abierto se incluye el tópico de detección de los pilares "/pilares"
 
@@ -658,7 +680,7 @@ Adicional a los nodos y tópicos del Reto Abierto (Seccion 6a y 6b del Readme), 
 | /cmd_servo | std_msgs/Float32 (−1…+1) | control → pico_bridge |
 | /pilares | std_msgs/String (`R:cx:h;G:cx:h;M:cx:h`) | nodo_camara → control_reto2 |
 
-## 6h. Estrategia del Reto con Obstáculos 
+## 6i. Estrategia del Reto con Obstáculos 
 
 La lógica del Reto con Obstáculos está organizada en una navegación distinta a la del Reto Abierdo, donde la detección de esquinas era fundamental para hacer los cruces. En este reto abandonamos eso y si bien mantenemos los Estados simples, la navegación se hace siguiendo 3 capas de orientación que conviven 1) Ruta Proyectada 2) Recorte por Color y 3) SpiderSense.
 
@@ -670,7 +692,7 @@ La lógica del Reto con Obstáculos está organizada en una navegación distinta
 
 **Capa 1 — Ruta Proyectada (Ray Marching)**
 
-<img width="460" height="480" align="left" alt="Ruta Proyectada" src="https://github.com/user-attachments/assets/0c05d8f7-bd39-4baf-bbd3-0b2e3b692d20" />
+<img width="460" height="480" align="left" alt="Ruta Proyectada" src="https://github.com/user-attachments/assets/7153eb87-3d9f-4852-8b41-2012b0090877" />
 
 En la La Capa 1, el LiDAR reporta un abanico de direcciones candidatas frente al robot (de −60° a +60° en intervalos de 2° - 60 lecturas) y cada una se convierte en una "Ruta Viable", entonces para cada una se calcula un "score" para determinar cual es la trayectoria ideal o best_dir. Ese score combina 2 cosas, 1) Cuán lejos puede ir el robot en esa dirección sin chocar con algo y 2) Que tan desviada está esa dirección respecto al rumbo objetivo de la pista. La dirección ganadora es la propuesta inicial de hacia dónde dirigirse.
 
@@ -703,14 +725,14 @@ La Capa 3 "SpiderSense" es el reflejo de emergencia para casos donde las paredes
 
 **Fin de carrera:** 
 
-Como no tenemos giros y esquinas como en el reto 1, que para finalizar la carrera, contabamos 12 giros, entonces establecimos una medición acumulada de giro en terminos absoluto del IMU |acc_yaw| y que cuando este supere los 900°, equivalenten a 2,5 vueltas, entonces buscar el proximo color magenta, que justamente es el estacionamiento y cuando lo vea se detenga en esa sección, siguiendo la estrategia del Reto Abierto, es decir, parar cuando este entre 1,3m y 1,5m de la pared frontal de esa sección.
+Como no tenemos giros y esquinas como en el Reto Abierto, que para finalizar la carrera, contabamos 12 giros, entonces establecimos una medición acumulada de giro en terminos absoluto del IMU |acc_yaw| y que cuando este supere los 900°, equivalenten a 2,5 vueltas, entonces buscar el proximo color magenta, que justamente es el estacionamiento y cuando lo vea se detenga en esa sección, siguiendo la estrategia del Reto Abierto, es decir, parar cuando este entre 1,3m y 1,5m de la pared frontal de esa sección.
 
 
 `|acc_yaw| > 900°` **AND** detección de blob
 magenta con altura ≥ 60 px (caja de parada), luego parada por
 distancia frontal como en Reto 1.
 
-## 6i. Detección de Pilares R/G/M (cámara)
+## 6j. Detección de Pilares R/G/M (cámara)
 
 <img width="300" height="320" align="left" alt="Detección de Pilares" src="https://github.com/user-attachments/assets/68cab891-b796-4743-8e43-a9954c33ba31" />
 
@@ -729,28 +751,27 @@ nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica
 <br clear="left" />
 <br>
 
-## 6j. Diagrama de Flujo de Reto con Obstáculos
+## 6k. Diagrama de Flujo de Reto con Obstáculos
 
 <img width="600" height="1075" alt="Reto2" src="https://github.com/user-attachments/assets/8b36ad02-b3b0-473f-b923-e1e8d9394cd6" />
 
 
-## 6k. Métricas de Desempeño del Reto con Obstáculos 
+## 6l. Métricas de Desempeño del Reto con Obstáculos 
 
 Después de 3 días de pruebas físicas en la pista oficial WRO: 
 
 |**Métrica**|**Resultado**|
 |---|---|
-|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|
-|Precisión del conteo de giros|12/12 giros contados correctamente, no se<br>generan dobles giros por restricciones<br>colocadas para ello, aprendidas en WRO<br>2025|
-|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque<br>por fallo en lectura de apertura, corregido|
-|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|
-|Posición lateral durante rectas|< 5 cm de desviación del centro del<br>corredor, mucho más robusto con el control<br>dual Heading y Centrado|
-|Heading después de completar un giro|Dentro de 5° del objetivo|
-|Tiempos Promedios en Pruebas| 40 segundos|
+|Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)|
+|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV| 
+|Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|. 
+|Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|
+|Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|
+|Tiempos Promedios en Pruebas| 32 segundos por Vuelta|
 
-Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
+Data de prueba recopilada hasta el 29/6, que ha ido mejorando con ajustes de velocidad. 
 
-## 6l. Ajustes Realizados en Ambos Retos
+## 6m. Ajustes Realizados en Ambos Retos
 
 - Inicialmente diseñamos una detección de sentido pre-arranque más ambiciosa analizando discontinuidades del LiDAR mientras el robot estaba estacionario. La idea era detectar el lado en donde estaban las discontinuidades más importantes, para detectar hacia qué lado estaba la apertura, pero la tasa de éxito dependía mucho de la posición inicial del robot por lo que pasamos a una estrategia más reactiva como la comentada en el _Pilar 2_ . 
 
