@@ -894,6 +894,8 @@ Para facilitar su reproductibilidad anexamos lista completa de los componentes c
 
 **Listado de impresiones 3D** 
 
+Se realizó un Anexo de la Sección 8.1. dedicado a las Piezas 3D, su distintas evoluciones, fotos de su prototipo, versiones en 3D y Foto del componente ya impreso. El anexo está disponible **/materials.** 
+
 Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
 
 ||Formato|Formato|
