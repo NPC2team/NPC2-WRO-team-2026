@@ -1,4 +1,4 @@
-# Anexo de Sección 8.1. Piezas 3D
+# Anexo de Sección 8.a. Piezas 3D
 
 Presentamos el evolutivo de la Piezas Impresas en 3D de **Proyecto Mahoraga**. Se utilizó una Impresora Bambu Lab P2S con Filamento PLA, excepto en el caso del engranaje del Motor que en su última versión necesitó un filamenento de Nylon (PA de Fibra de Carbono) mas resistente y que soporta mayores temperaturas. El infill general utilizado fue 15% por default, excepto en el chasis que se ajustó en las últimas versiones a 55% para mayor fortaleza y algunas otras piezas que requirieron un poco mas de Infill (30%).
 
