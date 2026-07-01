@@ -566,7 +566,6 @@ Después de completarse el 12° giro (turn_count == 12), el estado transita a FI
 |< 1.2 m|-0.2 m/s|Marcha atrás|
 
 
-
 **Máquina de Estados** 
 
 La máquina de estados de alto nivel tiene cinco estados: 
@@ -894,7 +893,7 @@ Para facilitar su reproductibilidad anexamos lista completa de los componentes c
 
 **Listado de impresiones 3D** 
 
-Se realizó un Anexo de la Sección 8.1. dedicado a las Piezas 3D, su distintas evoluciones, fotos de su prototipo, versiones en 3D y Foto del componente ya impreso. El anexo está disponible **/materials.** 
+Se realizó un Anexo de la Sección 8.1. dedicado a las Piezas 3D, su distintas evoluciones, fotos de su prototipo, versiones en 3D y Foto del componente ya impreso. El anexo está disponible **/materials/Piezas 3D.md**
 
 Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
 
