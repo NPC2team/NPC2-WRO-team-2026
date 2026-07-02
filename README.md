@@ -1137,4 +1137,64 @@ Resumen del orden recomendado:
 11. Calibrar IMU (figura de 8) y encoder (`2006 ticks/m` validados)
 12. Calibrar HSV de la cámara bajo iluminación de la pista
 
+<table>
+  <tr>
+    <td align="center">
+      <b>Ensamble del Diferencial</b><br>
+      <img width="960" height="1280" alt="01 Diferencial con Soporte" src="https://github.com/user-attachments/assets/6e5646f1-0f24-48be-b2f5-8573089c3192" />
+    </td>
+    <td align="center">
+      <b>Soportes del Diferencial + Ruedas</b><br>
+      <img width="960" height="1280" alt="02 Diferencial con Ruedas" src="https://github.com/user-attachments/assets/f1fe4b57-816f-43ad-9fba-1a12d8b0aa38" />
+    </td>
+    <td align="center">
+      <b>Montaje del Motor</b><br>
+      <img width="960" height="1280" alt="03 Motor" src="https://github.com/user-attachments/assets/b26effcc-1b17-4a2a-98c8-e82fbcee9ebe" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Montaje de Dirección</b><br>
+      <img width="791" height="964" alt="05 Servo" src="https://github.com/user-attachments/assets/f63274ec-be18-4463-8ca0-09d9c5613019" />
+    </td>
+  <td align="center">
+  <b>Colocación del Servo</b><br>
+  <img width="907" height="1137" alt="06 LiDAR" src="https://github.com/user-attachments/assets/2f99dec4-c244-4012-81f6-0559b57d0ed7" />
+</td>
+    <td align="center">
+      <b>Colocación del Chasis Superior</b><br>
+      <img width="824" height="667" alt="08 Chasis Arriba" src="https://github.com/user-attachments/assets/8e4b45b6-1c51-4d72-a92e-ddffc996772b" />
+    </td>
+  </tr>
+</table>
 ---
+<table>
+  <tr>
+    <td align="center">
+      <b>Colocación de Driver del Motor y Regulador</b><br>
+      <img width="960" height="1280" alt="09 VNH + Reg" src="https://github.com/user-attachments/assets/97845b76-bd8d-4c42-a3a6-7559b54dd561" />
+    </td>
+    <td align="center">
+      <b>Reguladoe del Servo</b><br>
+      <img width="960" height="1280" alt="10 Conexion Reg Servo" src="https://github.com/user-attachments/assets/94fdc828-db87-4f66-832b-b3845d0c0dce" />
+    </td>
+    <td align="center">
+      <b>Colocación de Pico 2 Plus</b><br>
+      <img width="864" height="1220" alt="15 Conexion Pico 2 Plus" src="https://github.com/user-attachments/assets/5ff79966-f1cc-4f6d-93f1-813cb2b64b93" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>MColocación de RPI 5</b><br>
+      <img width="860" height="1067" alt="131 RPI5" src="https://github.com/user-attachments/assets/0953eb00-98e1-4551-b401-8a099996a491" />
+    </td>
+  <td align="center">
+  <b>Botón + IMU BNO085</b><br>
+  <img width="960" height="1036" alt="16 IMU + Boton" src="https://github.com/user-attachments/assets/e9ccc935-7b76-45bb-986b-214debf63de6" />
+</td>
+    <td align="center">
+      <b>Foto Final</b><br>
+      <img width="824" height="667" alt="08 Chasis Arriba" src="https://github.com/user-attachments/assets/8e4b45b6-1c51-4d72-a92e-ddffc996772b" />
+    </td>
+  </tr>
+</table>
