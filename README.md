@@ -884,7 +884,7 @@ Para facilitar su reproductibilidad anexamos lista completa de los componentes c
 | **Mecánica** | Ruedas | 64 mm aluminio + neumático goma | 4 | Amazon |
 | | Eje trasero | KYX Racing Steel Drive Shaft (Tamiya DT04) | 1 | Amazon |
 | | Manguetas Ackermann | KYX Racing Aluminum Steering Knuckles | 2 | Amazon |
-| | Servo saver | Tamiya TT-02 Hi-Torque + horn aluminio | 1 | [Tamiya](https://www.tamiyausa.com/). |
+| | Servo saver | Tamiya TT-02 Hi-Torque | 1 | [Tamiya](https://www.tamiyausa.com/). |
 | | Tie rods | M3 ajustables uxcell | 2 | Amazon |
 | | Ejes | Acero inoxidable 5 mm × 100 mm uxcell | 2 | Amazon |
 | **Cables** | USB-C Pi↔Pico | SUNGUY USB-C 3.1 Gen2 — 6 in y 1 ft | 2 | Amazon |
@@ -1117,25 +1117,23 @@ ros2 launch npc_bot base_reto2.launch.py
 
 ## 8.f Notas de Ensamblaje
 
-> **Pendiente de redactar:** secuencia de ensamblaje paso a paso.
-> Sugerencia: incluir 6–8 fotos del proceso (primer piso completo,
-> diferencial montado, eje trasero, servo + dirección, segundo piso,
-> ensamble final).
 
 Resumen del orden recomendado:
 
-1. Imprimir todas las piezas
-2. Ensamblar diferencial: insertar engranajes cónicos en `Gear Box Diferencial`
-3. Montar eje trasero KYX con diferencial en el `Chassis Abajo V2`
-4. Montar motor Pololu 34:1 con `Soporte Motor VF` y `Gear Motor con Flange`
-5. Montar servo Savox **detrás de las ruedas delanteras** (`Soporte Servo VF`)
-6. Conectar manguetas KYX + tie rods M3 + servo saver Tamiya
-7. **Ajustar convergencia (toe-in ≈ 0.5 mm)** con servo centrado
-8. Montar VNH5019, reguladores y batería en el primer piso
-9. Montar Raspberry Pi 5, Pico Plus 2 y sensores en el segundo piso
-10. Ruteo de cables por los canales modulares (`Canal 2/3/4`)
-11. Calibrar IMU (figura de 8) y encoder (`2006 ticks/m` validados)
-12. Calibrar HSV de la cámara bajo iluminación de la pista
+1.  Imprimir todas las piezas
+2.  Ensamblar diferencial: insertar engranajes cónicos en `Gear Box Diferencial`
+3.  Montar eje trasero KYX con diferencial en el `Chasis Abajo` ajustando con sus Sortes y Espaciadores.
+5.  Montar Motor Pololu 34:1 con `Soporte Motor` y `Gear Motor con Flange`
+6.  Montar servo Savox detrás de las ruedas delanteras en su `Soporte Servo VF`
+7.  Conectar manguetas KYX + tie rods M3 + servo saver Tamiya
+8.  Ajustar alineación con servo centrado
+9.  Colocación del LiDAR STL27L
+10. Colocar Soportes y Chasis de Arriba
+11. Montar VNH5019, reguladores con batería LiPO S3 en el primer piso
+12. Montar Raspberry Pi 5 y Pico Plus 2
+13. Colocación de Sensores TOF e IMU + Botón de Inicio
+14. Ruteo de cables por los canales modulares y agujeros del Chasis 
+15. Colocación de Cámara
 
 <table>
   <tr>
@@ -1152,18 +1150,40 @@ Resumen del orden recomendado:
       <img width="960" height="1280" alt="03 Motor" src="https://github.com/user-attachments/assets/b26effcc-1b17-4a2a-98c8-e82fbcee9ebe" />
     </td>
   </tr>
-  <tr>
+   <tr>
+    <td align="center">
+      El diferencial va ajustado en el espacio considerado en el chasis para él, colocando los primeros soportes y los espaciadores hechos a la medida para garantizar que la caja del diferencial no se deslice de lado cuando gire el motor<br>
+    </td>
+    <td align="center">
+      El otro par de soportes se incluyen para evitar que no quede recto la transmisión, como pasaba en la versión anterior del Chasis por el peso de la caja del diferencial. Se ajustan las ruedas y se revisa que queden bien sujetas y a la misma distancia del chasis a cada lado.<br>
+    </td>
+    <td align="center">
+      Los agujeros del chasis garantizan que el soporte del motor quede ubicado donde los engranajes del motor y del diferencial estan alineados. Importante que el nuevo enganaje del Motor impreso en Nylon, permite a diferencia del PLA utilizado antes mayor resistencia a la fricción.<br>
+    </td>
+  </tr>
+   <tr>
     <td align="center">
       <b>Montaje de Dirección</b><br>
       <img width="791" height="964" alt="05 Servo" src="https://github.com/user-attachments/assets/f63274ec-be18-4463-8ca0-09d9c5613019" />
     </td>
   <td align="center">
-  <b>Colocación del Servo</b><br>
+  <b>Colocación del LiDAR</b><br>
   <img width="907" height="1137" alt="06 LiDAR" src="https://github.com/user-attachments/assets/2f99dec4-c244-4012-81f6-0559b57d0ed7" />
 </td>
     <td align="center">
       <b>Colocación del Chasis Superior</b><br>
       <img width="824" height="667" alt="08 Chasis Arriba" src="https://github.com/user-attachments/assets/8e4b45b6-1c51-4d72-a92e-ddffc996772b" />
+    </td>
+  </tr>
+<tr>
+    <td align="center">
+     Las barras se atornillan a las manguetas y estas a las C-Hubs del chasis. Las tierods son ajustables para lograr la alineación con el centro del servo. El soporte del servo se fija al chasis y se atornilla el tierod al Servo Saver. Para armar el Servo Saver, dejamos un <a href="https://www.youtube.com/watch?v=pzWLF9ScBSY" target="_blank">Link</a> que nos ayudó. <br>
+    </td>
+    <td align="center">
+      El LiDAR se atornilla en la parte frontal asegurando que quede fijo y garantice un Field of View de 180 grados. <br>
+    </td>
+    <td align="center">
+      Los agujeros del chasis superior e inferior estan alineados para colocar los soportes de 6cms y así unir ambos chasis, garantizando el espacio con holgura para que los componentes y el subnivel de la bateria entren sin problema.<br>
     </td>
   </tr>
 </table>
@@ -1175,7 +1195,7 @@ Resumen del orden recomendado:
       <img width="960" height="1280" alt="09 VNH + Reg" src="https://github.com/user-attachments/assets/97845b76-bd8d-4c42-a3a6-7559b54dd561" />
     </td>
     <td align="center">
-      <b>Reguladoe del Servo</b><br>
+      <b>Regulador del Servo</b><br>
       <img width="960" height="1280" alt="10 Conexion Reg Servo" src="https://github.com/user-attachments/assets/94fdc828-db87-4f66-832b-b3845d0c0dce" />
     </td>
     <td align="center">
@@ -1185,7 +1205,18 @@ Resumen del orden recomendado:
   </tr>
   <tr>
     <td align="center">
-      <b>MColocación de RPI 5</b><br>
+     Continuamos con la parte eléctrica, colocando el VNH5019 y el Regulador Cenral que reciben energía de la batería a través del switche de encendido. Para el detalle del cableado ver la sección 5 del Readme o del Journal. <br>
+    </td>
+    <td align="center">
+      Arriba en la parte frontal ubicamos el regulador D36V50F5, encargado exclusivamente del servo. Recibe la energía a través del switche y la envía al Servo. Pasamos los cables por los agujeros del chasis para conectar con el sevo qque está abajo. Para asegurar los cables Dupont utilizamos un sujetador.<br>
+    </td>
+    <td align="center">
+      Encima del compartimiento de la batería ubicamos el Pico 2 Plus. Queda centrado en el vehículo, lo cual era importante porque es el que mas conexiones lleva (VNH5019, Encoder, Botón de Arranque, RPI5, IMU y TOF). <br>
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+      <b>Colocación de RPI 5</b><br>
       <img width="860" height="1067" alt="131 RPI5" src="https://github.com/user-attachments/assets/0953eb00-98e1-4551-b401-8a099996a491" />
     </td>
   <td align="center">
@@ -1195,6 +1226,17 @@ Resumen del orden recomendado:
     <td align="center">
       <b>Foto Final</b><br>
       <img width="824" height="667" alt="08 Chasis Arriba" src="https://github.com/user-attachments/assets/8e4b45b6-1c51-4d72-a92e-ddffc996772b" />
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+     La RPI5 la ubicamos en la parte trasera y sus conexiones principales son con el Pico 2 Plus y el LiDAR, como la comunicación es por USB es importante tener cables muy cercanos a la medida necesaria. Para armar el NVME segimos el paso a paso de la pagina oficial de <a href="https://learn.pimoroni.com/article/getting-started-with-nvme-base?gad_source=1&gad_campaignid=21808011029&gbraid=0AAAAADqO9eI2JBt_V5J718nZPukufdGr8&gclid=CjwKCAjwu53SBhAhEiwAJzSLNn-C14eCdenwd9VDtsrBGij-e7OjglkBVuX8pjsKX0_WzyU9FhXqaRoC4g8QAvD_BwE" target="_blank">Pimoroni</a>. <br>
+    </td>
+    <td align="center">
+      Al lado del Pico 2 Plus, colocamos una protoboard y ahi encajamos el Botón de Inicio y el IMU BNO085, asegurandonos que no utilicen las misma lineas de conexión. Si bien el IMU se conecta por Qwiic los pines pueden interferir.<br>
+    </td>
+    <td align="center">
+      Colocación de la Cámara en su soporte en el Piso de Arriba y <b>Proyecto Mahoraga</b> queda totalmente armado y listo luego de ajustar cableado (Sección 5) y la programación (Sección 6 y 7).<br>
     </td>
   </tr>
 </table>
