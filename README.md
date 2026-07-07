@@ -50,7 +50,7 @@
 <div>
 <img width="316" height="411" align="left" alt="Equipo" src="https://github.com/user-attachments/assets/75947953-eac8-472f-b4b6-771bddc59407" /><br>
    
-Somos el equipo **NPC (Non Playable Character)**, este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO    Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
+Somos el equipo **NPC (Non Playable Character)**, este es nuestro segundo año en competencias de la WRO, con el objetivo de lograr un vehículo verdaderamente autónomo que supere con éxito los retos de la competencia WRO Futuros Ingenieros 2026 a Nivel Nacional y nos permita obtener nuestro cupo en la Final Internacional de Puerto Rico. 
 
 Vu Tue Anh, compitió el año pasado en la categoría de Misiones Roboticas, mientras que Leonardo y Juan participaron en la categoría de Futuros Ingenieros, llegando a la Final Nacional de Venezuela donde obtuvimos el 5to Lugar, mientras que en un invitacional en Weifang, China logramos el 1er Lugar. 
 </div>
@@ -585,6 +585,22 @@ La máquina de estados de alto nivel tiene cinco estados:
 
 <img width="1911" height="1077" alt="Reto1" src="https://github.com/user-attachments/assets/8688b286-6c20-4c30-901a-c8fbc9baaf0d" />
 
+### Tiempo de arranque tras encender el robot
+
+Al presionar el interruptor principal de alimentación, el robot tarda aproximadamente **40 segundos** en quedar listo para recibir la señal de inicio (botón físico). Este tiempo se compone de:
+
+| Fase | Tiempo | Descripción |
+|---|---|---|
+| Boot de Ubuntu 24.04 | 20 s | Carga del kernel Linux, drivers de hardware (USB, I2C, GPIO) y servicios base del sistema, dado que el RPI5 es mas un computador que un simple microcontrolador |
+| Espera de detección USB | 5 s | Delay defensivo para asegurar que el Pico Plus 2 (`/dev/ttyACM0`) y el LiDAR STL-27L (`/dev/ttyUSB0`) están correctamente detectados antes de que los nodos intenten conectarse |
+| Arranque del driver del LiDAR | 5 s | El LDROBOT STL-27L requiere inicializar su motor de barrido, estabilizar la velocidad de rotación (10 Hz) y publicar el primer scan válido |
+| Arranque del bridge del Pico | 5 s | Abre la conexión serial a 921600 baudios, sincroniza con el firmware y confirma que la comunicación bidireccional está activa |
+| Arranque del nodo de control | 3 s | Inicializa las suscripciones ROS 2, espera el primer /scan y la primera /npcpos, y transita del estado BOOT al estado READY |
+| **Total** | **~40 s** | El robot queda esperando el botón de inicio |
+
+Este tiempo fue contabilizado cargando individualmente cada proceso, los 40 s es una consecuencia del hardware (RPI5) y la arquitectura de software basada en ROS 2 Jazzy sobre Ubuntu 24.04, en contraste con un arranque monolítico tipo Arduino que sería casi instantáneo pero con capacidades muy limitadas. 
+La decisión de construir sobre ROS 2 permite modularidad, herramientas de depuración avanzadas y facilidad de integración con sensores complejos (LiDAR, cámara), a costa de un tiempo de arranque.
+
 
 ## 6g. Métricas de Desempeño del Reto Abierto 
 
@@ -598,9 +614,9 @@ Después de 3 días de pruebas físicas en la pista oficial WRO:
 |Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|
 |Posición lateral durante rectas|< 5 cm de desviación del centro del<br>corredor, mucho más robusto con el control<br>dual Heading y Centrado|
 |Heading después de completar un giro|Dentro de 5° del objetivo|
-|Tiempos Promedios en Pruebas| 40 segundos|
+|Tiempos Promedios en Pruebas| 70 segundos|
 
-Luego de correcciones menores logramos obtener tiempos de 40 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
+Luego de correcciones menores logramos obtener tiempos de 70 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
 
 **Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos ha obtener tiempos entre 42 y 38 segundos. 
 
