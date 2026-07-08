@@ -2,7 +2,6 @@
 ## **NPC – WRO FUTUROS INGENIEROS 2026** 
 
 ## **CONTENIDO** 
-
 ## **1. Introducción e Información del Equipo**
 - a. Introducción 
 - b. Miembros del Equipo 
@@ -90,7 +89,7 @@ Para nuestro proyecto, fui responsable en la realización de pruebas, así como 
 <img width="210" height="300" align="left" alt="PHOTO-2026-06-04-21-09-27" src="https://github.com/user-attachments/assets/48676392-0ae0-44b2-8602-3c6cad144d51" /><br>
 Alfredo, es nuestro coach y de profesion matemático. 
 
-Él también es nuestro profesor de robótica en el Colegio Jefferson y ha estado desde 2023 paticipando en ompetencias de la WRO en Venezuela, dirigiendo a varios equipos del colegio en las distintas categorias, con participaciones en las Regionales, Final en Venezuela, Final Internacional y diversos invitacionales.
+Él también es nuestro profesor de robótica en el Colegio Jefferson y ha estado desde 2023 participando en competencias de la WRO en Venezuela, dirigiendo a varios equipos del colegio en las distintas categorias, con participaciones en las Regionales, Final en Venezuela, Final Internacional y diversos invitacionales.
 
 <br clear="left" />
 
@@ -114,7 +113,7 @@ Alfredo, es nuestro coach y de profesion matemático.
   <tr>
     <td align="center">
       <b>Vista Frontal</b><br>
-      <img src="https://github.com/user-attachments/assets/b4a8942e-1439-43c1-a7ca-33edc2647366"<img width="400" height="320"> 
+       <img width="400" height="320" alt="22 Frontal" src="https://github.com/user-attachments/assets/ab78d782-aaf4-49ed-85d8-5922f9fe8a1f" />
     </td>
     <td align="center">
       <b>Vista Trasera</b><br>
@@ -122,17 +121,17 @@ Alfredo, es nuestro coach y de profesion matemático.
     </td>
     <td align="center">
       <b>Lado Izquierdo</b><br>
-      <img src="https://github.com/user-attachments/assets/66ecf1d0-42eb-4086-8b54-f46e6d13c84b" width="400" height="320">
+      <img width="400" height="320" alt="19 Foto Izq" src="https://github.com/user-attachments/assets/c34049fb-42e1-4ccc-aeb5-6e32fe62dc67" />
     </td>
   </tr>
   <tr>
     <td align="center">
       <b>Lado Derecho</b><br>
-      <img src="https://github.com/user-attachments/assets/6423f7da-b81e-492e-8be2-071ec206ab03" width="400" height="320">
+      <img width="400" height="320" alt="20 Foto Derecha" src="https://github.com/user-attachments/assets/efa7557b-1148-40c9-8483-a9b76c738ed9" />
     </td>
   <td align="center">
   <b>Vista de Arriba</b><br>
-  <img src="https://github.com/user-attachments/assets/095f60eb-c609-4bc3-b138-825c379ec7ad" width="400" height="320">
+ <img width="400" height="320" alt="18 Foto de Arriba" src="https://github.com/user-attachments/assets/88a34a1b-095a-4e09-85f4-a4d43ea4ba80" />
 </td>
     <td align="center">
       <b>Vista de Abajo</b><br>
@@ -213,9 +212,9 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 
 Uno de los principales retos de este año era que el vehículo debía ser más ágil, para lo cual había que reducir su tamaño y mejorar su capacidad de giro. Con batalla 142 mm y pivotes 97 mm, el robot recorre 34,2 cm para girar 90°, frente a los 48,2 cm del chasis 2025 (−29%). 
 
-Los C Hub o portamanguetas de dirección fueron integrados en el chasis de abajo, permitiendo el mayor cruze que podía aportar el servo. El servo Savox SC-1251MG aporta precisión de ángulo de giro al ser digital, tener engranajes metálicos y ser coreless, permitiéndole además una alta velocidad de respuesta 0.09s/60°. 
+Los C Hub o portamanguetas de dirección fueron integrados en el chasis de abajo, permitiendo el mayor cruce que podía aportar el servo. El servo Savox SC-1251MG aporta precisión de ángulo de giro al ser digital, tener engranajes metálicos y ser coreless, permitiéndole además una alta velocidad de respuesta 0.09s/60°. 
 
-A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta decisión liberó el espacio frontal para colocar el LiDAR en posición baja y adelantada. 
+A diferencia de 2025, colocamos el servo detrás de las ruedas delanteras. Esta decisión liberó el espacio frontal para colocar el LiDAR en posición baja y adelantada. 
 
 <br clear="left" />
 <br>
@@ -237,7 +236,7 @@ A diferencia del 2025, colocamos el servo detrás de las ruedas delanteras. Esta
 |Distancia para 90°|341,90 mm|
 
 
-**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en el 2025 y explicamos las mejoras._** 
+**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en 2025 y explicamos las mejoras._** 
 
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
@@ -336,7 +335,7 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 
 ## 6a. Visión General 
 
-El software del robot **Proyecto Mahoraga** está construido sobre ROS 2 Jazzy corriendo en Ubuntu 24.04 en una Raspberry Pi 5 (16 GB), con un microcontrolador Pimoroni Pico Plus 2 (RP2350) encargándose de la lectura de sensores de bajo nivel y el control de actuadores. La arquitectura sigue un patrón distribuido de dos capas: 
+El software del robot **Proyecto Mahoraga** está construido sobre ROS 2 Jazzy corriendo en Ubuntu 24.04 en una Raspberry Pi 5, con un microcontrolador Pimoroni Pico Plus 2 (RP2350) encargándose de la lectura de sensores de bajo nivel y el control de actuadores. La arquitectura sigue un patrón distribuido de dos capas: 
 
 • Raspberry Pi 5 (capa de alto nivel): ejecuta nodos ROS 2 para percepción, toma de decisiones y control a 40 Hz. 
 
@@ -345,6 +344,10 @@ El software del robot **Proyecto Mahoraga** está construido sobre ROS 2 Jazzy c
 La comunicación entre las dos capas ocurre por USB serial (921600 baudios) usando un protocolo CSV liviano, conectado a topicos ROS 2 mediante un nodo puente dedicado. 
 
 <img width="612" height="474" alt="Nodos y Topicos Reto 1" src="https://github.com/user-attachments/assets/350644a9-b4a9-480d-b60c-c625360d443f" />
+
+Elegimos ROS 2 como base porque su modelo de nodos comunicados por topics nos permitió descomponer el problema en piezas manejables: un nodo para el LiDAR, uno para el puente al microcontrolador, y uno para el control de alto 
+nivel. Esta modularidad, junto con las herramientas de depuración que ofrece el ecosistema y la disponibilidad de drivers oficiales para nuestros sensores, fueron determinantes para completar el proyecto en 
+el tiempo disponible. Las decisiones arquitectónicas específicas y sus trade-offs se detallan en la Sección 7.
 
 ## 6b.Estructura del Código
 
@@ -387,7 +390,7 @@ Se desarrolló un esquema de comunicación basado en tópicos, estableciendo los
 
 El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que maneja todas las operaciones de tiempo real de las que la RPi5 no debe encargarse. 
 
-**Responsabilidades** 
+### **Responsabilidades** 
 
 - Lectura del IMU a 100 Hz vía Qwiic I2C (Adafruit BNO085, con fusión sensorial 9-DOF onboard) 
 - Conteo del encoder vía interrupción por hardware en GPIO 2 (Canal A) y lectura digital en GPIO 3 (Canal B), cuadratura de un solo flanco 
@@ -397,7 +400,7 @@ El Pico Plus 2 ejecuta un firmware basado en Arduino (un único archivo.ino) que
 - Lectura del botón de arranque en GPIO 28 (INPUT_PULLUP, activo LOW) 
 - Publicación de telemetría a la Pi5 a 50 Hz vía USB serial 
 
-**Protocolo Serial de Comunicación RPi5 y Pico2** 
+### **Protocolo Serial de Comunicación RPi5 y Pico2** 
 
 **Pico → Pi5** (50 Hz cada uno): 
 
@@ -417,7 +420,7 @@ STOP **`→`** Parada de emergencia
 
 La lógica del Reto Abierto está organizada en 4 pilares funcionales, cada uno abordando una preocupación distinta. Esta descomposición hizo más clara la discusión de diseño y modular la implementación. 
 
-**Pilar 1. Localización y Conteo de Giros** 
+### **Pilar 1. Localización y Conteo de Giros** 
 
 Objetivo: saber dónde está el robot y cuántas esquinas ha girado (meta: 12 giros = 3 vueltas completas). 
 
@@ -431,11 +434,11 @@ Objetivo: saber dónde está el robot y cuántas esquinas ha girado (meta: 12 gi
 
 - Conteo de giros realizado al detectar el cruce (esquina) y no depender del cálculo acumulado del IMU que puede verse afectado por el efecto drifting. 
 
-**Pilar 2. Detección de Esquinas y Sentido de Recorrido** 
+### **Pilar 2. Detección de Esquinas y Sentido de Recorrido** 
 
 El robot debe detectar cuándo ha llegado a una esquina, decidir hacia qué lado girar, y en qué sentido (CW o CCW) seguirá toda la carrera. Esta metodología era igual a la que empleamos en 2025, pero en aquel momento lo hicimos con ultrasónicos y ahora contamos con un LiDAR, esto nos permitió hacer la detección de una forma más robusta. 
 
-Al encontrarnos a 0,7 metros de la pared central el LiDAR revisa los laterales en busca de aperturas (lecturas mayores a 1m). Sin embargo, no dependimos de una medida única frontal del LiDAR y 2 laterales, le pedimos la mediana de ±5° de la medición frontal y 2° de mediciones laterales en vez de solo una medición a +90° y -90°. En el caso de nuestro LiDAR que nos da 2.160 mediciones en cada vuelta, esto representa 6 mediciones por cada grado, permitiéndonos tener 60 mediciones frontales (10x6) y 12 en cada lateral (2x6), dando más robustez y evitar falsas señales. 
+Al encontrarnos a 0,7 metros de la pared central el LiDAR revisa los laterales en busca de aperturas (lecturas mayores a 1m). Sin embargo, no dependimos de una medida única frontal del LiDAR y 2 laterales, le pedimos la mediana de ±5° de la medición frontal y 2° de mediciones laterales en vez de solo una medición a +75° y -75°. En el caso de nuestro LiDAR que nos da 2.160 mediciones en cada vuelta, esto representa 6 mediciones por cada grado, permitiéndonos tener 60 mediciones frontales (10x6) y 12 en cada lateral (2x6), dando más robustez y evitar falsas señales. 
 
 |**Condición**|**Umbral**|**Propósito**|
 |---|---|---|
@@ -473,12 +476,11 @@ if self.sentido_giro is None:
 Una vez que en la primera esquina se determina el sentido de los giros, en las siguientes esquinas el LiDAR, solo busca aperturas hacia esa dirección. 
 
 
-
-**Pilar 3. Control de Navegación y Centrado de Pared** 
+### **Pilar 3. Control de Navegación y Centrado de Pared** 
 
 Establecimos 2 esquemas de control de navegación: El Heading y el Centrado de Paredes donde el que tenga la corrección más importante tiene preferencia. Asi tenemos que: 
 
-Heading: Una vez que el LiDAR detecta un desvío importante o detecto un cruce y se actualiza el nuevo ángulo destino +/-90° según sea la dirección, se produce un error alto que activa el heading y hace girar el servo. La agresividad del giro está controlada por un P-controller con dos ganancias diferenciadas. Una ganancia más agresiva (KP_Giro) cuando el error es superior a 15° y una ganancia menor (KP_Rect) cuando el error se reduce a 15°, esto hace que una vez que el error (desviación con el objetivo se reduce) el angulo de giro se suaviza evitando un sobrecruce o oscilaciones buscando el objetivo. 
+**Heading:** Una vez que el LiDAR detecta un desvío importante o detecto un cruce y se actualiza el nuevo ángulo destino +/-90° según sea la dirección, se produce un error alto que activa el heading y hace girar el servo. La agresividad del giro está controlada por un P-controller con dos ganancias diferenciadas. Una ganancia más agresiva (KP_Giro) cuando el error es superior a 15° y una ganancia menor (KP_Rect) cuando el error se reduce a 15°, esto hace que una vez que el error (desviación con el objetivo se reduce) el angulo de giro se suaviza evitando un sobrecruce o oscilaciones buscando el objetivo. 
 
 ```
 error = norm_ang(self.pose.theta - self.section_angle)
@@ -492,7 +494,7 @@ str_angle = clamp(str_angle, -1.0, 1.0)
 ```
 
 
-Centrado de Paredes: Tal como va haciendo las mediciones para detectar las aperturas, también va realizando mediciones para calcular desviaciones respecto al centro de la pista 
+**Centrado de Paredes:** Tal como va haciendo las mediciones para detectar las aperturas, también va realizando mediciones para calcular desviaciones respecto al centro de la pista 
 
 <img width="400" height="320" align="right" alt="Centrado de Paredes" src="https://github.com/user-attachments/assets/6350c33e-c6ee-4556-ac09-e184c207aea2" />
 
@@ -548,7 +550,7 @@ else:
                       out_max=VELOCIDAD_CURVA)   # 0.25 m/s
 ```
 
-**Pilar 4. Fin de Carrera** 
+### **Pilar 4. Fin de Carrera** 
 
 Después de completarse el 12° giro (turn_count == 12), el estado transita a FINISH_APPROACH, donde: 
 
@@ -566,7 +568,7 @@ Después de completarse el 12° giro (turn_count == 12), el estado transita a FI
 |< 1.2 m|-0.2 m/s|Marcha atrás|
 
 
-**Máquina de Estados** 
+### **Máquina de Estados** 
 
 La máquina de estados de alto nivel tiene cinco estados: 
 
@@ -604,21 +606,21 @@ La decisión de construir sobre ROS 2 permite modularidad, herramientas de depur
 
 ## 6g. Métricas de Desempeño del Reto Abierto 
 
-Después de 3 días de pruebas físicas en la pista oficial WRO: 
+Se reportan los avances que fuímos teniendo en pruebas en una pista con las medidas oficiales de la WRO: 
 
-|**Métrica**|**Resultado**|
-|---|---|
-|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|
-|Precisión del conteo de giros|12/12 giros contados correctamente, no se<br>generan dobles giros por restricciones<br>colocadas para ello, aprendidas en WRO<br>2025|
-|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque<br>por fallo en lectura de apertura, corregido|
-|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|
-|Posición lateral durante rectas|< 5 cm de desviación del centro del<br>corredor, mucho más robusto con el control<br>dual Heading y Centrado|
-|Heading después de completar un giro|Dentro de 5° del objetivo|
-|Tiempos Promedios en Pruebas| 70 segundos|
+|**Métrica**|**Junio**|**Julio**|
+|---|---|---|
+|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|Igual|
+|Precisión del conteo de giros|12/12 giros contados correctamente, no se generan dobles giros por restricciones colocadas para ello, aprendidas en WRO 2025|Igual|
+|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque por fallo en lectura de apertura, corregido|100%|
+|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|Igual|
+|Posición lateral durante rectas|< 5 cm de desviación del centro del corredor, mucho más robusto con el control dual Heading y Centrado|Igual|
+|Heading después de completar un giro|Dentro de 5° del objetivo|Igual|
+|Tiempos Promedios en Pruebas| 70 segundos|Se lograron tiempos de 64 seg con mayor velocidad 0,5 m/s, pero las curvas eran mas abiertas, por lo que decidimos mantener en 0,4 m/s, especialmente cuando el centro de la pista era grande 1,8m x 1,8m|
 
-Luego de correcciones menores logramos obtener tiempos de 70 segundos para dar las 3 vueltas, mas eficientes a los que obtuvimos en la Regional 1 de Miranda, que si bien logramos realizar el reto, el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
+En la Regional 1 de Miranda, logramos realizar el reto, pero el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
 
-**Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos ha obtener tiempos entre 42 y 38 segundos. 
+**Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos ha obtener tiempos entre 60 y 70 segundos. 
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
 
@@ -649,7 +651,7 @@ La lógica del Reto con Obstáculos está organizada en una navegación distinta
 | **C2 — Recorte por color** | Si pilar rojo → solo candidatos derechos; si verde → solo izquierdos | Cámara |
 | **C3 — SpiderSense** | Reflejo lateral: si distancia <22 cm en 25°–75°, atenúa el lado correspondiente ÷3 | LiDAR |
 
-**Capa 1 — Ruta Proyectada (Ray Marching)**
+### **Capa 1 — Ruta Proyectada (Ray Marching)**
 
 <img width="460" height="480" align="left" alt="Ruta Proyectada" src="https://github.com/user-attachments/assets/7153eb87-3d9f-4852-8b41-2012b0090877" />
 
@@ -665,7 +667,7 @@ Adicionalmente para cada uno de las 60 rutas candidatas, se aplica el principio 
 
 <br clear="left" />
 
-**Capa 2 — Recorte por Color**
+### **Capa 2 — Recorte por Color**
 
 <img width="460" height="440" align="left" alt="Capa2" src="https://github.com/user-attachments/assets/5c05023b-fa03-45a2-8d99-c9e73ed0e801" />
 
@@ -677,7 +679,7 @@ La altura en píxeles funciona como proxy de distancia: un pilar cercano se ve g
 <br clear="left" />
 <br>
 
-**Capa 3 — SpiderSense**
+### **Capa 3 — SpiderSense**
 
 La Capa 3 "SpiderSense" es el reflejo de emergencia para casos donde las paredes laterales o los obstaculos estan muy cerca, para esto el LiDAR dos sectores laterales (25° a 75° en cada lado del robot) y calcula la distancia mínima en cada uno. Si la distancia del lado izquierdo cae por debajo de 22 cm y el robot está virando hacia la izquierda (steering < 0), entonces el comando de steering se divide entre 3. Lo mismo para el lado derecho. La doble condición (peligro lateral + giro hacia el peligro) es clave, si el robot está virando hacia el lado contrario, no hay riesgo de colisión inminente. Al dividir entre 3 el steering lo que se busca es atenuar el angulo de giro para evitar la colisión lateral 
 
@@ -686,12 +688,12 @@ Si d_izq < 22 cm AND robot vira a la izquierda -> steering / 3
 Si d_der < 22 cm AND robot vira a la derecha -> steering / 3  
 ```
 
-**Fin de carrera:** 
+### **Fin de carrera:** 
 
-Como no tenemos giros y esquinas como en el Reto Abierto, que para finalizar la carrera, contabamos 12 giros, entonces establecimos una medición acumulada de giro en terminos absoluto del IMU |acc_yaw| y que cuando este supere los 900°, equivalenten a 2,5 vueltas, entonces buscar el proximo color magenta, que justamente es el estacionamiento y cuando lo vea se detenga en esa sección, siguiendo la estrategia del Reto Abierto, es decir, parar cuando este entre 1,3m y 1,5m de la pared frontal de esa sección.
+Como no tenemos giros y esquinas como en el Reto Abierto, que para finalizar la carrera, contabamos 12 giros, entonces establecimos una medición acumulada de giro en terminos absoluto del IMU |acc_yaw| y que cuando este supere los 990°, equivalenten a 2,5 vueltas, entonces buscar el proximo color magenta, que justamente es el estacionamiento y cuando lo vea se detenga en esa sección, siguiendo la estrategia del Reto Abierto, es decir, parar cuando este entre 1,3m y 1,5m de la pared frontal de esa sección.
 
 
-`|acc_yaw| > 900°` **AND** detección de blob
+`|acc_yaw| > 990°` **AND** detección de blob
 magenta con altura ≥ 60 px (caja de parada), luego parada por
 distancia frontal como en Reto 1.
 
@@ -721,18 +723,17 @@ nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica
 
 ## 6l. Métricas de Desempeño del Reto con Obstáculos 
 
-Después de 5 días de pruebas físicas en la pista oficial WRO: 
+Se reportan los avances evolutivos que fuímos teniendo en pruebas en una pista con las medidas oficiales de la WRO: 
 
-|**Métrica**|**Resultado**|
-|---|---|
-|Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)|
-|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV| 
-|Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|. 
-|Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|
-|Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|
-|Tiempos Promedios en Pruebas| 32 segundos por Vuelta|
+|**Métrica**|**Junio**|**Julio**|
+|---|---|---|
+|Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)|..|
+|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV|..|
+|Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|...|
+|Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|..|
+|Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|..|
+|Tiempos Promedios en Pruebas| 32 segundos por Vuelta|..|
 
-Data de prueba recopilada hasta el 29/6, que ha ido mejorando con ajustes de velocidad. 
 
 ## 6m. Ajustes Realizados en Ambos Retos
 
@@ -749,7 +750,9 @@ Con estos ajustes logramos una tasa de éxito muy elevada en el Reto Abierto, in
 
 - Para el Reto con Obstáculos también vimos la necesidad de reducir la velocidad y así dar mas tiempo para la detección de obstáculos y la maniobra de evasión, quedando en 0.3 m/s en rectas y 0.20 m/s en curvas.
 
-Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con Obstáculos, quedando pendiente aún mas pruebas y el ajuse de velocidad, capacidad de giro y posiblemente esttructurar una maniobra de retroceso cuando no sea posible hacer la evasión del obstáculo. Adicionalmente está pendiente la estrategía del estacionamiento.
+- La magnitud del giro en Ruta Proyectada (Capa 1) viene determinada por el grado donde se encuentra la ruta ideal en un campo de -60° a +60°, si está en alguno de los extremos el servo gira al máximo posible hacia ese lado, en una función lineal que determinaba el angulo de giro. Si el angulo de la ruta ideal, era por ejemplo +30°, ahi el giro era el 50% del máximo del servo. Entonces, lo que hicimos fue cambiar la función lineal Giro del Servo (-100%,100%) = Angulo de Ruta Ideal / 60 a una función servo donde (Angulo de Ruta Ideal/60)^k con k < 1. Esto permite que el ajuste sea mas agresivo, pese a que los valores no sean extremos garantizando una reacción mas acelerada. Nos queda es encontrar el valor de K que sea ideal para tener el trade off entre mayor agresividad de giro sin generar volatilidad en el recorrido por cambios bruscos del servo.
+
+Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con Obstáculos, quedando pendiente aún mas pruebas y pruebas con distintas velocidades, capacidad de giro y posiblemente esttructurar una maniobra de retroceso cuando no sea posible hacer la evasión del obstáculo. Adicionalmente está pendiente la estrategía del estacionamiento.
 
 ## 7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)
 
@@ -806,7 +809,11 @@ Esta subsección resume las decisiones de ingeniería más importantes con su ra
 IMU; la frontera entre los dos es un protocolo CSV legible. **El
 Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
 
-### Decisión 2 — Lógica del Reto Abierto: 4 pilares en lugar de máquina de estados compleja
+### Decisión 2 — Arquitectura: Elección de ROS 2
+
+La decisión de construir el software del robot sobre **ROS 2 Jazzy** en lugar de un enfoque monolítico tipo Arduino nos aportó ventajas técnicas para un proyecto de esta complejidad. El sistema de topics permite que los sensores (LiDAR, IMU, encoder), el nodo puente al Pico y el nodo de control se comuniquen de forma desacoplada y asíncrona, lo que facilitó desarrollar y depurar cada componente por separado. Herramientas como /pilares, Rviz2, y el uso de SSH, permitieron diagnosticar en tiempo real qué estaba viendo el robot y por qué tomaba cada decisión. Finalmente, el modelo de mensajes personalizados (como nuestra `NpcPose.msg`) nos garantiza coherencia temporal entre los datos de odometría, y prepara la arquitectura para escalar al Reto de Obstáculos con la incorporación natural de nuevos nodos (visión por cámara, sensores ToF) sin reescribir la lógica existente. 
+
+### Decisión 3 — Lógica del Reto Abierto: 4 pilares en lugar de máquina de estados compleja
 
 | Pilares | Función |
 |---|---|
@@ -817,7 +824,7 @@ Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
 
 **Por qué 4 pilares y no máquina de estados grande:** la máquina se reduce a solo 5 estados (`BOOT → READY → RUNNING → FINISH_APPROACH → STOPPED`); el resto de la complejidad vive como capas dentro del estado `RUNNING`, fácil de ajustar capa por capa sin tocar las otras.
 
-### Decisión 3 — Reto con Obstáculos: Siguiendo Camino de 3 capas
+### Decisión 4 — Reto con Obstáculos: Siguiendo Camino de 3 capas
 
 | Capa | Función | Sensor principal |
 |---|---|---|
@@ -828,12 +835,12 @@ Pico es deliberadamente ejecutor:** no decide, solo ejecuta.
 **Por qué navegación reactiva y no detección de eventos:** la busqueda de ruta más profunda maneja curvas y pilares implícitamente, sin la necesidad de "detección
 de esquina, que es mas dificil en la presencia de obstaculos. La cámara es solo semáforo de color (rojo/verde), no estima distancia. La distancia la lleva el LiDAR.
 
-### Decisión 4 — Conteo de vueltas por yaw acumulado, no por esquinas
+### Decisión 5 — Conteo de vueltas por yaw acumulado, no por esquinas
 
-**Por qué |acc_yaw| > 900° en Reto 2** (en lugar de contar giros como en Reto 1): los pilares fuerzan trayectorias no rectangulares; el robot puede "girar" 90° por una curva *o* por una evasión, y
-contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos. Solo hay que configurar bien el color Magenta.
+**Por qué |acc_yaw| > 990° en Reto 2** (en lugar de contar giros como en Reto 1): los pilares fuerzan trayectorias no rectangulares; el robot puede "girar" 90° por una curva *o* por una evasión, y
+contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos con 990°, es equivalente a 11 giros y solo debe para en el siguiente giro cuando vea el color MAaenta. Solo hay que configurar bien el color Magenta.
 
-### Decisión 5 — Detección de sentido CW/CCW en la primera esquina
+### Decisión 6 — Detección de sentido CW/CCW en la primera esquina
 
 **Antes:** intentábamos detectar sentido con discontinuidades del LiDAR antes de arrancar (robot quieto).
 **Problema:** en pruebas no funcionaba consistentemente.
