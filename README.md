@@ -1248,7 +1248,7 @@ Resumen del orden recomendado:
 </td>
     <td align="center">
       <b>Foto Final</b><br>
-      <img width="824" height="667" alt="08 Chasis Arriba" src="https://github.com/user-attachments/assets/8e4b45b6-1c51-4d72-a92e-ddffc996772b" />
+       <img width="960" height="1036" alt="17 Foto Final" src="https://github.com/user-attachments/assets/56b26d4a-94f4-48e5-ab84-eed77622a849" />
     </td>
   </tr>
    <tr>
@@ -1259,7 +1259,7 @@ Resumen del orden recomendado:
       Al lado del Pico 2 Plus, colocamos una protoboard y ahi encajamos el Botón de Inicio y el IMU BNO085, asegurandonos que no utilicen las misma lineas de conexión. Si bien el IMU se conecta por Qwiic los pines pueden interferir.<br>
     </td>
     <td align="center">
-      Colocación de la Cámara en su soporte en el Piso de Arriba y <b>Proyecto Mahoraga</b> queda totalmente armado y listo luego de ajustar cableado (Sección 5) y la programación (Sección 6 y 7).<br>
+      Colocación de la Cámara en su soporte en el Piso de Arriba con 60 grados de inclinación. <b>Proyecto Mahoraga</b> queda totalmente armado y listo luego de ajustar cableado (Sección 5) y la programación (Sección 6 y 7).<br>
     </td>
   </tr>
 </table>
