@@ -147,6 +147,16 @@ Alfredo, es nuestro coach y de profesion matemático.
 **Link YouTube** 
 (https://youtube.com/shorts/lqm2GCjuBmU?feature=share)
 
+3b. Reto 1 - Open Challenge con la caja grande en todos los lados
+
+**Link Youtube**
+(https://youtu.be/qX_5btinKA8)
+
+3c. Reto 1 - Open Challenge con un lado de la caja más grande que el otro.
+
+**Link Youtube**
+(https://youtube.com/shorts/0UPQsAmQOhI)
+
 3b. Reto 2 – Obstacle Challenge 
 
 **Link YouTube** 
