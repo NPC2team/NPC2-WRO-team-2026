@@ -157,10 +157,10 @@ Alfredo, es nuestro coach y de profesion matemático.
 **Link Youtube**
 (https://youtube.com/shorts/0UPQsAmQOhI)
 
-3b. Reto 2 – Obstacle Challenge 
+3d. Reto 2 intento– Obstacle Challenge 
 
 **Link YouTube** 
-
+(https://youtu.be/Lv-a8dN4dbw)
 ## **4. Movilidad y Diseño Mecánico (Criterio 1)** 
 
 En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**.  En  el  Engineering  Journal  (Sección  4)  incluimos  la  descripción completa  del proceso  de  diseño,  las  mejoras sobre  nuestro  robot 2025,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. 
