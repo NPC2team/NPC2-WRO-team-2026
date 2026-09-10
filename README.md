@@ -38,10 +38,21 @@
 - l. Métricas de Desempeño del Reto con Obstáculos
 - m. Ajustes Realizados en Ambos Retos
 ## **7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)** 
-
+ - a. Diagrama de Bloques del Sistema
+ - b. Interacción entre Subsistemas
+ - c. Restricciones (Constraints) Identificadas
+ - d. Decisiones de Diseño Principales
+ - e. Análisis de Riesgos y Mitigación
+ - f. Historial de Iteraciones (resumen)
 ## **8. Instrucciones de Reproducibilidad (Criterio 5)** 
-
-
+ - a. Requisitos de Hardware
+ - b. Requisitos de Software
+ - c. Instalación Paso a Paso
+ - d. Estructura del Repositorio
+ - e. Cómo Arrancar el Sistema
+ - f. Notas de Ensamblaje
+<br>
+<br>
 
 ## **1. Encabezado e Información del Equipo** 
 
