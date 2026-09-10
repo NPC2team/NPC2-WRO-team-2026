@@ -182,6 +182,19 @@ Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a l
 |Distancia entrepivotes|97 mm|
 |Peso(sin cámara)|1.100g (límite reglamentario: 1500g)|
 
+### Evolutivo del Chasis
+
+Las piezas fueron diseñadas en Fusion e impresas en 3D, utilizando una Impresora Bambu Lab P2S con Filamento PLA. El infill general utilizado fue 15% por default, excepto en el chasis que se ajustó en las últimas versiones a 55% para mayor fortaleza y algunas otras piezas que requirieron un poco mas de Infill (30%).
+
+|**Pieza**|**Prototipo**|**Versión_#1**|**Versión_#2**|**Versión_Final**|**Foto_Real**|**Comentarios**|
+|---|---|---|---|---|---|---|
+|Chasis de Abajo|<img width="250" height="400" alt="Chasis Abajo Prototipo" src="https://github.com/user-attachments/assets/47581fb8-67aa-416d-8e9e-12950c659ff1" />|<img width="800" height="600" alt="Chasis Abajo V1" src="https://github.com/user-attachments/assets/c313e7db-6008-40b1-8222-2f91f0e01e03" />|<img width="800" height="600" alt="Chasis Abajo V2" src="https://github.com/user-attachments/assets/191f9959-d4f0-4171-9cdc-3b337c24bec3" />|<img width="800" height="600" alt="Chasis Abajo VF" src="https://github.com/user-attachments/assets/c0370bf7-6c27-497a-a957-2602fd02712f" />|<img width="600" height="800" alt="Chasis Abajo Foto" src="https://github.com/user-attachments/assets/63b3190c-025c-4947-8aa3-8bb0d67ec623" />|El Chasis de Abajo ha tenido varias evoluciones, desde un Prototipo en cartón que hicimos para ver si se ajustaban las piezas. La Versión 1 incluye un agujero para colocar la transmisión, así como el espacio necesario adelante para colocar el LiDAR. La Versión 2 mas refinada, incluye algunos agujeros para tornillos del soporte del Chasis de Arriba, las C Hub incorporadas para la Dirección. La Versión Final ademas de incorporar mas agujeros para los tornillos de los soportes, también incrementa el espacio para el LiDAR y asi lograr un FOV libre de 180 grados y esta impreso con un Infill de 55% para lograr mayor consistencia y se fortalecieron los C Hub, que comenzaron a doblarse en la versión anterior.   
+|Chasis de Arriba|<img width="960" height="1280" alt="Chasis Arriba Prototipo" src="https://github.com/user-attachments/assets/227f7bc5-38e9-4e06-beaf-f3db4a6d1d00" />|<img width="997" height="640" alt="Chasis Arriba V1" src="https://github.com/user-attachments/assets/5ef1016f-3d26-4982-ba2d-9f5bfeff9f54" />| <img width="986" height="652" alt="Chasis Arriba V2" src="https://github.com/user-attachments/assets/737924b8-7b8b-4f48-acf5-2038006267d6" />|<img width="888" height="601" alt="Chasis Arriba VF" src="https://github.com/user-attachments/assets/06ed4ba2-53e2-4cd8-819b-eb79d1c4e45c" />|<img width="773" height="1209" alt="Chasis Arriba Foto" src="https://github.com/user-attachments/assets/84536c22-f2cf-4f8f-b402-5cb9c047e754" />|El Chasis de Arriba comenzamos con un Prototipo en cartón vara visualizar los componentes a comprar tenian el espacio requerido. La Versión 1 incluye el habitáculo de la batería entre ambos niveles, pero una Versión 2 refinó espacio para los cables, soporte para el suitche de encendido y orificios para los soportes que unen ambos chasis. La Versión Final, refina la colocación del suiche y se crea un subnivel para elevar un poco el RPI 5 y el subnivel encima de la batería para comodar mejor otros compotentes. Finalmente un espacio frontal adicional para centrar bien la cámará, justo encima del LiDAR|
+
+|**Pieza**|**Modelo Fusion**|**Versión_#1**|**Versión_Final**|**Foto_Real**|**Comentarios**|
+|---|---|---|---|---|---|
+|Sujeta Cables|<img width="902" height="634" alt="Sujeta Cable Prototipo en Fusion" src="https://github.com/user-attachments/assets/712822ff-0728-4713-b339-9b291779aac1" />|No Aplica|<img width="630" height="423" alt="Sujeta Cables VF" src="https://github.com/user-attachments/assets/17971505-ad8b-4973-af4d-ae686da3f29e" />|<img width="740" height="1095" alt="Sujeta Cables Foto" src="https://github.com/user-attachments/assets/1276c280-94b3-432e-a5e1-29f03c550767" />|Sujeta cable Dupont, útil para asegurar que los cables dupont conectados al Servo no se sueltes, igual lo usamos para canalizar cables dupont a través del chasis| 
+|Soporte de Rolineras|<img width="699" height="677" alt="Soporte de Rolinera Prototipo en Fusion" src="https://github.com/user-attachments/assets/f5879aa4-bd2c-4dc0-b399-ff6cf48408bb" />|No Aplica|<img width="462" height="519" alt="Soporte de Rolinera Tapa VFinal" src="https://github.com/user-attachments/assets/b6bb574a-becd-474b-b3f1-43a324634503" /><img width="607" height="600" alt="Soporte de Rolinera VFinal" src="https://github.com/user-attachments/assets/82ced774-8c34-41bb-9b70-33c213c536ae" />|<img width="607" height="600" alt="Soporte de Rolinera Foto" src="https://github.com/user-attachments/assets/619dd32a-26c8-4eb9-92b4-6a56385724a1" />|Diseñadas para suetar rolinera que soporta el tren trasero del diferencial. El diseño original llevaba 2 (una de cada lado), pero luego del la Regional 1 de Miranda se decidió incluir 2 adicionales para dar mayor soporte.| 
 
 Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba, soportes de motor y servo, carcasa y engranajes del diferencial y motor, espaciadores, repisa, canales de cables con tapas). 
 
@@ -216,6 +229,18 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 
 **_En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor._**
 
+### Evolutivo de Piezas de Tracción 
+
+Los engranajes y la caja del diferencial fueron diseñados en Fusion e impresos en 3D utilizando una Impresora Bambu Lab P2S con Filamento PLA, excepto en el caso del engranaje del Motor que en su última versión necesitó un filamenento de Nylon (PA de Fibra de Carbono) mas resistente y que soporta mayores temperaturas, para corregir la falla presentada en el Regional de Miranda. El infill general utilizado fue de 30% y 50%.
+
+|**Pieza**|**Modelo Fusion**|**Versión_#1**|**Versión_Final**|**Foto_Real**|**Comentarios**|
+|---|---|---|---|---|---|
+|Soporte Motor|<img width="796" height="723" alt="Soporte Motor Prototipo en Fusion" src="https://github.com/user-attachments/assets/4f784ce9-6437-4464-a28f-d71f9a1b96d7" />|<img width="506" height="427" alt="Soporte de Motor V1" src="https://github.com/user-attachments/assets/a784e1c8-c491-4157-b4df-030a284e75a3" />|<img width="519" height="427" alt="Soporte de Motor VF" src="https://github.com/user-attachments/assets/7f888489-329c-4cb3-a8bc-3c9f14d3b731" />|<img width="483" height="385" alt="Soporte Motor Foto" src="https://github.com/user-attachments/assets/bfaa5a11-bb49-42ee-8a6b-6f8e48cb167c" />|Un diseño inicial que no ajusto bien el motor y las vibraciones provocaban desplazamientos que movian el ajuste de los engranajes. La Versión Final ajustó esa falla y ademas se colocaron pestañas para tornillos dado que la sujeción por debajo de la V1 hacia complicado su posicionamiento exacto en el chasis|
+|Gear Motor|<img width="741" height="475" alt="Gear Motor Prototipo" src="https://github.com/user-attachments/assets/ca24a87f-d876-454c-a330-a9fe566a06b3" />|<img width="530" height="455" alt="Gear Motor V1" src="https://github.com/user-attachments/assets/376afbcd-66ce-4c7f-86c9-50ca79f41190" />|<img width="530" height="455" alt="Gear Motor V Final" src="https://github.com/user-attachments/assets/492f6abe-75a1-477c-9673-36864fcaea42" />| <img width="519" height="521" alt="Gear Motor Foto" src="https://github.com/user-attachments/assets/7543a5a0-6356-4349-a315-8a575cb802fd" />| El engranaje del motor se tuvo que volver hacer luego de la Regional 1 de Miranda, porque el uso comió el hole del engranaje y quedó con poco agarre y hacía que al robot le costara arrancar. Se imprimió nuevamente en Nylon para mayor resistencia al calor de la fricción y al uso. El diseño original se hizo usando una herramienta de diseño de MarketWorld [https://makerworld.com/](https://makerworld.com/es/makerlab/parametricModelMaker](https://makerworld.com/es/makerlab/parametricModelMaker?designId=1364266&from=model_page&modelName=SPUR+GEAR_ParametricModelMaker.scad&protected=true&unikey=57dd6905-7898-41ec-923e-688726f70bdf))| 
+|Gear Diferencial|<img width="621" height="523" alt="Gear Diferencial Prototipo" src="https://github.com/user-attachments/assets/5d85975a-c38b-41c7-89bf-678563519cf7" />|No Aplica|<img width="325" height="254" alt="Gear Diferencial VFinal" src="https://github.com/user-attachments/assets/298b10c8-fd56-4ed6-a36e-b58504d9c9d7" />|<img width="879" height="866" alt="Gear Diferencial Foto" src="https://github.com/user-attachments/assets/61780c71-d8d7-4418-81a9-b72d32f89a12" />|El diseño original se hizo usando una herramienta de diseño de MarketWorld [https://makerworld.com/](https://makerworld.com/es/makerlab/parametricModelMaker](https://makerworld.com/es/makerlab/parametricModelMaker?designId=1364266&from=model_page&modelName=SPUR+GEAR_ParametricModelMaker.scad&protected=true&unikey=57dd6905-7898-41ec-923e-688726f70bdf))| 
+|Gear Caja de Diferencial|<img width="748" height="532" alt="Gear Box Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/9572b7fa-3c32-4bb0-90f9-0adf38d1d467" />|No Aplica|<img width="416" height="333" alt="Gear Box Diferencial VFinal" src="https://github.com/user-attachments/assets/0bcac5b3-7d51-4727-9a01-68b1e88b6092" />|<img width="416" height="465" alt="Gear Box Diferencial Foto Final" src="https://github.com/user-attachments/assets/57d8fc9b-a06d-41eb-aa91-8d983893313a" />|El diseño original se hizo usando una herramienta de diseño de MarketWorld [https://makerworld.com/](https://makerworld.com/es/makerlab/parametricModelMaker](https://makerworld.com/es/makerlab/parametricModelMaker?designId=1364266&from=model_page&modelName=SPUR+GEAR_ParametricModelMaker.scad&protected=true&unikey=57dd6905-7898-41ec-923e-688726f70bdf))| 
+|Espaciador Diferencial|<img width="693" height="635" alt="Espaciador Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/005d6a33-55b5-478e-aa7b-652d1629b7fe" />|No Aplica|<img width="468" height="336" alt="Espaciador Diferencial Versión Final" src="https://github.com/user-attachments/assets/47c13380-5ae9-4008-9cb1-0ed8493e2433" />|<img width="376" height="370" alt="Espaciador Diferencial Foto" src="https://github.com/user-attachments/assets/980a9ffa-dacf-4a50-811f-46ce58268876" />|Espaciador en el diferencial para ajustar la caja de engranajes del diferencial a los soportes de la rolineras y que el eje trasero y el diferencial no se muevan lateralmente| 
+
 ## 4c. Sistema de Dirección 
 
 <img width="331" height="352" align="left" hspace="6" alt="Direccion" src="https://github.com/user-attachments/assets/3a22cd53-615c-4a26-9979-4e6cee0f2961" />
@@ -245,8 +270,43 @@ A diferencia de 2025, colocamos el servo detrás de las ruedas delanteras. Esta 
 |Radio degiro(R)|217,7 mm a 40°|
 |Distancia para 90°|341,90 mm|
 
+### Sistema de Dirección Ackerman
 
-**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados. Comparamos estos resultados con los que obtuvimos en 2025 y explicamos las mejoras._** 
+Competir en Future Engineers WRO 2026 requiere un vehículo de 4 ruedas con dirección real (no diferencial). En el sistema Ackermann la rueda delantera interior gira a un ángulo mayor que la rueda exterior, dado que si las dos ruedas delanteras giraran al mismo ángulo (paralelas), la rueda interna (la del lado interior de la curva) se vería forzada a "arrastrar" o derrapar. 
+
+Para aplicar la geometría Ackermann no usamos las dimensiones externas del chasis, sino las de los puntos de giro reales. La distancia entre pivotes es menor que el ancho total porque las ruedas tienen grosor y los tornillos sobre los que giran (pivotes) están dentro del contorno de las ruedas.
+
+***Fórmula del radio de giro***
+
+La fórmula completa que considera tanto la batalla como la distancia entre pivotes en un giro a 40 grados es:
+
+```bash
+R  = L / tan(δ) + W / 2
+R = 142 / tan (40°) + 97 / 2
+R = 142 / 0.839 + 48.5 
+R = 217.7 mm
+```
+
+***Cálculo de la distancia recorrida en un giro de 90°***
+
+```bash
+Distancia = (2 × π × R) / 4
+Distancia = (2 × π × 217.7) / 4 ≈ 341.9 mm
+```
+
+Bajo este calculo y probado en la practica, Proyecto Mahoraga es capaz de hacer un giro de 90 grados en 34,2 cms.
+
+
+**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como el comparativo con 2025 de los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados._** 
+
+### Evolutivo de Piezas 3D de Dirección 
+
+El soporte del servo hecho a la medida y altura necesaria, asi como los C-Hubs fueron diseñados en Fusion e impresos en 3D utilizando una Impresora Bambu Lab P2S con Filamento PLA. El infill general utilizado fue de 15% para el soporte y 30% para el C-Hubs aunque este último se descartó en el diseño final por incluirse en la placa del chasis.
+
+|**Pieza**|**Modelo Fusion**|**Versión_#1**|**Versión_Final**|**Foto_Real**|**Comentarios**|
+|---|---|---|---|---|---|
+|Soporte Servo|<img width="763" height="682" alt="Soporte Servo Prototipo en Fusion" src="https://github.com/user-attachments/assets/8921e9b8-114d-4369-97fb-cebade415fcd" />|<img width="521" height="451" alt="Soporte de Servo V1" src="https://github.com/user-attachments/assets/b978f579-46d7-43b5-b75c-403e4fa139ab" />|<img width="484" height="398" alt="Soporte de Servo V2" src="https://github.com/user-attachments/assets/9576e490-375c-4adb-acc8-4f27f14bb6ae" />| <img width="431" height="305" alt="Soporte Servo Foto" src="https://github.com/user-attachments/assets/ac51d6c3-cd66-4c31-b102-0885bf16c29f" />|El diseño inicial tenía su atornillado por debajo y dificultaba su ajuste al chasis, ademas los agujeros a los tornillos quedaron muy flojos por usar un infill muy bajo en la pieza (15%). La Versión Final ajustó esa falla con un Infill de 30% y ademas se colocaron pestañas para tornillos para mas fácil ajuste al chasis |
+|C Hubs|<img width="414" height="601" alt="C Hubs V1" src="https://github.com/user-attachments/assets/8f08d656-e76c-42f1-84bf-3272c6f7da95" />|No Aplica|Descartada, al incluirse en el Chasis en la Versión V1 en adelante|<img width="397" height="473" alt="C Hubs Foto" src="https://github.com/user-attachments/assets/28d3c488-85c7-469a-a407-1fe34a2f50fe" />|Ideada para sostener las manguetas de la dirección en vez de comprar unas comerciales. sin embargo se incluyeron en el diseño del Chasis V1| 
 
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
@@ -296,6 +356,37 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 |**TOTAL bus lógica (5V**<br>**vía D24V90F5)**<br>**TOTAL bus servo (5V**<br>**via D36V50F5)**<br>**Bus 11.1V MOTOR**<br>**(directo)**||**~2.2 A**<br>**~0.5 A**<br>**~0.5 A**|**~4.0 A**<br>**~3.5 A**<br>**~5.0 A**|Margen: +125 % pico, +309%<br>continuo<br>Margen: +57 % pico, +1.000%<br>continuo<br>Margen: +140 % pico|
 |**TOTAL desde LiPo 3S**||**~3.2 A**|**~9.0 A pico**||
 
+### Cálculo de Autonomía de Batería
+
+***Consumo***
+```bash
+El bus de la lógica D24V90F5 de 5V consume 2.2 A
+2.2 A x 5V = 11.000 mA 
+El bus del servo D36V50F5 de 5V consume 0.5 A
+0.5 A x 5V = 2.500 mA 
+El bus del Motor de 11.1v via VNH5019 consume 0.5 A
+0.5 A x 11.1V = 5.550 mA 
+
+Total de Consumo 18.000 mA
+
+Los reguladores buck Pololu D36V50F5 y D24V90F5) son ~90% eficientes. 
+
+Entonces la batería tiene una razon de 11.1V x 90% = 9.99
+
+Reexpresando el Consumo tenemos C = 18.000 / 9.99 = 1801.8 mA @ 11.1V
+```
+***Batería***
+```bash
+La	bateria Lipo 3S es de 11.1V y con capacidad de 3.000 mAh
+Considerando una Capacidad Útil de 70%, dado que en la práctica la batería a full carga arranca con un voltaje de 12,5V, tendíamos:​
+Capacidad Útil = 3.000 mAh x 70% = 2.100 mAh
+
+Autonomia = Capacidad de Bateria (mAh) / Consumo Total (mA)
+Autonomia = 2.100 mAh / 1.802 (mA)
+Autonomia = 1,1655 h = 69.9 minutos
+```
+
+En la práctica hemos visto autonomía similares, pero hemos establecido un cambio de bateria mas conservador cercano a los 50 minutos de uso, que normalmente han sido unas 10 pruebas de 3 giros, mas el tiempo que ha estado prendido el robot en modo de debugging o de ajuste de algunas variables del código. 
 
 ## 5c. Sensores 
 
@@ -312,11 +403,92 @@ Uno de los upgrades más importantes que hicimos en **Proyecto Mahoraga** fue te
 
 **_En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._** 
 
+### Evolutivo de Piezas 3D para Sensores 
+
+Se construyó una repisa especial para alojar el IMU BNO085 que debía estar cerca del Pico Plus 2, tambien se construyó un sencillo pero eficaz soporte de camara para que se atornillara al chasis en un angulo ideal. Las piezas fueron diseñadas en Fusion e impresos en 3D utilizando una Impresora Bambu Lab P2S con Filamento PLA. El infill utilizado fue de 30%.
+
+|**Pieza**|**Modelo Fusion**|**Versión_#1**|**Versión_Final**|**Foto_Real**|**Comentarios**|
+|---|---|---|---|---|---|
+|Repisa|<img width="984" height="416" alt="Repisa Prototipo en Fusion" src="https://github.com/user-attachments/assets/16d53b0b-8b01-4a57-8aaa-5174044cedb6" />|<img width="689" height="453" alt="Repisa V1" src="https://github.com/user-attachments/assets/accc2536-348c-4857-9ac0-fbc69ebac2b1" />|Descartada, al incluirse en el Chasis en la Versión Final|<img width="681" height="560" alt="Repisa" src="https://github.com/user-attachments/assets/7b409d90-85a8-4a2f-bc21-1f964ad7c4cc" />|La Repisa se realizó para colocar la protoboard que lleva el IMU y el botón de inicio, iba atornillada al habitáculo de la batería| 
+|Soporte Cámara|<img width="739" height="533" alt="Soporte Camara Fusion" src="https://github.com/user-attachments/assets/6c18b316-ce92-4007-a381-f05cb60168f8" />|<img width="356" height="366" alt="Soporte Camara V1" src="https://github.com/user-attachments/assets/7cc61ee3-fae3-43bf-bc3a-c9dcc093d959" />| <img width="453" height="331" alt="Soporte Camara VF" src="https://github.com/user-attachments/assets/d372134d-283b-4c5b-89f1-383e943d8715" />|<img width="340" height="314" alt="Soporte Camara GS Fotojpeg" src="https://github.com/user-attachments/assets/6e349b37-b488-4260-aa34-3afb2839f244" />|Soporte para la Camara en su 1era versión fue para la Raspberry Cam Wide V3, como esa se nos dañó y empezamos a utilizar una Global Shutter, se realizó un nuevo soporte de cámara que consiste de una forma de tornilo para sostenerla desde abajo como un tripode, en un angulo de 60 grados.| 
+
 ## 5d. Topología de Comunicaciones 
 
 Se caracteriza por una topología híbrida en estrella de alto rendimiento, donde la Raspberry Pi 5 actúa como el nodo central de procesamiento, conectada punto a punto mediante interfaces dedicadas a la cámara Global Shutter (vía MIPI CSI-2), al LiDAR STL27L (vía un puente USB-UART) y a una co-procesadora Raspberry Pico Plus 2 (vía USB-CDC). A su vez, la Pico Plus 2 funciona como un nodo secundario de control en tiempo real, gestionando un bus I2C/Qwicc compartido en paralelo para los sensores críticos de navegación (2 sensores de distancia TOF VL53L4CD y la IMU BNO085) y utilizando líneas independientes GPIO/PWM para el control directo de actuadores y hardware de movimiento, que incluyen un encoder, el driver de motor VNH5019 y un servo Savox SC-1251MG. 
 
 <img width="558" height="347" alt="Topologia de Comunicación2" src="https://github.com/user-attachments/assets/b38bd3fd-9669-4113-bf3e-4ea2c285b41a" />
+
+#### Nodo central: Raspberry Pi 5
+
+La Raspberry Pi 5 actúa como el nodo central de la estrella principal. Ejecuta Ubuntu 24.04 con ROS 2 Jazzy, y concentra todas las tareas que requieren capacidad computacional significativa: procesamiento del LiDAR (~2400 puntos por scan a 10 Hz), procesamiento de imagen de la cámara para el Reto de Obstáculos, ejecución del algoritmo de control a 40 Hz, y gestión de la máquina de estados de alto nivel. Se conecta punto a punto con tres periféricos a través de interfaces dedicadas, cada una elegida por sus características específicas de ancho de banda y latencia:
+
+**Cámara RPi Global Shutter → Pi5 vía MIPI CSI-2:**
+Interfaz nativa de la Raspberry Pi para cámaras, con ancho de banda de hasta 6 Gbps. Se eligió MIPI CSI-2 sobre USB porque elimina la sobrecarga del protocolo USB, ofrece menor latencia (crítica para procesamiento de visión en tiempo real) y libera los puertos USB para los demás dispositivos. La cámara Global Shutter fue seleccionada sobre una Rolling Shutter para evitar distorsiones tipo "jelly effect" durante el movimiento del robot.
+
+**LiDAR STL-27L → Pi5 vía USB (con conversor USB-UART interno):**
+El LiDAR se comunica internamente por UART a 921600 baudios, pero LDROBOT provee un cable con conversor CP2102N integrado que expone el dispositivo como puerto serial USB (/dev/ttyUSB0). 
+
+**Pico Plus 2 → Pi5 vía USB-CDC:**
+La comunicación con el microcontrolador utiliza el modo CDC (Communications Device Class) nativo del RP2350, que expone el Pico como puerto serial 
+virtual (/dev/ttyACM0) a 921600 baudios. Se implementó un protocolo CSV liviano sobre esta conexión, con mensajes delimitados por saltos de línea. La elección de USB-CDC sobre alternativas como I2C o SPI se 
+justifica por simplicidad y seguridad de conexión y el ancho de banda es más que suficiente para los 600 bytes/s del protocolo (posición, IMU, encoder, botón).
+
+#### Nodo secundario: Pico Plus 2 (RP2350)
+
+La Pico Plus 2 actúa como nodo secundario de control en tiempo real. Se eligió el RP2350 por su doble núcleo Cortex-M33 a 150 MHz, que 
+permite dividir tareas críticas entre cores (odometría en Core 0, comunicación en Core 1) sin bloqueos. Gestiona a su vez una segunda estrella con dos tipos de buses según la naturaleza de cada periférico:
+
+**Bus I2C (Qwiic) compartido para sensores digitales:**
+Los sensores de navegación con salida digital comparten un único bus 
+I2C0 en los GPIO 4 (SDA) y GPIO 5 (SCL), operando a 400 kHz. Este bus 
+soporta:
+
+- **IMU Adafruit BNO085** (dirección 0x4A): sensor de fusión 9-DOF que 
+  provee cuaterniones estabilizados a 100 Hz. Se prefiere sobre IMUs 
+  crudos porque la fusión sensorial está implementada en hardware 
+  dedicado, liberando al microcontrolador de esa carga computacional.
+
+- **2× VL53L4CD ToF** (reservados para el Reto de Obstáculos): sensores 
+  de tiempo de vuelo para la maniobra de estacionamiento. Comparten el 
+  mismo bus mediante gestión de direcciones I2C dinámica.
+
+El bus I2C se eligió sobre conexiones GPIO individuales porque permite 
+sumar sensores adicionales sin agotar los pines del microcontrolador, y 
+sobre SPI porque los sensores utilizados solo ofrecen interfaz I2C 
+nativa. El conector estándar Qwiic simplifica el cableado y evita 
+errores de conexión.
+
+**Líneas GPIO/PWM dedicadas para actuadores y sensores críticos de tiempo:**
+Los dispositivos que requieren respuesta inmediata o generación precisa 
+de señal utilizan pines dedicados, no un bus compartido:
+
+- **Encoder del motor** (GPIO 2 canal A por interrupción, GPIO 3 canal B 
+  por lectura digital): la lectura por interrupción por hardware 
+  garantiza que no se pierdan pulsos incluso a máxima velocidad 
+  (aproximadamente 4000 pulsos por segundo a velocidad de crucero).
+
+- **Driver de motor Pololu VNH5019** (GPIO 8, 9, 10, 12, 13): 
+  requiere 5 líneas independientes para dirección (INA, INB), 
+  habilitación (ENA, ENB) y PWM a 20 kHz. El PWM se genera con hardware 
+  para mantener la frecuencia por encima del rango audible.
+
+- **Servo Savox SC-1251MG** (GPIO 15): requiere PWM preciso a 50 Hz con 
+  pulsos entre 1.0 y 2.0 ms, generado con hardware dedicado del RP2350.
+
+- **Botón de inicio** (GPIO 28, configurado como INPUT_PULLUP): 
+  detección por interrupción para publicar el evento de inicio con 
+  latencia mínima a la Pi5.
+
+#### Racional de la elección de esta topología
+
+La separación en dos niveles resuelve el procesamiento complejo que requiere un sistema 
+operativo de propósito general (Linux) que no puede garantizar tiempos 
+de respuesta determinísticos, mientras que el control de actuadores 
+requiere precisión en el orden de microsegundos. Al delegar 
+en la Pico las tareas de tiempo real (lectura de encoder, generación de 
+PWM, integración de odometría), la RPi5 queda libre para procesamiento 
+intensivo (LiDAR, visión, control) sin comprometer la seguridad del 
+robot ante variaciones de latencia del sistema operativo.
 
 
 ## 5e. Ubicación de Sensores 
@@ -332,6 +504,8 @@ Se caracteriza por una topología híbrida en estrella de alto rendimiento, dond
 <img width="942" height="600" alt="Ubicación de Sensores" src="https://github.com/user-attachments/assets/1314b2d3-25ad-4afa-8bad-3a2b8fac8868" />
 
 <br>
+
+
 
 ## 5f. Diagrama de Cableado 
 
@@ -618,21 +792,28 @@ La decisión de construir sobre ROS 2 permite modularidad, herramientas de depur
 
 Se reportan los avances que fuímos teniendo en pruebas en una pista con las medidas oficiales de la WRO: 
 
-|**Métrica**|**Junio**|**Julio**|
-|---|---|---|
-|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|Igual|
-|Precisión del conteo de giros|12/12 giros contados correctamente, no se generan dobles giros por restricciones colocadas para ello, aprendidas en WRO 2025|Igual|
-|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque por fallo en lectura de apertura, corregido|100%|
-|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|Igual|
-|Posición lateral durante rectas|< 5 cm de desviación del centro del corredor, mucho más robusto con el control dual Heading y Centrado|Igual|
-|Heading después de completar un giro|Dentro de 5° del objetivo|Igual|
-|Tiempos Promedios en Pruebas| 70 segundos|Se lograron tiempos de 64 seg con mayor velocidad 0,5 m/s, pero las curvas eran mas abiertas, por lo que decidimos mantener en 0,4 m/s, especialmente cuando el centro de la pista era grande 1,8m x 1,8m|
+|**Métrica**|**Junio**|**Julio**|**Ago-Sept**|
+|---|---|---|---|
+|Detección de sentido (CW o CCW)|100% correcta con el enfoque de detección<br>en la primera esquina y luego de ajustes.|Igual|Igual|
+|Precisión del conteo de giros|12/12 giros contados correctamente, no se generan dobles giros por restricciones colocadas para ello, aprendidas en WRO 2025|Igual|Igual|
+|Tasa de completación de vueltas|Luego de ajustes, Estable con múltiples<br>corridas exitosas de 3 vueltas, 1 solo choque por fallo en lectura de apertura, corregido|100%|100%, excepto en pruebas con mayor velocidad 0,6 m/s donde la efectividad fue 60%|
+|Precisión de posición de parada|Consistentemente dentro de la banda 1,2 a 1,5m|Igual|Dentro de la banda de 1,4 a 1,7m al probar con más velocidad|
+|Posición lateral durante rectas|< 5 cm de desviación del centro del corredor, mucho más robusto con el control dual Heading y Centrado|Igual|Igual|
+|Heading después de completar un giro|Dentro de 5° del objetivo|Igual|Igual|
+|Tiempos Promedios en Pruebas| 70 segundos|Se lograron tiempos de 64 seg con mayor velocidad 0,5 m/s, pero las curvas eran mas abiertas, por lo que decidimos mantener en 0,4 m/s, especialmente cuando el centro de la pista era grande 1,8m x 1,8m|Igual, logrando 55seg en algunas pruebas de mas velocidad 0,6 m/s|
 
 En la Regional 1 de Miranda, logramos realizar el reto, pero el robot tardó en arrancar por un problema con el engrane del motor que quedó flojo al consumirse por el calor y la fricción generado por el uso. 
 
 **Solución:** Reimprimir el engranaje en resina de Nylon, mucho mas resistente al calor y a la fricción que el PLA que utilizamos en el engranaje anterior. Una vez solucionados en las prácticas volvimos ha obtener tiempos entre 60 y 70 segundos. 
 
 <img width="722" height="400" alt="Resultados Regional 1 2026" src="https://github.com/user-attachments/assets/dfc9c8f8-c718-4969-aeb3-4f4e9d9558e1" />
+
+En la Regional de Valencia, logramos 27ptos en el reto, pero no se de tuvo. El código que estaba cargado era el del reto 2, que tiene una configuración distinta de culminación de carrera. 
+
+**Solución:** Revisar porque no se habilitó el launcher del Reto 1. Había un problema en el launcher del Reto 1 que estaba en otro directorio, fue solucionado y se hicieron pruebas. 
+
+<img width="722" height="300" alt="Tabla de Valencia" src="https://github.com/user-attachments/assets/cc82e130-3bde-4e5f-938f-9157452ecbeb" />
+
 
 ## 6h. Nodos y Tópicos de Reto con Obstáculos 
 
@@ -735,14 +916,14 @@ nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica
 
 Se reportan los avances evolutivos que fuímos teniendo en pruebas en una pista con las medidas oficiales de la WRO: 
 
-|**Métrica**|**Junio**|**Julio**|
+|**Métrica**|**Junio**|**Julio**|**Ago-Sept**|
 |---|---|---|
-|Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)|..|
-|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV|..|
-|Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|...|
-|Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|..|
-|Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|..|
-|Tiempos Promedios en Pruebas| 32 segundos por Vuelta|..|
+|Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)| Con obstaculos (357 obstaculos con promedio de 7 por vuelta de 51 vueltas). En el 10% de los casos la evasión ha causado un desvio incorrecto (36/350)|420 obstaculos con promedio de 7 por vuelta de 60 vueltas. En el 6% de los casos la evasión ha causado un desvio incorrecto (25/420) |
+|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV|98% de obstaculos detectados correctamente|90% de obstaculos detectados correctamente, se practico con ubicación de obstaculos compleja|
+|Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|85%|89%|
+|Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|50%|90% aunque mueve algún pilar|
+|Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|Igual|40%, aun con problemas con el magnenta|
+|Tiempos Promedios en Pruebas| 32 segundos por Vuelta|35 seg por vuelta|38 seg por Vuelta, hemos logrado mas eficiencia con menor velocidad|
 
 
 ## 6m. Ajustes Realizados en Ambos Retos
@@ -762,7 +943,9 @@ Con estos ajustes logramos una tasa de éxito muy elevada en el Reto Abierto, in
 
 - La magnitud del giro en Ruta Proyectada (Capa 1) viene determinada por el grado donde se encuentra la ruta ideal en un campo de -60° a +60°, si está en alguno de los extremos el servo gira al máximo posible hacia ese lado, en una función lineal que determinaba el angulo de giro. Si el angulo de la ruta ideal, era por ejemplo +30°, ahi el giro era el 50% del máximo del servo. Entonces, lo que hicimos fue cambiar la función lineal Giro del Servo (-100%,100%) = Angulo de Ruta Ideal / 60 a una función servo donde (Angulo de Ruta Ideal/60)^k con k < 1. Esto permite que el ajuste sea mas agresivo, pese a que los valores no sean extremos garantizando una reacción mas acelerada. Nos queda es encontrar el valor de K que sea ideal para tener el trade off entre mayor agresividad de giro sin generar volatilidad en el recorrido por cambios bruscos del servo.
 
-Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con Obstáculos, quedando pendiente aún mas pruebas y pruebas con distintas velocidades, capacidad de giro y posiblemente esttructurar una maniobra de retroceso cuando no sea posible hacer la evasión del obstáculo. Adicionalmente está pendiente la estrategía del estacionamiento.
+- Producto del mayor nivel de giro, lateralmente Proyecto Mahoraga podía mover algunos de los pilares, 2 o 3 por vuelta, por lo que incluimos un delay despues de deja de ver el obstaculo de 1.5 seg antes de cambiar de dirección.
+
+Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con Obstáculos, hemos descartado estructurar una maniobra de retroceso cuando no sea posible hacer la evasión del obstáculo, dado que cambiaría en mucho la lógica de conducción y ya hemos minimizando esos casos. Sigue pendiente unae strategía eficaz del estacionamiento.
 
 ## 7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)
 
@@ -926,7 +1109,7 @@ Para facilitar su reproductibilidad anexamos lista completa de los componentes c
 
 **Listado de impresiones 3D** 
 
-Se realizó un Anexo de la Sección 8.1. dedicado a las Piezas 3D, su distintas evoluciones, fotos de su prototipo, versiones en 3D y Foto del componente ya impreso. El anexo está disponible [**/materials/Piezas 3D.md**](https://github.com/NPC2team/NPC2-WRO-team-2026/blob/main/materials/Piezas%203D.md)
+Se realizó un Anexo de la Sección 8.1. dedicado a todas las Piezas 3D, su distintas evoluciones, fotos de su prototipo, versiones en 3D y Foto del componente ya impreso. El anexo está disponible [**/materials/Piezas 3D.md**](https://github.com/NPC2team/NPC2-WRO-team-2026/blob/main/materials/Piezas%203D.md)
 
 Los componentes impresos en 3D tienen sus archivos en STL/3MF en **/models.** 
 
