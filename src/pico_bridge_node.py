@@ -6,10 +6,7 @@
 # Pimoroni Pico Plus 2 (vía USB serial) y el resto del sistema
 # ROS 2 corriendo en la Raspberry Pi 5.
 #
-# Proyecto: WRO 2026 Future Engineers — Equipo NPC
-# Etapa: 2 (puente Pico ↔ ROS 2)
-#
-# Responsabilidades:
+# Que hace?:
 #   1. Detectar y conectarse automáticamente a la Pico por USB
 #   2. Leer continuamente líneas CSV del Pico (hilo dedicado)
 #   3. Publicar en topics ROS 2:
@@ -21,14 +18,12 @@
 #        /cmd_motor (Float32) — velocidad en m/s para el motor
 #        /cmd_servo (Float32) — steering [-1, +1] para el servo
 #   5. Reenviar comandos al Pico formateados como CSV
-#   6. Reconectar automáticamente si se pierde la comunicación
 #
-# Protocolo serial (terminador '\n'):
 #   Pico → Pi5:
 #     POS,x,y,theta,acc_yaw
 #     IMU,yaw,qx,qy,qz
 #     ENC,ticks
-#     BTN                          (botón físico presionado)
+#     BTN                          (botón de inicio)
 #     BOOT,mensaje | OK,mensaje | ERR,mensaje
 #   Pi5 → Pico:
 #     M,velocidad   (ej: "M,0.80")
@@ -63,21 +58,18 @@ RECONNECT_DELAY_S = 2.0
 class PicoBridgeNode(Node):
     """
     Nodo puente entre el Pico (USB serial) y ROS 2.
-    No contiene lógica del robot, solo traduce mensajes.
     """
 
     def __init__(self):
         super().__init__('pico_bridge')
         self.get_logger().info('Iniciando pico_bridge_node...')
 
-        # ----------------------------------------------------------
         # Conexión serial al Pico
         # ----------------------------------------------------------
         self.ser = None
         self.serial_lock = threading.Lock()  # protege escrituras concurrentes
         self.conectar_pico()
 
-        # ----------------------------------------------------------
         # Publishers (de Pico hacia ROS 2)
         # ----------------------------------------------------------
         self.pub_pose = self.create_publisher(NpcPose, '/npcpos', 10)
@@ -85,13 +77,11 @@ class PicoBridgeNode(Node):
         self.pub_encoder = self.create_publisher(Int32, '/encoder', 10)
         self.pub_start = self.create_publisher(Empty, '/start', 10)
 
-        # ----------------------------------------------------------
         # Subscribers (de ROS 2 hacia Pico)
         # ----------------------------------------------------------
         self.create_subscription(Float32, '/cmd_motor', self.callback_motor, 10)
         self.create_subscription(Float32, '/cmd_servo', self.callback_servo, 10)
 
-        # ----------------------------------------------------------
         # Hilo dedicado a leer del USB sin bloquear el nodo principal
         # ----------------------------------------------------------
         self.running = True
@@ -108,8 +98,7 @@ class PicoBridgeNode(Node):
     def conectar_pico(self):
         """
         Busca el puerto USB del Pico Plus 2 y abre la conexión.
-        Identificación por descripción del puerto (más robusto que
-        hardcoded /dev/ttyACM0).
+        Identificación por descripción del puerto (/dev/ttyACM0).
         """
         puerto = self._encontrar_puerto_pico()
         if puerto is None:
@@ -136,7 +125,7 @@ class PicoBridgeNode(Node):
     def _encontrar_puerto_pico(self):
         """
         Recorre puertos serie disponibles y devuelve el primero que
-        parezca ser una Pico (por descripción del producto).
+        parezca ser una Pico.
         Si no encuentra, devuelve None.
         """
         for port in list_ports.comports():
@@ -187,8 +176,9 @@ class PicoBridgeNode(Node):
 
     def usb_read_loop(self):
         """
-        Loop que corre en hilo dedicado. Lee líneas del USB y las
-        parsea. Si hay error de comunicación, intenta reconectar.
+        Loop que corre en hilo dedicado. 
+        Lee líneas del USB. 
+        Si hay error de comunicación, intenta reconectar.
         """
         while self.running and rclpy.ok():
             if self.ser is None or not self.ser.is_open:

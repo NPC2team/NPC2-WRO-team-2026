@@ -1,7 +1,7 @@
 # ============================================================
 # NpcPose.msg
 # ------------------------------------------------------------
-# Mensaje personalizado para la pose del robot NPC en WRO 2026.
+# Mensaje para la pose de Proyecto Mahoraga.
 # Combina posición 2D, orientación y yaw acumulado en un solo
 # mensaje para mantener consistencia temporal.
 #

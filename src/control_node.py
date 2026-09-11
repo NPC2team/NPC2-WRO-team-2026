@@ -2,10 +2,10 @@
 # ============================================================
 # control_node.py
 # ------------------------------------------------------------
-# Nodo principal de control para el Open Challenge WRO 2026
+# Nodo principal de control para el Reto Abierto (Reto1)
 # Equipo NPC
 #
-# Responsabilidades:
+# Wue Hace?:
 #   - Recibir datos del bridge (/npcpos) y del LiDAR (/scan)
 #   - Implementar los 4 pilares del diseño:
 #       Pilar 1: localización y conteo de giros (12 giros = 3 vueltas)
@@ -26,13 +26,7 @@
 #   - LiDAR Clockwise: el frente del robot corresponde al ángulo 270°
 #     del LiDAR. La conversión robot↔LiDAR es SUMA:
 #         angulo_lidar = (270 + angulo_robot) % 360
-#     (porque ambos sentidos son CW)
 #
-# Nota crítica: IMU usa convención CCW positivo, servo usa CW positivo.
-# Por eso el cálculo de error de heading invierte el orden:
-#     error = norm_ang(theta - section_angle)
-# Cuando theta > section_angle (robot más a la izquierda del objetivo),
-# error > 0 → str_angle > 0 → servo a la DERECHA → corrige correctamente.
 # ============================================================
 
 import math
@@ -49,7 +43,7 @@ from npc_interfaces.msg import NpcPose
 
 
 # ============================================================
-# PARÁMETROS DEL CONTROL (todos tuneables)
+# PARÁMETROS DEL CONTROL (todos parametrizables)
 # ============================================================
 
 # --- Frecuencias ---
@@ -57,8 +51,7 @@ LOOP_FREQUENCY_HZ = 40.0
 LOOP_PERIOD_S = 1.0 / LOOP_FREQUENCY_HZ
 
 # --- Velocidades (m/s) ---
-# Velocidades conservadoras para depuración inicial.
-# Una vez el robot esté completamente controlado, subir progresivamente.
+# Velocidades conservadoras y ajustables si se quiere bajar tiempos.
 VELOCIDAD_RECTA = 0.4
 VELOCIDAD_CURVA = 0.25
 VELOCIDAD_APROXIMACION_FIN = 0.7 * VELOCIDAD_RECTA  # 0.28
@@ -75,13 +68,12 @@ KP_GIRO = 1.91
 UMBRAL_FIN_GIRO_RAD = math.radians(15.0)  # 0.2618
 
 # --- Wall centering (Pilar 3 Capa 2) ---
-# Sectores en convención del robot: positivo = derecha
-# Ajustado al FoV real del LiDAR (visible 193°-350°)
+# FoV real del LiDAR era 193°-350°, ahora es 185-355, se podría ajustar
 # Originalmente (80, 82); pero (270+82)%360=352° está fuera del FoV
 SECTOR_WALL_DER = (75.0, 77.0)
 SECTOR_WALL_IZQ = (-77.0, -75.0)
 KP_LATERAL = 1.0
-UMBRAL_CORREDOR_MAX = 1.1         # suma left+right
+UMBRAL_CORREDOR_MAX = 1.1         # suma distancia left+right 
 UMBRAL_DIST_POST_GIRO = 0.4       # m desde último giro
 WALL_CENTERING_MAX = 0.5          # límite del strAngle generado por Capa 2
 
@@ -90,9 +82,9 @@ WALL_CENTERING_MAX = 0.5          # límite del strAngle generado por Capa 2
 SECTOR_FRONTAL = (-5.0, 5.0)
 SECTOR_LATERAL_DER = (65.0, 75.0)
 SECTOR_LATERAL_IZQ = (-75.0, -65.0)
-UMBRAL_FRONTAL = 0.7              # m, distancia para activar detección de esquina
-UMBRAL_APERTURA_LATERAL = 1.0     # m, confirmación lateral
-UMBRAL_DEBOUNCE_ESPACIAL = 1.0    # m desde último giro
+UMBRAL_FRONTAL = 0.7              # m, distancia para activar detección de esquina, consistente hasta en cuadro grande
+UMBRAL_APERTURA_LATERAL = 1.0     # m, confirmación lateral de apertura
+UMBRAL_DEBOUNCE_ESPACIAL = 1.0    # m desde último giro, para evitar doble giro
 
 # Nota: el sentido de giro (CW/CCW) se detecta en la PRIMERA esquina
 # mirando ambos lados laterales y eligiendo el que tenga apertura.
@@ -117,9 +109,8 @@ LIDAR_RANGO_MAX = 3.0             # m
 # al mapear: angulo_lidar = (LIDAR_FRENTE_DEG - angulo_robot) % 360
 LIDAR_FRENTE_DEG = 270.0
 
-
 # ============================================================
-# CLASE PRINCIPAL
+# PRINCIPAL
 # ============================================================
 
 class ControlNode(Node):
@@ -127,7 +118,7 @@ class ControlNode(Node):
     def __init__(self):
         super().__init__('control_node')
 
-        # ----- Datos sensoriales (los llenan los callbacks) -----
+        # ----- Datos sensoriales (callbacks) -----
         self.pose = None
         self.lidar = None
         self.lidar_ranges_np = None
@@ -194,15 +185,14 @@ class ControlNode(Node):
         Convierte un ángulo en convención del robot al índice del array
         de ranges del LiDAR.
 
-        Convención de los SECTORES del robot en este código:
+        Convención de los SECTORES del robot:
             0° = frente, +90° = DERECHA, -90° = IZQUIERDA, 180° = atrás
             (consistente con servo: positivo = derecha)
         Convención del LiDAR:
             Escaneo Clockwise desde 0° hasta 360°. El frente del robot
             corresponde al ángulo LIDAR_FRENTE_DEG (calibrado: 270°).
 
-        Como ambas convenciones son CW (positivo en mismo sentido),
-        la conversión es SUMA: lidar = (FRENTE + robot) % 360.
+        La conversión es SUMA: lidar = (FRENTE + robot) % 360.
         Ejemplo: robot +90° (derecha) → (270 + 90) % 360 = 0° del LiDAR.
         """
         angulo_lidar_deg = (LIDAR_FRENTE_DEG + angulo_robot_deg) % 360.0
@@ -216,7 +206,6 @@ class ControlNode(Node):
     def _mediana_sector(self, ang_min_deg, ang_max_deg):
         """
         Calcula la mediana de las distancias en un sector angular del robot.
-        Los ángulos se pasan en convención del robot (no del LiDAR).
         """
         if self.lidar_ranges_np is None:
             return float('inf')
@@ -303,10 +292,7 @@ class ControlNode(Node):
 
     def _estado_boot(self):
         """
-        Datos disponibles. Inicializar estado interno y pasar a READY.
-        El section_angle se captura cuando se presione el botón, no aquí,
-        para que sea la orientación REAL del robot en la pista
-        (independiente de dónde se cargaron los nodos).
+        Inicializar estado interno y pasar a READY.
         """
         self.cmd_velocity = 0.0
         self.cmd_steering = 0.0
@@ -320,17 +306,11 @@ class ControlNode(Node):
 
     def _estado_ready(self):
         """
-        Estado READY: el robot está listo pero no hace nada inteligente.
+        Estado READY: el robot está listo pero no hace nada.
         Solo espera a que se presione el botón físico (/start).
-        Esto permite arrancar los nodos en la mesa de inspección y
-        colocar el robot en la pista justo antes de presionar el botón.
-
+    
         Al presionar el botón se captura la orientación actual del IMU
-        como rumbo objetivo inicial. Así no importa dónde estaban los
-        nodos cuando arrancaron: el "rumbo de carrera" se define en el
-        momento de presionar el botón, con el robot ya en posición.
-
-        El sentido de giro NO se detecta aquí: se detecta cuando el robot
+        como rumbo objetivo inicial. El sentido de giro NO se detecta aquí: se detecta cuando el robot
         llegue a la primera esquina y vea apertura clara en un lado.
         """
         # Mantener motor parado y servo recto
@@ -346,7 +326,6 @@ class ControlNode(Node):
                 f'sentido se detectará en 1a esquina)'
             )
             self.estado = 'RUNNING'
-
 
     # ----------------------------------------------------------
     # ESTADO: RUNNING
@@ -405,7 +384,6 @@ class ControlNode(Node):
 
         # Debounce espacial: ¿avanzamos lo suficiente desde el último giro?
         # En la primera esquina last_turn_pos es None y _dist_desde_ultimo_giro
-        # devuelve inf, así que esta condición siempre se cumple la primera vez.
         if self._dist_desde_ultimo_giro() < UMBRAL_DEBOUNCE_ESPACIAL:
             return
 
@@ -482,7 +460,7 @@ class ControlNode(Node):
         Por eso el error se calcula como (theta - section_angle) en lugar de
         (section_angle - theta): cuando theta es mayor que el objetivo,
         el robot está MÁS hacia la izquierda de lo deseado y debe corregir
-        hacia la DERECHA (servo positivo).
+        hacia la DERECHA (servo positivo). Esto es así porque el servo está instalado viendo hacia adelante.
         """
         error = self._norm_ang(self.pose.theta - self.section_angle)
 
@@ -497,7 +475,7 @@ class ControlNode(Node):
         """
         Detecta cuándo el error de heading baja del umbral y desactiva turning.
         El conteo se hace en _actualizar_contador_giros() detectando la
-        transición True→False.
+        transición True a False.
 
         Usa la misma fórmula de error que _calcular_heading por consistencia.
         Como solo se usa abs(error), el signo no afecta el resultado.
