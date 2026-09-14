@@ -119,7 +119,7 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 **“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, bautizado en alusión al poderoso personaje del Anime Jujutsu Kaisen por su capacidad de adaptación.
 
-**“Proyecto Mahoraga”** representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá ejecutar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. En la carpeta ***Comparativo con 2025*** se podrá ver el detalle de la mejora vs Crazy Diamond (2025) y en la carpeta de ***Journal*** detallaremos el diario con los avances semana a semana de la labor para construir **“Proyecto Mahoraga”**.
+**“Proyecto Mahoraga”** representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá ejecutar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. En la carpeta ***Selección de Componentes y Comparación con 2025*** se podrá ver el detalle de la mejora vs Crazy Diamond (2025) y porque se seleccionó cada componente, mientras que en la carpeta de ***Journal*** detallaremos el diario con los avances semana a semana de la labor para construir **“Proyecto Mahoraga”**.
 
 ## 2b. Fotos del Robot 
 
@@ -177,7 +177,7 @@ Alfredo, es nuestro coach y de profesion matemático.
 (https://youtu.be/Lv-a8dN4dbw)
 ## **4. Movilidad y Diseño Mecánico (Criterio 1)** 
 
-En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. En  "Comparativo con 2025",  mostramos las  mejoras sobre  nuestro robot Proyecyo Mahoraga respecto a Crazy Diamond 2025.
+En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. En  ***Selección de Componentes y Comparación con 2025***,  mostramos las  mejoras sobre nuestro robot Proyecyo Mahoraga respecto a Crazy Diamond 2025.
 
 ## 4a. Chasis 
 
@@ -217,7 +217,7 @@ Las piezas fueron diseñadas en Fusion e impresas en 3D, utilizando una Impresor
 
 Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba, soportes de motor y servo, carcasa y engranajes del diferencial y motor, espaciadores, repisa, canales de cables con tapas). 
 
-***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot 300 grms mas ligero, 5 cms mas corto y 4 cms menos ancho***
+***En la carpeta "Selección de Componentes y Comparación con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot 300 grms mas ligero, 5 cms mas corto y 4 cms menos ancho***
 
 ## 4b. Sistema de Tracción 
 
@@ -303,7 +303,7 @@ Los engranajes y la caja del diferencial fueron diseñados en Fusion e impresos 
 |Gear Caja de Diferencial|<img width="748" height="532" alt="Gear Box Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/9572b7fa-3c32-4bb0-90f9-0adf38d1d467" />|No Aplica|<img width="416" height="333" alt="Gear Box Diferencial VFinal" src="https://github.com/user-attachments/assets/0bcac5b3-7d51-4727-9a01-68b1e88b6092" />|<img width="416" height="465" alt="Gear Box Diferencial Foto Final" src="https://github.com/user-attachments/assets/57d8fc9b-a06d-41eb-aa91-8d983893313a" />|El diseño original se hizo usando una herramienta de diseño de MarketWorld [https://makerworld.com/](https://makerworld.com/es/makerlab/parametricModelMaker](https://makerworld.com/es/makerlab/parametricModelMaker?designId=1364266&from=model_page&modelName=SPUR+GEAR_ParametricModelMaker.scad&protected=true&unikey=57dd6905-7898-41ec-923e-688726f70bdf))| 
 |Espaciador Diferencial|<img width="693" height="635" alt="Espaciador Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/005d6a33-55b5-478e-aa7b-652d1629b7fe" />|No Aplica|<img width="468" height="336" alt="Espaciador Diferencial Versión Final" src="https://github.com/user-attachments/assets/47c13380-5ae9-4008-9cb1-0ed8493e2433" />|<img width="376" height="370" alt="Espaciador Diferencial Foto" src="https://github.com/user-attachments/assets/980a9ffa-dacf-4a50-811f-46ce58268876" />|Espaciador en el diferencial para ajustar la caja de engranajes del diferencial a los soportes de la rolineras y que el eje trasero y el diferencial no se muevan lateralmente| 
 
-***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un controlador mucho mas eficiente, con ruedas mas angostas, pero firmes al ser de aluminio y motor con prestaciones comparables pero menor tamaño y peso***
+***En la carpeta "Selección de Componentes y Comparación con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un controlador mucho mas eficiente, con ruedas mas angostas, pero firmes al ser de aluminio y motor con prestaciones comparables pero menor tamaño y peso***
 
 ## 4c. Sistema de Dirección 
 
@@ -378,7 +378,7 @@ El soporte del servo hecho a la medida y altura necesaria, asi como los C-Hubs f
 |Soporte Servo|<img width="763" height="682" alt="Soporte Servo Prototipo en Fusion" src="https://github.com/user-attachments/assets/8921e9b8-114d-4369-97fb-cebade415fcd" />|<img width="521" height="451" alt="Soporte de Servo V1" src="https://github.com/user-attachments/assets/b978f579-46d7-43b5-b75c-403e4fa139ab" />|<img width="484" height="398" alt="Soporte de Servo V2" src="https://github.com/user-attachments/assets/9576e490-375c-4adb-acc8-4f27f14bb6ae" />| <img width="431" height="305" alt="Soporte Servo Foto" src="https://github.com/user-attachments/assets/ac51d6c3-cd66-4c31-b102-0885bf16c29f" />|El diseño inicial tenía su atornillado por debajo y dificultaba su ajuste al chasis, ademas los agujeros a los tornillos quedaron muy flojos por usar un infill muy bajo en la pieza (15%). La Versión Final ajustó esa falla con un Infill de 30% y ademas se colocaron pestañas para tornillos para mas fácil ajuste al chasis |
 |C Hubs|<img width="414" height="601" alt="C Hubs V1" src="https://github.com/user-attachments/assets/8f08d656-e76c-42f1-84bf-3272c6f7da95" />|No Aplica|Descartada, al incluirse en el Chasis en la Versión V1 en adelante|<img width="397" height="473" alt="C Hubs Foto" src="https://github.com/user-attachments/assets/28d3c488-85c7-469a-a407-1fe34a2f50fe" />|Ideada para sostener las manguetas de la dirección en vez de comprar unas comerciales. sin embargo se incluyeron en el diseño del Chasis V1| 
 
-***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un una capacidad de giro mayor en 29% gracias a su menor tamaño que disminuyo tanto su Batalla como Pivotes. Ademas el servo digital añade precisión y velocidad de respuesta.***
+***En la carpeta "Selección de Componentes y Comparación con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un una capacidad de giro mayor en 29% gracias a su menor tamaño que disminuyo tanto su Batalla como Pivotes. Ademas el servo digital añade precisión y velocidad de respuesta.***
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
 
@@ -474,7 +474,7 @@ Uno de los upgrades más importantes que hicimos en **Proyecto Mahoraga** fue te
 |<img width="110" height="110" alt="Encoder" src="https://github.com/user-attachments/assets/c9b0380f-ce44-4107-9fe8-7cd2a6e6303e" />|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
 
 
-***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un una capacidad muy superior por el uso del LiDAR para mapear obstaculos y paredes, y en el reposa buena parte de la responsabilidad de navegación como veremos mas adelante.***
+***En la carpeta "Selección de Componentes y Comparación con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) y porque se seleccionaron estos componentes, culminando con un robot con un una capacidad muy superior por el uso del LiDAR para mapear obstaculos y paredes, y en el reposa buena parte de la responsabilidad de navegación como veremos mas adelante.***
 
 
 ### Evolutivo de Piezas 3D para Sensores 
@@ -1061,7 +1061,7 @@ Esta sección documenta cómo los subsistemas del robot trabajan juntos, las res
 ## 7d. Decisiones de Diseño Principales
 
 Esta subsección resume las decisiones de ingeniería más importantes con su razonamiento. 
-**Cada decisión sigue el patrón "elegimos X en vez de Y porque…"** Aunque la comparativa de componentes se hará en el **Engineering Journal, sección 7**.
+**Cada decisión sigue el patrón "elegimos X en vez de Y porque…"** Aunque la comparativa de componentes se puede ver con detalle en la carpeta ***Selección de Componentes y Comparación con 2025***.
 
 ### Decisión 1 — Arquitectura: RPi 5 como Cerebro + Pico 2 como ejecutor y reportador de datos 
 
