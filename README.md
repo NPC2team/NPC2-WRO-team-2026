@@ -174,11 +174,16 @@ Alfredo, es nuestro coach y de profesion matemático.
 (https://youtu.be/Lv-a8dN4dbw)
 ## **4. Movilidad y Diseño Mecánico (Criterio 1)** 
 
-En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**.  En  el  Engineering  Journal  (Sección  4)  incluimos  la  descripción completa  del proceso  de  diseño,  las  mejoras sobre  nuestro  robot 2025,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. 
+En este apartado documentamos la ficha técnica de la configuración mecánica final de **Proyecto  Mahoraga**,  los ajustes realizados sobre la versión inicial de Proyecto Mahoraga y los cálculos detallados del Ackerman, torque y velocidad. En  "Comparativo con 2025",  mostramos las  mejoras sobre  nuestro robot Proyecyo Mahoraga respecto a Crazy Diamond 2025.
 
 ## 4a. Chasis 
 
-Compuesto por 2 niveles, con un subnivel adicional y un compartimiento hecho a la medida para la batería Lipo S3 11.1V. Esto con la finalidad de hacer más eficiente el uso del espacio y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
+Originalmente pensamos que necesitaríamos 3 pisos para alojar todos los componentes y en un ancho relativamente angosto. Al avanzar el diseño nos dimos cuenta de que esto generaba: 
+· Centro de masa elevado, perjudicial en curvas cerradas
+· Peso adicional innecesario por la estructura extra
+· Mayor altura total del robot
+
+Finalmente pensamos que era mejor 2 niveles, con un subnivel adicional y un compartimiento hecho a la medida para la batería Lipo S3 11.1V. Esto con la finalidad de hacer más eficiente el uso del espacio y lograr obtener un robot más pequeño y ágil. Las piezas fueron impresas en 3D, dándonos mayor flexibilidad en el diseño y permitiéndonos adecuar los espacios a los componentes mecánicos y eléctricos de Proyecto Mahoraga. 
 
 <img width="604" height="426" alt="Chasis Comentado" src="https://github.com/user-attachments/assets/6b80a166-bae0-440d-9ea4-06bb7c6f8add" />
 
@@ -209,7 +214,7 @@ Las piezas fueron diseñadas en Fusion e impresas en 3D, utilizando una Impresor
 
 Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba, soportes de motor y servo, carcasa y engranajes del diferencial y motor, espaciadores, repisa, canales de cables con tapas). 
 
-**_En el Engineering Journal en la sección 4.1 comentamos la evolución del chasis luego de un proceso iterativo, así como su comparativo con la versión que manejamos en 2025._** 
+***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot 300 grms mas ligero, 5 cms mas corto y 4 cms menos ancho***
 
 ## 4b. Sistema de Tracción 
 
@@ -219,7 +224,7 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 
  - Reutilizamos el diferencial utilizado por Crazy Diamond en 2025, ajustándolo al menor ancho de Proyecto Mahoraga e imprimimos un nuevo engranaje para el motor porque el eje era de menor diámetro y necesitaba otro flange para ajustar correctamente. 
 
- - El motor es manejado por un Pololu VNH5019 de alta estabilidad, con buen manejo de energía que lo protege de cambios bruscos de dirección y le permite mantener la precisión al robot. 
+ - El motor es manejado por un Pololu VNH5019 de alta estabilidad, con buen manejo de energía que lo protege de cambios bruscos de dirección y le permite mantener la precisión al robot. El motor se fijó al chasis a través de un soporte hecho a la medida en impresión 3D, para garantizar la altura ideal para engranar con la barra del diferencial y lograr la sujeción para evitar movimientos producto de la vibración. El soporto requirió de varias iteraciones en el diseño, hasta la última que incluyó pestañas para fijarlo al chasis con tornillos de precisión.
 
  - Incorporamos unas ruedas de 11mm de ancho de aluminio con neumático de goma, menos anchas que el estándar de 25mm, lo cual nos permite reducir el ancho, disminuir la fricción y mejora la estabilidad efectiva pese, al menor ancho su mayor peso permite bajar el centro de gravedad del motor.
 
@@ -238,7 +243,50 @@ Todos los archivos en STL/3MF están en **/models** (chasis de abajo y de arriba
 |Eje trasero|KYX Racing acero (Tamiya DT04)|
 |Ruedas|64 mm aluminio, ancho 11 mm + neumático de goma|
 
-**_En el Engineering Journal en la sección 4.2 comentamos porque elegimos estos componentes y la comparativa con otras opciones, adicionalmente detallamos el cálculo de ticks por metro del encoder, la velocidad lineal y el torque del motor._**
+### Encoder 
+El Encoder conectado al motor de fabrica trae una calibración para al ser conectado al diferencial necesitamos recalcularlo.
+
+Encoder calibrado empíricamente <br>
+A pesar de que en teoría la resolución del encoder es: <br>
+```bash
+48 Counts per Revolution (CPR) × 34 Relación del Motor = 1.632 CPR en la rueda
+```
+Para saber cuánto avanza el robot en una vuelta, calculamos el perímetro de la rueda con la siguiente fórmula:
+```bash
+Circunferencia =  π x Diámetro de la rueda = 3,1416 x 0,065 metros = 0,2042 metros
+Una vez que tienes el perímetro (en metros), divides los pulsos de una vuelta entre esa distancia:
+Ticks por metro = CPR en la rueda (1.632) / Circunferencia de la rueda en metros (0,2042 metros) = 7.992 ticks por metro
+```
+```bash
+En la práctica intervienen el diferencial impreso, la elasticidad del neumático de goma y los acoples mecánicos que hacen
+una relación cercana a una reducción 4:1, por lo que la medición en pruebas nos dio:
+2.006 ticks / metro
+```
+Esta calibración empírica es un ejemplo de iteración basada en datos: en lugar de confiar en el cálculo teórico, ejecutamos ensayos repetibles desplazando el robot distancias conocidas y contando ticks acumulados.
+
+### Cálculo de velocidad lineal teórica 
+```bash
+Circunferencia =  π x Diámetro de la rueda = 3,1416 x 0,065 metros = 0,2042 metros
+Velocidad = (RPM / 60) × Circunferencia = (330 / 60) × 0,2042 metros
+Velocidad ≈ 1.1231 m/s
+```
+***A esta velocidad con un perímetro estimado de 10 metros por vuelta, nos da una vuelta en 8,9 segundos, un tiempo total necesario para 3 vueltas de 27 segundos. Esto deja margen amplio dentro del tiempo límite reglamentario y es un tiempo bastante competitivo versus lo conseguido por otros equipos en años anteriores.*** <br>
+
+### Cálculo del Torque del Motor
+
+El Pololu 34:1 Metal Gearmotor 25Dx67L mm MP 12V tiene un Torque según sus características de 0,065 Kg.cm y una eficiencia entre 70% y 80%. <br>
+```bash
+Torque de salida =  Torque del Motor x Relación del Motor x N (Eficiencia)
+Torque de salida = 0,065 kg/cm x 34 x 0,75 = 1,65 kg/cm
+```
+
+Al considerar el diferencial, tenemos que incluir la relación del diferencial, que se calcula como la relación entre el número de dientes de la corona (18) dividido por el número de dientes del piñón del diferencial (12). <br>
+```bash
+Torque de salida =  Torque del Motor x Relación del Motor x N (Eficiencia) x Relación Diferencial
+Torque de salida (con Diferencial) = 0,065 kg/cm x 34 x 0,75 x (18/12) = 2,32 kg/cm
+```
+
+***Este torque nos da la tranquilida de resistir sin problema el peso del robot y ademas garantizar la precisión en los movimientos***
 
 ### Evolutivo de Piezas de Tracción 
 
@@ -252,15 +300,24 @@ Los engranajes y la caja del diferencial fueron diseñados en Fusion e impresos 
 |Gear Caja de Diferencial|<img width="748" height="532" alt="Gear Box Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/9572b7fa-3c32-4bb0-90f9-0adf38d1d467" />|No Aplica|<img width="416" height="333" alt="Gear Box Diferencial VFinal" src="https://github.com/user-attachments/assets/0bcac5b3-7d51-4727-9a01-68b1e88b6092" />|<img width="416" height="465" alt="Gear Box Diferencial Foto Final" src="https://github.com/user-attachments/assets/57d8fc9b-a06d-41eb-aa91-8d983893313a" />|El diseño original se hizo usando una herramienta de diseño de MarketWorld [https://makerworld.com/](https://makerworld.com/es/makerlab/parametricModelMaker](https://makerworld.com/es/makerlab/parametricModelMaker?designId=1364266&from=model_page&modelName=SPUR+GEAR_ParametricModelMaker.scad&protected=true&unikey=57dd6905-7898-41ec-923e-688726f70bdf))| 
 |Espaciador Diferencial|<img width="693" height="635" alt="Espaciador Diferencial Prototipo Fusion" src="https://github.com/user-attachments/assets/005d6a33-55b5-478e-aa7b-652d1629b7fe" />|No Aplica|<img width="468" height="336" alt="Espaciador Diferencial Versión Final" src="https://github.com/user-attachments/assets/47c13380-5ae9-4008-9cb1-0ed8493e2433" />|<img width="376" height="370" alt="Espaciador Diferencial Foto" src="https://github.com/user-attachments/assets/980a9ffa-dacf-4a50-811f-46ce58268876" />|Espaciador en el diferencial para ajustar la caja de engranajes del diferencial a los soportes de la rolineras y que el eje trasero y el diferencial no se muevan lateralmente| 
 
+***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un controlador mucho mas eficiente, con ruedas mas angostas, pero firmes al ser de aluminio y motor con prestaciones comparables pero menor tamaño y peso***
+
 ## 4c. Sistema de Dirección 
 
 <img width="331" height="352" align="left" hspace="6" alt="Direccion" src="https://github.com/user-attachments/assets/3a22cd53-615c-4a26-9979-4e6cee0f2961" />
 
 Uno de los principales retos de este año era que el vehículo debía ser más ágil, para lo cual había que reducir su tamaño y mejorar su capacidad de giro. Con batalla 142 mm y pivotes 97 mm, el robot recorre 34,2 cm para girar 90°, frente a los 48,2 cm del chasis 2025 (−29%). 
 
-Los C Hub o portamanguetas de dirección fueron integrados en el chasis de abajo, permitiendo el mayor cruce que podía aportar el servo. El servo Savox SC-1251MG aporta precisión de ángulo de giro al ser digital, tener engranajes metálicos y ser coreless, permitiéndole además una alta velocidad de respuesta 0.09s/60°. 
+La transmisión del movimiento del servo a las ruedas usa componentes de calidad de radio control de competición:
+- Servo Saver Tamiya TT-02 Hi-Torque: protege el servo absorbiendo impactos cuando el robot roza una pared o choca, así como un sobregiro imprevisto. 
+- Manguetas KYX Racing aluminio (Tamiya DT04): soportan las ruedas delanteras con pivote Ackermann. Aluminio para resistencia bajo cargas laterales repetidas.
+- Tie rods M3 ajustables (uxcell): rosca M3 que permite ajuste fino de longitud. Esto es crítico porque, con piezas fijas impresas, un error de 2 mm dejaría las ruedas "bizcas" (chuecas).
+- Ejes de acero inoxidable 5 mm × 100 mm (uxcell): pivote rígido sin flexión.
+- Los C Hub o portamanguetas de dirección fueron integrados en el chasis de abajo, permitiendo el mayor cruce que podía aportar el servo. El servo Savox SC-1251MG aporta precisión de ángulo de giro al ser digital, tener engranajes metálicos y ser coreless, permitiéndole además una alta velocidad de respuesta 0.09s/60°. 
 
 A diferencia de 2025, colocamos el servo detrás de las ruedas delanteras. Esta decisión liberó el espacio frontal para colocar el LiDAR en posición baja y adelantada. 
+
+El servo está fijado al chasis a través de un soporte hecho a la medida en impresión 3D, para garantizar la altura ideal de las barras conectadas a las manguetas. El soporto requirió de varias iteraciones en el diseño, hasta la última que incluyó pestañas para fijarlo al chasis con tornillos de precisión.
 
 <br clear="left" />
 <br>
@@ -294,21 +351,20 @@ La fórmula completa que considera tanto la batalla como la distancia entre pivo
 ```bash
 R  = L / tan(δ) + W / 2
 R = 142 / tan (40°) + 97 / 2
-R = 142 / 0.839 + 48.5 
-R = 217.7 mm
+R = 142 / 0,839 + 48,5 
+R = 217,7 mm
 ```
 
 ***Cálculo de la distancia recorrida en un giro de 90°***
 
 ```bash
 Distancia = (2 × π × R) / 4
-Distancia = (2 × π × 217.7) / 4 ≈ 341.9 mm
+Distancia = (2 × π × 217,7) / 4 ≈ 341,9 mm
 ```
 
-Bajo este calculo y probado en la practica, Proyecto Mahoraga es capaz de hacer un giro de 90 grados en 34,2 cms.
+***Bajo este calculo y probado en la practica, Proyecto Mahoraga es capaz de hacer un giro de 90 grados en 34,2 cms.***
 
 
-**_En el Engineering Journal en la sección 4.3 describimos más ampliamente los componentes de la dirección, las ventajas del principio Ackerman, así como el comparativo con 2025 de los cálculos para obtener el radio de giro y la distancia necesaria para completar un giro de 90 grados._** 
 
 ### Evolutivo de Piezas 3D de Dirección 
 
@@ -319,25 +375,27 @@ El soporte del servo hecho a la medida y altura necesaria, asi como los C-Hubs f
 |Soporte Servo|<img width="763" height="682" alt="Soporte Servo Prototipo en Fusion" src="https://github.com/user-attachments/assets/8921e9b8-114d-4369-97fb-cebade415fcd" />|<img width="521" height="451" alt="Soporte de Servo V1" src="https://github.com/user-attachments/assets/b978f579-46d7-43b5-b75c-403e4fa139ab" />|<img width="484" height="398" alt="Soporte de Servo V2" src="https://github.com/user-attachments/assets/9576e490-375c-4adb-acc8-4f27f14bb6ae" />| <img width="431" height="305" alt="Soporte Servo Foto" src="https://github.com/user-attachments/assets/ac51d6c3-cd66-4c31-b102-0885bf16c29f" />|El diseño inicial tenía su atornillado por debajo y dificultaba su ajuste al chasis, ademas los agujeros a los tornillos quedaron muy flojos por usar un infill muy bajo en la pieza (15%). La Versión Final ajustó esa falla con un Infill de 30% y ademas se colocaron pestañas para tornillos para mas fácil ajuste al chasis |
 |C Hubs|<img width="414" height="601" alt="C Hubs V1" src="https://github.com/user-attachments/assets/8f08d656-e76c-42f1-84bf-3272c6f7da95" />|No Aplica|Descartada, al incluirse en el Chasis en la Versión V1 en adelante|<img width="397" height="473" alt="C Hubs Foto" src="https://github.com/user-attachments/assets/28d3c488-85c7-469a-a407-1fe34a2f50fe" />|Ideada para sostener las manguetas de la dirección en vez de comprar unas comerciales. sin embargo se incluyeron en el diseño del Chasis V1| 
 
+***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un una capacidad de giro mayor en 29% gracias a su menor tamaño que disminuyo tanto su Batalla como Pivotes. Ademas el servo digital añade precisión y velocidad de respuesta.***
 
 ## **5. Arquitectura de Potencia y Sensores (Criterio 2)** 
 
-En este apartado documentamos la ficha técnica del sistema de alimentación, distribución de potencia y arquitectura de sensores para **Proyecto Mahoraga**. 
+En este apartado documentamos la ficha técnica del sistema de alimentación, distribución de potencia, power budget, autonomía de batería y arquitectura de sensores para **Proyecto Mahoraga**. 
 
-**_En el Engineering Journal (sección 5) se encuentran las justificaciones de selección de los componentes batería/reguladores, diagramas de cableado completos y presupuesto de energía (power Budget), así como justificación de selección de sensores y su proceso de calibración._** 
 
 ## 5a. Sistema de Potencia 
 
 |**Componente**|**Modelo**|**Especificaciones**|
 |---|---|---|
-|Batería|Zeee LiPo 3S|11.1 V nominal, 3.000 mAh, 50C, conector T|
+|Batería|Zeee LiPo 3S|11.1 V nominal (12,6 V plenamente cargada), 3.000 mAh, 50C, conector T|
 |Regulador Principal<br>(lógica)|Pololu D24V90F5|5V salida, 9 A continuos|
-|Regulador  Servo|Pololu D36V50F5|5V salida, 5.5 A continuos|
+|Regulador  Servo|Pololu D36V50F5|5V salida, 5,5 A continuos|
 |Motor Driver|Pololu VNH5019|Rango Operativo 5,5 a 24V, Cpacidad 12 A|
 
 La bateria 3S nos permite alimentar correctamente el motor Pololu 34:1 25Dx67L MP 12V y sacar provecho de su potencia. 
 
-**Decisión clave:** Distribución dual de reguladores 5V. El D24V90F5 (9A) alimenta toda la lógica del robot (Raspberry Pi 5, Pico Plus 2, LiDAR, IMU, TOF, lógica del VNH5019). El D36V50F5 (5.5A) alimenta exclusivamente el servo Savox SC-1251MG, que tiene picos de corriente durante giros bruscos o choques. Esto aísla los transitorios del servo del riel de lógica sensible, evitando reinicios del Raspberry Pi 5 o del Pico Plus 2. 
+**Decisión clave:** Distribución dual de reguladores 5V. El D24V90F5 (9A) alimenta toda la lógica del robot (Raspberry Pi 5, Pico Plus 2, LiDAR, IMU, TOF, lógica del VNH5019). El D36V50F5 (5.5A) alimenta exclusivamente el servo Savox SC-1251MG, que tiene picos de corriente de hasta 3,5A durante giros bruscos o choques. Esto aísla los transitorios del servo del riel de lógica sensible, evitando reinicios del Raspberry Pi 5 o del Pico Plus 2 o errores en los datos de los sensores.
+
+
 
 <img width="845" height="634" alt="Distribucion de Potencia" src="https://github.com/user-attachments/assets/cbb05f86-15c2-4bf1-b885-bf6c1c0fd992" />
 
@@ -350,41 +408,41 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 
 |**Componente**|**Voltaje**|**Corriente**<br>**típica**|**Corriente**<br>**pico**|**Notas**|
 |---|---|---|---|---|
-|Raspberry Pi 5 (16GB) +<br>NVMe|5 V|1.5 A|3.0 A|Fuente oficial recomienda 5A|
+|Raspberry Pi 5 (16GB) +<br>NVMe|5 V|1,5 A|3,0 A|Fuente oficial recomienda 5A|
 |Active Cooler RPi 5|5 V|0.05 A|0.1 A|Ventilador PWM|
-|SSD M.2 NVMe Silicon<br>Power|3.3 V|0.3 A|0.5 A|Alimentado vía NVMe Base|
-|Pico Plus 2 (RP2350)|5 V|0.05 A|0.15 A|Alimentado desde RPi vía USB|
-|Terminal PiCowbell|5 V|<0.01 A|<0.01 A|Solo terminales / reset|
-|LiDAR STL-27L|5 V|0.3 A|0.3 A|21.600 mediciones/s, 10Hz|
-|IMU BNO085|3.3 V (Qwiic)|0.015 A|0.025 A|Bajo consumo|
-|VL53L4CD ToF ×2|3.3 V (Qwiic)|0.020 A c/u|0.05 A c/u|Sensor láser pulsado|
-|Cámara Global Shutter|3.3 V (FPC)|0.25 A|0.4 A|Alimentada por RPi|
-|SparkFun Qwiic<br>MultiPort|3.3 V|<0.001 A|<0.001 A|Pasivo|
-|Servo Savox<br>SC-1251MG|5 V|0.5 A|3.5 A (stall)|Posibilidad de picos en giros y<br>choques|
-|Motor Pololu 34:1 12V|11.1 V (LiPo)|0.5 A|5.0 A (stall)|Alimentación directa|
-|Encoder magnético|3.3 V|0.01 A|0.015 A|Alimentado por Pico 2|
-|VNH5019 (lógica)|5 V|<0.01 A|<0.01 A|Solo lógica; potencia va por LiPo|
+|SSD M.2 NVMe Silicon<br>Power|3,3 V|0,3 A|0,5 A|Alimentado vía NVMe Base|
+|Pico Plus 2 (RP2350)|5 V|0,05 A|0,15 A|Alimentado desde RPi vía USB|
+|Terminal PiCowbell|5 V|<0,01 A|<0,01 A|Solo terminales / reset|
+|LiDAR STL-27L|5 V|0,3 A|0,3 A|21.600 mediciones/s, 10Hz|
+|IMU BNO085|3,3 V (Qwiic)|0,015 A|0.025 A|Bajo consumo|
+|VL53L4CD ToF ×2|3,3 V (Qwiic)|0,020 A c/u|0,05 A c/u|Sensor láser pulsado|
+|Cámara Global Shutter|3,3 V (FPC)|0.25 A|0,4 A|Alimentada por RPi|
+|SparkFun Qwiic<br>MultiPort|3,3 V|<0,001 A|<0,001 A|Pasivo|
+|Servo Savox<br>SC-1251MG|5 V|0,5 A|3,5 A (stall)|Posibilidad de picos en giros y<br>choques|
+|Motor Pololu 34:1 12V|11,1 V (LiPo)|0,5 A|5,0 A (stall)|Alimentación directa|
+|Encoder magnético|3,3 V|0.01 A|0,015 A|Alimentado por Pico 2|
+|VNH5019 (lógica)|5 V|<0,01 A|<0,01 A|Solo lógica; potencia va por LiPo|
 |**TOTAL bus lógica (5V**<br>**vía D24V90F5)**<br>**TOTAL bus servo (5V**<br>**via D36V50F5)**<br>**Bus 11.1V MOTOR**<br>**(directo)**||**~2.2 A**<br>**~0.5 A**<br>**~0.5 A**|**~4.0 A**<br>**~3.5 A**<br>**~5.0 A**|Margen: +125 % pico, +309%<br>continuo<br>Margen: +57 % pico, +1.000%<br>continuo<br>Margen: +140 % pico|
-|**TOTAL desde LiPo 3S**||**~3.2 A**|**~9.0 A pico**||
+|**TOTAL desde LiPo 3S**||**~3,2 A**|**~9,0 A pico**||
 
 ### Cálculo de Autonomía de Batería
 
 ***Consumo***
 ```bash
 El bus de la lógica D24V90F5 de 5V consume 2.2 A
-2.2 A x 5V = 11.000 mA 
+2,2 A x 5V = 11.000 mA 
 El bus del servo D36V50F5 de 5V consume 0.5 A
-0.5 A x 5V = 2.500 mA 
-El bus del Motor de 11.1v via VNH5019 consume 0.5 A
-0.5 A x 11.1V = 5.550 mA 
+0,5 A x 5V = 2.500 mA 
+El bus del Motor de 11,1v via VNH5019 consume 0.5 A
+0,5 A x 11,1V = 5.550 mA 
 
 Total de Consumo 18.000 mA
 
 Los reguladores buck Pololu D36V50F5 y D24V90F5) son ~90% eficientes. 
 
-Entonces la batería tiene una razon de 11.1V x 90% = 9.99
+Entonces la batería tiene una razon de 11,1V x 90% = 9,99
 
-Reexpresando el Consumo tenemos C = 18.000 / 9.99 = 1801.8 mA @ 11.1V
+Reexpresando el Consumo tenemos C = 18,000 / 9,99 = 1801,8 mA @ 11.1V
 ```
 ***Batería***
 ```bash
@@ -394,7 +452,7 @@ Capacidad Útil = 3.000 mAh x 70% = 2.100 mAh
 
 Autonomia = Capacidad de Bateria (mAh) / Consumo Total (mA)
 Autonomia = 2.100 mAh / 1.802 (mA)
-Autonomia = 1,1655 h = 69.9 minutos
+Autonomia = 1,1655 h = 69,9 minutos
 ```
 
 En la práctica hemos visto autonomía similares, pero hemos establecido un cambio de bateria mas conservador cercano a los 50 minutos de uso, que normalmente han sido unas 10 pruebas de 3 giros, mas el tiempo que ha estado prendido el robot en modo de debugging o de ajuste de algunas variables del código. 
@@ -412,7 +470,9 @@ Uno de los upgrades más importantes que hicimos en **Proyecto Mahoraga** fue te
 |<img width="100" height="90" alt="GS Lens" src="https://github.com/user-attachments/assets/82a42c9a-cfe0-4fa4-acbb-b78bad9f0970" />|Lente CCTV M12 <br>2.8mm F2.0|Campo de visión amplio para captura 96°>|
 |<img width="110" height="110" alt="Encoder" src="https://github.com/user-attachments/assets/c9b0380f-ce44-4107-9fe8-7cd2a6e6303e" />|Magnetic Encoder<br>Pololu|48 CPR motor, 2.006 ticks/m calibrados|
 
-**_En el Engineering Journal, sección 5.3 abordamos con detalle porque elegimos estos componentes._** 
+
+***En la carpeta "Comparativo con 2025" puede verse el detalle de la mejora vs Crazy Diamond (2025) para estos componentes, culminando con un robot con un una capacidad muy superior por el uso del LiDAR para mapear obstaculos y paredes, y en el reposa buena parte de la responsabilidad de navegación como veremos mas adelante.***
+
 
 ### Evolutivo de Piezas 3D para Sensores 
 
@@ -522,9 +582,9 @@ robot ante variaciones de latencia del sistema operativo.
 
 <img width="2800" height="2000" alt="esquematico" src="https://github.com/user-attachments/assets/feb72cbb-3bc7-460f-871f-41e487800fb9" />
 
-**_Diagrama completo de conexiones eléctricas: ver schemes/conexiones-del-robot.pdf._** 
+**_Diagrama completo de conexiones eléctricas: ver schemes/cableado detallado.pdf._** 
 
-**_Detalle de cada conexión (pin a pin) en el Engineering Journal sección 5.5 ._** 
+
 
 ## **6. Arquitectura de Software y Estrategia de Obstáculos (Criterio 3)** 
 
@@ -562,7 +622,8 @@ src/
 │   ├── npc_bot.launch.py          # Lanza Reto 1 completo
 │   └── base_reto2.launch.py       # Lanza Reto 2 completo
 └── systemd/
-    └── npc_bot.service            # Arranque Automatico 
+    └── npc_bot.service            # Arranque Automatico Reto 1
+    └── npc_bot_reto2.service      # Arranque Automatico Reto 2 
 ```
 
 
