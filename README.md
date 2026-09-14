@@ -51,6 +51,7 @@
  - d. Estructura del Repositorio
  - e. Cómo Arrancar el Sistema
  - f. Notas de Ensamblaje
+ - g. Journal Detallado
 <br>
 <br>
 
@@ -420,9 +421,9 @@ Como se observa en la tabla del Power Budget, el uso de los 2 reguladores nos da
 |SparkFun Qwiic<br>MultiPort|3,3 V|<0,001 A|<0,001 A|Pasivo|
 |Servo Savox<br>SC-1251MG|5 V|0,5 A|3,5 A (stall)|Posibilidad de picos en giros y<br>choques|
 |Motor Pololu 34:1 12V|11,1 V (LiPo)|0,5 A|5,0 A (stall)|Alimentación directa|
-|Encoder magnético|3,3 V|0.01 A|0,015 A|Alimentado por Pico 2|
+|Encoder magnético|3,3 V|0,01 A|0,015 A|Alimentado por Pico 2|
 |VNH5019 (lógica)|5 V|<0,01 A|<0,01 A|Solo lógica; potencia va por LiPo|
-|**TOTAL bus lógica (5V**<br>**vía D24V90F5)**<br>**TOTAL bus servo (5V**<br>**via D36V50F5)**<br>**Bus 11.1V MOTOR**<br>**(directo)**||**~2.2 A**<br>**~0.5 A**<br>**~0.5 A**|**~4.0 A**<br>**~3.5 A**<br>**~5.0 A**|Margen: +125 % pico, +309%<br>continuo<br>Margen: +57 % pico, +1.000%<br>continuo<br>Margen: +140 % pico|
+|**TOTAL bus lógica (5V**<br>**vía D24V90F5)**<br>**TOTAL bus servo (5V**<br>**via D36V50F5)**<br>**Bus 11,1V MOTOR**<br>**(directo)**||**~2,2 A**<br>**~0,5 A**<br>**~0,5 A**|**~4,0 A**<br>**~3,5 A**<br>**~5,0 A**|Margen: +125 % pico, +309%<br>continuo<br>Margen: +57 % pico, +1.000%<br>continuo<br>Margen: +140 % pico|
 |**TOTAL desde LiPo 3S**||**~3,2 A**|**~9,0 A pico**||
 
 ### Cálculo de Autonomía de Batería
@@ -582,9 +583,8 @@ robot ante variaciones de latencia del sistema operativo.
 
 <img width="2800" height="2000" alt="esquematico" src="https://github.com/user-attachments/assets/feb72cbb-3bc7-460f-871f-41e487800fb9" />
 
-**_Diagrama completo de conexiones eléctricas: ver schemes/cableado detallado.pdf._** 
-
-
+**_Diagrama completo de conexiones eléctricas: ver schemes/esquematico detallado.png._** 
+**_Detalle de cableado en cada componente: ver schemes/cableado detallado.pdf._** 
 
 ## **6. Arquitectura de Software y Estrategia de Obstáculos (Criterio 3)** 
 
@@ -1021,7 +1021,7 @@ Con estos ajustes hemos logrado una mejora en la tasa de éxito en el Reto con O
 
 ## 7. Pensamiento Sistémico y Decisiones de Ingeniería (Criterio 4)
 
-Esta sección documenta cómo los subsistemas del robot trabajan juntos, las restricciones que dieron forma al diseño, las decisiones principales con sus alternativas, y el historial de iteraciones. El análisis técnico extendido (con cálculos, código y diagnósticos está en el **Engineering Journal, sección 7**.
+Esta sección documenta cómo los subsistemas del robot trabajan juntos, las restricciones que dieron forma al diseño, las decisiones principales con sus alternativas, y el historial de iteraciones.
 
 ## 7a. Diagrama de Bloques del Sistema
 
@@ -1139,8 +1139,8 @@ contar esquinas confundiría ambas. El yaw acumulado es robusto en ambos casos c
 
 # 8. Instrucciones de Reproducibilidad (Criterio 5)
 
- Esta sección permite que **otro equipo pueda replicar el robot **Proyecto Mahoraga** desde cero. Incluye lista de hardware con links de compra, requisitos de software, instalación paso a paso, estructura del repositorio, archivos CAD/3D y procedimiento de arranque en
-competencia. Sin embargo, el emsamblaje y el paso a paso estará aún más detallado en el **_Engineering Journal Sección 8_**.
+ Esta sección permite que otro equipo pueda replicar el robot **Proyecto Mahoraga** desde cero. Incluye lista de hardware con links de compra, requisitos de software, instalación paso a paso, estructura del repositorio, archivos CAD/3D y procedimiento de arranque en
+competencia. Sin embargo, el Journal del paso a paso que nosotros hicimos está en las sección **Journal** del Repositorio.
 
 ## 8.a Requisitos de Hardware
 
@@ -1528,3 +1528,11 @@ Resumen del orden recomendado:
     </td>
   </tr>
 </table>
+
+## 8.g Journal Detallado
+
+Acá presentamos el Gantt que se construyó con el detalle de las fases que llevamos acabo como equipo para poder desarrollar a Proyecto Mahoraga. En la carpeta de ***Journal*** veran el detalle de cada una de estas fases semana a semana y por hito y que no colocamos aquí por lo amplio de la información.
+
+<img width="1441" height="766" alt="Cronograma" src="https://github.com/user-attachments/assets/f2482e3b-634a-4935-9fcf-a5cc1c20d1ab" />
+
+
