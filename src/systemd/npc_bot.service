@@ -1,0 +1,43 @@
+[Unit]
+Description=NPC WRO 2026 Robot Auto-Start
+# Esperar a que el sistema esté completamente arrancado
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=simple
+
+# Usuario y grupo bajo el que correrá el servicio
+User=npc
+Group=npc
+
+# Variables de entorno necesarias para ROS 2
+Environment="HOME=/home/npc"
+Environment="USER=npc"
+
+# Directorio de trabajo
+WorkingDirectory=/home/npc
+
+# Esperar 5 segundos para que USB esté completamente enumerado
+# (Pico en /dev/ttyACM0 y LiDAR en /dev/ttyUSB0)
+ExecStartPre=/bin/sleep 5
+
+# Comando principal: sourcea los environments y arranca el launch file
+ExecStart=/bin/bash -c "source /opt/ros/jazzy/setup.bash && source /home/npc/lidar_ws/install/setup.bash && source /home/npc/wro_ws/install/setup.bash && ros2 launch npc_bot npc_bot.launch.py"
+
+# Si el servicio falla, reintenta cada 5 segundos
+Restart=on-failure
+RestartSec=5
+
+# Limpieza al parar el servicio: cierra todos los procesos hijos
+KillMode=mixed
+KillSignal=SIGINT
+TimeoutStopSec=10
+
+# Logging al journal del sistema (se ve con journalctl)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+# Arrancar este servicio en el target multi-user (modo normal sin GUI)
+WantedBy=multi-user.target

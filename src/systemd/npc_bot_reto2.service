@@ -1,0 +1,25 @@
+[Unit]
+# ============================================================================
+#  npc_bot_reto2.service  -  Equipo NPC, WRO 2026 Future Engineers
+#  Arranca el sistema completo del Reto 2 al encender el robot.
+#  IMPORTANTE: se usa network.target (NO multi-user.target). En el Reto 1
+#  descubrimos que multi-user.target ya estaba alcanzado al bootear y el
+#  servicio nunca arrancaba; network.target lo resuelve.
+# ============================================================================
+Description=NPC Bot Reto 2 (Obstacle Challenge) - arranque automatico
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=npc
+# Ejecuta el script combinado (base + control).
+ExecStart=/bin/bash /home/npc/wro_ws/arrancar_reto2_completo.sh
+# Si el proceso principal (el control) muere, no reiniciar solo:
+# en competencia preferimos control manual, no reinicios inesperados.
+Restart=no
+# Dar tiempo generoso al arranque antes de considerarlo fallido.
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target
