@@ -117,7 +117,9 @@ Alfredo, es nuestro coach y de profesion matemático.
 
 ## 2a. Descripción del Robot 
 
-**“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá ejecutar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme y en el Engineering Journal las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. 
+**“Proyecto Mahoraga”** es nuestro vehículo para Futuros Ingenieros 2026, bautizado en alusión al poderoso personaje del Anime Jujutsu Kaisen por su capacidad de adaptación.
+
+**“Proyecto Mahoraga”** representa una evolución significativa con respecto a **“Crazy Diamond” (WRO 2025)**, con quien ya logramos triunfos y a quien le agradecemos el aprendizaje. Proyecto Mahoraga presenta mejoras en hardware, diseño y software que nos permitirá ejecutar con éxito los retos de Futuros Ingenieros 2026. Abordaremos con detalle en este Readme las características del Robot, el proceso de diseño, construcción y programación, así como las decisiones y obstáculos que tuvimos en el camino, con la finalidad de que sea posible replicar por cualquier entusiasta de la robótica como nosotros. En la carpeta ***Comparativo con 2025*** se podrá ver el detalle de la mejora vs Crazy Diamond (2025) y en la carpeta de ***Journal*** detallaremos el diario con los avances semana a semana de la labor para construir **“Proyecto Mahoraga”**.
 
 ## 2b. Fotos del Robot 
 
