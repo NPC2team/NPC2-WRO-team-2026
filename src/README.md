@@ -1,1 +1,2 @@
 **En esta carpeta encontraras diferentes archivos que estan relacionados con la programación del carro o sus componentes.**
+Los archivos de los nodos de la camara y los 2 nodos de control para cada uno de los retos. De igual manera esta el Pico Firmware del archivo en C++ que ejecuta el Pico y ademas en NPC_bot está el pico_bridge node que permite hacer el enlace entre lo que trasmite el Pico 2 en C++ y el Python que recibe la Pi5 con el paquete ROS2 Jazzy Jalisco. 
