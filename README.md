@@ -991,9 +991,9 @@ nodo_camara.py convierte el frame BGR a HSV, aplica máscaras de color y publica
 Se reportan los avances evolutivos que fuímos teniendo en pruebas en una pista con las medidas oficiales de la WRO: 
 
 |**Métrica**|**Junio**|**Julio**|**Ago-Sept**|
-|---|---|---|
+|---|---|---|---|
 |Detección de Ruta Ideal)|100% correcta cuando se practica sin obstaculos (12 rondas de 3 vueltas c/u). Con obstaculos (200 obstaculos con promedio de 5 por vuelta de 40 vueltas). <br> En el 10% de los casos la evasión ha causado un desvio incorrecto (21/200)| Con obstaculos (357 obstaculos con promedio de 7 por vuelta de 51 vueltas). En el 10% de los casos la evasión ha causado un desvio incorrecto (36/350)|420 obstaculos con promedio de 7 por vuelta de 60 vueltas. En el 6% de los casos la evasión ha causado un desvio incorrecto (25/420) |
-|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV|98% de obstaculos detectados correctamente|90% de obstaculos detectados correctamente, se practico con ubicación de obstaculos compleja|
+|Tasa de Detección de Obstáculos|96% de obstaculos detectados correctamente (192/200 obstaculos). <br>  Dificultad de detección cuando vehículo se desvia mucho y cámara no detecta por el FoV|98% de obstaculos detectados correctamente|90% de obstaculos detectados correctamente, se practicó con ubicación de obstaculos compleja|
 |Tasa de Evasión de Obstáculos|80% de obstaculos detectados correctamente (160/200 obstaculos). <br> 4% por no detección, 10% por falta de espacio para evadir y 6% por chocar el obstáculo|85%|89%|
 |Tasa de completación de vueltas|40% de Éxito de vuelta completa con evasión (16 de 40 vueltas). Ha mejorado desde que redujimos velocidad.|50%|90% aunque mueve algún pilar|
 |Precisión de posición de parada|0% Se está deteniendo un giro antes por detección erronea del magenta. Identificado el problema pero dando prioridad a otros ajustes|Igual|40%, aun con problemas con el magnenta|
@@ -1520,7 +1520,7 @@ Resumen del orden recomendado:
   </tr>
    <tr>
     <td align="center">
-     La RPI5 la ubicamos en la parte trasera y sus conexiones principales son con el Pico 2 Plus y el LiDAR, como la comunicación es por USB es importante tener cables muy cercanos a la medida necesaria. Para armar el NVME segimos el paso a paso de la pagina oficial de <a href="https://learn.pimoroni.com/article/getting-started-with-nvme-base?gad_source=1&gad_campaignid=21808011029&gbraid=0AAAAADqO9eI2JBt_V5J718nZPukufdGr8&gclid=CjwKCAjwu53SBhAhEiwAJzSLNn-C14eCdenwd9VDtsrBGij-e7OjglkBVuX8pjsKX0_WzyU9FhXqaRoC4g8QAvD_BwE" target="_blank">Pimoroni</a>. <br>
+     La RPI5 la ubicamos en la parte trasera y sus conexiones principales son con el Pico 2 Plus y el LiDAR, como la comunicación es por USB es importante tener cables muy cercanos a la medida necesaria. Para armar el NVME seguimos el paso a paso de la pagina oficial de <a href="https://learn.pimoroni.com/article/getting-started-with-nvme-base?gad_source=1&gad_campaignid=21808011029&gbraid=0AAAAADqO9eI2JBt_V5J718nZPukufdGr8&gclid=CjwKCAjwu53SBhAhEiwAJzSLNn-C14eCdenwd9VDtsrBGij-e7OjglkBVuX8pjsKX0_WzyU9FhXqaRoC4g8QAvD_BwE" target="_blank">Pimoroni</a>. <br>
     </td>
     <td align="center">
       Al lado del Pico 2 Plus, colocamos una protoboard y ahi encajamos el Botón de Inicio y el IMU BNO085, asegurandonos que no utilicen las misma lineas de conexión. Si bien el IMU se conecta por Qwiic los pines pueden interferir.<br>
